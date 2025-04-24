@@ -1,0 +1,340 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\universalfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\universalfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\universalfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\universalfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\universalfilter.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\universalfilter.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\inputarguments\\blurinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:inputarguments\\blurinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\sharpwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\sharpwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\imageprocessingalgos\\filter\\linearsharpening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\filter\\linearsharpening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\inputarguments\\filter2dinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:inputarguments\\filter2dinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\imageprocessingalgos\\blur\\medianblur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\blur\\medianblur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\sharpwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\sharpwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\blurwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\blurwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\blurwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\blurwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\matrixrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\matrixrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\edgemethods\\sobelui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\edgemethods\\sobelui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\imageprocessingalgos\\edgedetection\\sobel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\edgedetection\\sobel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\edgemethods\\sobelui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\edgemethods\\sobelui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\tresholdwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\tresholdwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 183,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\MainUI.cs",
+              "RelativeDocumentMoniker": "MainUI.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\MainUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "MainUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T19:38:19.324Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UniversalFilter.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\UniversalFilter.Designer.cs",
+              "RelativeDocumentMoniker": "customUI\\UniversalFilter.Designer.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\UniversalFilter.Designer.cs",
+              "RelativeToolTip": "customUI\\UniversalFilter.Designer.cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAYwA8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T19:37:49.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UniversalFilter.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\UniversalFilter.cs",
+              "RelativeDocumentMoniker": "customUI\\UniversalFilter.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\UniversalFilter.cs",
+              "RelativeToolTip": "customUI\\UniversalFilter.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAUwGgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T19:24:51.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UniversalFilter.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\UniversalFilter.cs",
+              "RelativeDocumentMoniker": "customUI\\UniversalFilter.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\UniversalFilter.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "customUI\\UniversalFilter.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T19:06:48.203Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BlurWindow.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\BlurWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\BlurWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\BlurWindow.cs",
+              "RelativeToolTip": "customUI\\BlurWindow.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T15:01:23.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BlurWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\BlurWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\BlurWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\BlurWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "customUI\\BlurWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T15:01:18.677Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MedianBlur.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T14:28:51.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BlurInput.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\InputArguments\\BlurInput.cs",
+              "RelativeDocumentMoniker": "InputArguments\\BlurInput.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\InputArguments\\BlurInput.cs",
+              "RelativeToolTip": "InputArguments\\BlurInput.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T14:28:10.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Filter2dInput.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\InputArguments\\Filter2dInput.cs",
+              "RelativeDocumentMoniker": "InputArguments\\Filter2dInput.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\InputArguments\\Filter2dInput.cs",
+              "RelativeToolTip": "InputArguments\\Filter2dInput.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAjwA0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T13:59:55.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LinearSharpening.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Filter\\LinearSharpening.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Filter\\LinearSharpening.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Filter\\LinearSharpening.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Filter\\LinearSharpening.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAswBYAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T13:42:08.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SharpWindow.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\SharpWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\SharpWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\SharpWindow.cs",
+              "RelativeToolTip": "customUI\\SharpWindow.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAASwCcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T13:06:08.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SharpWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\SharpWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\SharpWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\SharpWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "customUI\\SharpWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T13:01:16.905Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MatrixRow.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\MatrixRow.cs",
+              "RelativeDocumentMoniker": "customUI\\MatrixRow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\MatrixRow.cs",
+              "RelativeToolTip": "customUI\\MatrixRow.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAowBUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T12:58:05.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Sobel.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T11:03:12.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SobelUI.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\EdgeMethods\\SobelUI.cs",
+              "RelativeDocumentMoniker": "customUI\\EdgeMethods\\SobelUI.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\EdgeMethods\\SobelUI.cs",
+              "RelativeToolTip": "customUI\\EdgeMethods\\SobelUI.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwKIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:42:00.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SobelUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\EdgeMethods\\SobelUI.cs",
+              "RelativeDocumentMoniker": "customUI\\EdgeMethods\\SobelUI.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\EdgeMethods\\SobelUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "customUI\\EdgeMethods\\SobelUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:41:57.741Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TabManager.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\TabManager.cs",
+              "RelativeDocumentMoniker": "Services\\TabManager.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\TabManager.cs",
+              "RelativeToolTip": "Services\\TabManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T18:00:35.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TresholdWindow.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\TresholdWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\TresholdWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\TresholdWindow.cs",
+              "RelativeToolTip": "customUI\\TresholdWindow.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAswBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T16:50:27.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainUI.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\MainUI.cs",
+              "RelativeDocumentMoniker": "MainUI.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\MainUI.cs",
+              "RelativeToolTip": "MainUI.cs",
+              "ViewState": "AQIAABgBAAAAAAAAAAAnwC0BAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T16:48:24.041Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
