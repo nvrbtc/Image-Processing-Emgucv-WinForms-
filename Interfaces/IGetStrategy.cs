@@ -8,6 +8,6 @@ namespace APO_Tsarehradskiy.Interfaces
 {
     public interface IGetStrategy
     {
-        IAlgorithmStrategy GetInstance();
+        IAlgorithmStrategy GetAlgoInstance();
     }
 }

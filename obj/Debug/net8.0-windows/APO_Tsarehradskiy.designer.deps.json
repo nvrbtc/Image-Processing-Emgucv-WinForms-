@@ -77,6 +77,19 @@
           }
         }
       },
+      "Emgu.CV.UI/4.10.0.5680": {
+        "dependencies": {
+          "Emgu.CV": "4.10.0.5680",
+          "Emgu.CV.Bitmap": "4.10.0.5680",
+          "System.Drawing.Common": "9.0.0"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Emgu.CV.UI.dll": {
+            "assemblyVersion": "4.10.0.5680",
+            "fileVersion": "4.10.0.5680"
+          }
+        }
+      },
       "Emgu.runtime.windows.msvc.rt.arm64/19.42.34435": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/concrt140.dll": {
@@ -481,6 +494,13 @@
       "sha512": "sha512-WzBJWWENbF1oQKBo92ODtt9V/Eh4MFo8Y3MxxpWdoKJnZAjStxlE5epy3rB7442ZPAIRAiAaqPPZfrdml5Q9vQ==",
       "path": "emgu.cv.runtime.windows/4.10.0.5680",
       "hashPath": "emgu.cv.runtime.windows.4.10.0.5680.nupkg.sha512"
+    },
+    "Emgu.CV.UI/4.10.0.5680": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hz/q2jcUKWNRP9ZrwneHNi9h3Kq9Wu6LDEYp5Ug2ziZI+2CUwc44z5X7u+zENDqLpa6Ey4BuZ3PAMjhICjA7QQ==",
+      "path": "emgu.cv.ui/4.10.0.5680",
+      "hashPath": "emgu.cv.ui.4.10.0.5680.nupkg.sha512"
     },
     "Emgu.runtime.windows.msvc.rt.arm64/19.42.34435": {
       "type": "package",

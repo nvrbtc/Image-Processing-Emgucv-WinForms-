@@ -12,8 +12,8 @@ namespace APO_Tsarehradskiy.Services
     {
         public Mat img;
         public string fileName = string.Empty;
-        public ImageType imageType;
-        public ImageLoadResult(Mat input,string name,ImageType type) 
+        public Enums.Enums imageType;
+        public ImageLoadResult(Mat input,string name, Enums.Enums type) 
         {
             img = input;
             fileName = name;

@@ -1,37 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="customUI\BlurWindow.cs">
+    <Compile Update="customUI\Blur\BlurWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="customUI\EdgeMethods\CannyUI.cs">
+    <Compile Update="customUI\EdgeMethods\Usercontrol\CannyUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="customUI\EdgeMethods\LaplacianUI.cs">
+    <Compile Update="customUI\EdgeMethods\Usercontrol\LaplacianUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="customUI\EdgeMethods\SobelUI.cs">
+    <Compile Update="customUI\EdgeMethods\Usercontrol\SobelUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="customUI\EdgeMethods\EdgeDetectionWindow.cs">
+    <Compile Update="customUI\EdgeMethods\Window\EdgeDetectionWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="customUI\HistogramWindow.cs">
+    <Compile Update="customUI\Histogram\HistogramWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="customUI\ImageTabPage.cs">
+    <Compile Update="customUI\Hough\HoughWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="customUI\Hough\Usercontrols\ProbHoughUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="customUI\Hough\Usercontrols\SimpleHoughUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="customUI\TabPageInherited\ImageTabPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="customUI\MedianFilterWindow.cs">
+    <Compile Update="customUI\MedianFilter\MedianFilterWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="customUI\SharpWindow.cs">
+    <Compile Update="customUI\MorfologyMethods\MorfologyWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="customUI\TresholdWindow.cs">
+    <Compile Update="customUI\Prewitt\PrewittWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="customUI\UniversalFilter.cs">
+    <Compile Update="customUI\Sharpening\SharpWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="customUI\Skeletonization\SkeletonizationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="customUI\Treshold\TresholdWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="customUI\Filter2D\UniversalFilter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MainUI.cs">

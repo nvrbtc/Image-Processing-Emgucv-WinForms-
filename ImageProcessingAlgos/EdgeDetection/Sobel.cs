@@ -1,14 +1,7 @@
-﻿using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.InputTypes;
+﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
 using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV;
-using Emgu.CV.CvEnum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
 {
@@ -30,7 +23,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
             Mat result = new Mat();
             try
             {
-                CvInvoke.Sobel(ImageData.Image, result, parameters.depthType, parameters.dX, parameters.dY, parameters.kSize, parameters.scale, parameters.delta, parameters.borderType); 
+                CvInvoke.Sobel(ImageData.Image, result, parameters.Depth, parameters.dX, parameters.dY, parameters.Sz, parameters.Scale, parameters.Delta, parameters.BorderType); 
             }
             catch (Exception ex) 
             { 

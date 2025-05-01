@@ -9,7 +9,6 @@ C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsare
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.SharpWindow.resources
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.PosterizationWindow.resources
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.UniversalFilterWindow.resources
-C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.MainForm.resources
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.Properties.Resources.resources
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.csproj.GenerateResource.cache
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.GeneratedMSBuildEditorConfig.editorconfig
@@ -71,3 +70,12 @@ C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\refint\AP
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.pdb
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.genruntimeconfig.cache
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\ref\APO_Tsarehradskiy.dll
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.sourcelink.json
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.PrewittWindow.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.MorfologyMethods.MorfologyWindow.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Skeletonization.SkeletonizationWindow.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.MainUI.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\bin\Debug\net8.0-windows\Emgu.CV.UI.dll
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Hough.HoughWindow.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Hough.Usercontrols.ProbHoughUI.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Hough.Usercontrols.SimpleHoughUI.resources

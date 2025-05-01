@@ -1,14 +1,7 @@
-﻿using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.InputTypes;
+﻿using APO_Tsarehradskiy.InputTypes.Blur;
 using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV;
-using Emgu.CV.CvEnum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 {

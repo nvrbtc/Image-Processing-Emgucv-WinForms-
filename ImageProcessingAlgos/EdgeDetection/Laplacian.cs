@@ -1,4 +1,4 @@
-﻿using APO_Tsarehradskiy.customUI.EdgeMethodHandling;
+﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
 using APO_Tsarehradskiy.InputTypes;
 using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
@@ -25,7 +25,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
             try
             {
 
-                CvInvoke.Laplacian(ImageData.Image, copy, parameters.ddepth, parameters.kSize, parameters.scale, parameters.delta, parameters.borderType);
+                CvInvoke.Laplacian(ImageData.Image, copy, parameters.Depth, parameters.Sz, parameters.Scale, parameters.Delta, parameters.BorderType);
             }
             catch (Exception ex)
             {

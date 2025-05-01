@@ -1,6 +1,6 @@
 ﻿namespace APO_Tsarehradskiy
 {
-    partial class MainForm
+    partial class MainUI
     {
         /// <summary>
         ///  Required designer variable.
@@ -42,25 +42,29 @@
             hSVToolStripMenuItem = new ToolStripMenuItem();
             lABToolStripMenuItem = new ToolStripMenuItem();
             tresholdToolStripMenuItem = new ToolStripMenuItem();
-            blurToolStripMenuItem = new ToolStripMenuItem();
             edgeDetectionToolStripMenuItem = new ToolStripMenuItem();
             negationToolStripMenuItem = new ToolStripMenuItem();
             tresholdToolStripMenuItem1 = new ToolStripMenuItem();
-            medianFilterToolStripMenuItem = new ToolStripMenuItem();
             testingToolStripMenuItem = new ToolStripMenuItem();
             analyzeToolStripMenuItem = new ToolStripMenuItem();
             histogramToolStripMenuItem = new ToolStripMenuItem();
-            linierToolStripMenuItem = new ToolStripMenuItem();
             equalizationToolStripMenuItem = new ToolStripMenuItem();
+            linierToolStripMenuItem = new ToolStripMenuItem();
+            blurToolStripMenuItem1 = new ToolStripMenuItem();
+            filterToolStripMenuItem = new ToolStripMenuItem();
+            medianFilterToolStripMenuItem1 = new ToolStripMenuItem();
+            universalFilterToolStripMenuItem1 = new ToolStripMenuItem();
+            morphologyToolStripMenuItem = new ToolStripMenuItem();
+            operationsToolStripMenuItem = new ToolStripMenuItem();
+            skeletonizationToolStripMenuItem = new ToolStripMenuItem();
             tabControl = new TabControl();
-            universalFilterToolStripMenuItem = new ToolStripMenuItem();
             appMenu.SuspendLayout();
             SuspendLayout();
             // 
             // appMenu
             // 
             appMenu.ImageScalingSize = new Size(20, 20);
-            appMenu.Items.AddRange(new ToolStripItem[] { File, imageToolStripMenuItem, analyzeToolStripMenuItem });
+            appMenu.Items.AddRange(new ToolStripItem[] { File, imageToolStripMenuItem, analyzeToolStripMenuItem, blurToolStripMenuItem1, filterToolStripMenuItem, morphologyToolStripMenuItem });
             appMenu.Location = new Point(0, 0);
             appMenu.Name = "appMenu";
             appMenu.RenderMode = ToolStripRenderMode.System;
@@ -105,7 +109,7 @@
             // 
             // imageToolStripMenuItem
             // 
-            imageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicateToolStripMenuItem, typeToolStripMenuItem, tresholdToolStripMenuItem, blurToolStripMenuItem, edgeDetectionToolStripMenuItem, negationToolStripMenuItem, tresholdToolStripMenuItem1, medianFilterToolStripMenuItem, testingToolStripMenuItem, universalFilterToolStripMenuItem });
+            imageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicateToolStripMenuItem, typeToolStripMenuItem, tresholdToolStripMenuItem, edgeDetectionToolStripMenuItem, negationToolStripMenuItem, tresholdToolStripMenuItem1, testingToolStripMenuItem });
             imageToolStripMenuItem.Name = "imageToolStripMenuItem";
             imageToolStripMenuItem.Size = new Size(65, 24);
             imageToolStripMenuItem.Text = "Image";
@@ -113,7 +117,7 @@
             // duplicateToolStripMenuItem
             // 
             duplicateToolStripMenuItem.Name = "duplicateToolStripMenuItem";
-            duplicateToolStripMenuItem.Size = new Size(224, 26);
+            duplicateToolStripMenuItem.Size = new Size(193, 26);
             duplicateToolStripMenuItem.Text = "Duplicate";
             duplicateToolStripMenuItem.Click += DuplicateImageTab;
             // 
@@ -121,8 +125,8 @@
             // 
             typeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { grayToolStripMenuItem, colorToolStripMenuItem, hSVToolStripMenuItem, lABToolStripMenuItem });
             typeToolStripMenuItem.Name = "typeToolStripMenuItem";
-            typeToolStripMenuItem.Size = new Size(224, 26);
-            typeToolStripMenuItem.Text = "Type";
+            typeToolStripMenuItem.Size = new Size(193, 26);
+            typeToolStripMenuItem.Text = "Update Type";
             // 
             // grayToolStripMenuItem
             // 
@@ -155,49 +159,35 @@
             // tresholdToolStripMenuItem
             // 
             tresholdToolStripMenuItem.Name = "tresholdToolStripMenuItem";
-            tresholdToolStripMenuItem.Size = new Size(224, 26);
+            tresholdToolStripMenuItem.Size = new Size(193, 26);
             tresholdToolStripMenuItem.Text = "Posterization";
             tresholdToolStripMenuItem.Click += OpenPosterizationWindow;
-            // 
-            // blurToolStripMenuItem
-            // 
-            blurToolStripMenuItem.Name = "blurToolStripMenuItem";
-            blurToolStripMenuItem.Size = new Size(224, 26);
-            blurToolStripMenuItem.Text = "Blur";
-            blurToolStripMenuItem.Click += OpenBlurWindow;
             // 
             // edgeDetectionToolStripMenuItem
             // 
             edgeDetectionToolStripMenuItem.Name = "edgeDetectionToolStripMenuItem";
-            edgeDetectionToolStripMenuItem.Size = new Size(224, 26);
+            edgeDetectionToolStripMenuItem.Size = new Size(193, 26);
             edgeDetectionToolStripMenuItem.Text = "Edge detection";
             edgeDetectionToolStripMenuItem.Click += OpenEdgeDetectionWindow;
             // 
             // negationToolStripMenuItem
             // 
             negationToolStripMenuItem.Name = "negationToolStripMenuItem";
-            negationToolStripMenuItem.Size = new Size(224, 26);
+            negationToolStripMenuItem.Size = new Size(193, 26);
             negationToolStripMenuItem.Text = "Negation";
             negationToolStripMenuItem.Click += ApplyNegation;
             // 
             // tresholdToolStripMenuItem1
             // 
             tresholdToolStripMenuItem1.Name = "tresholdToolStripMenuItem1";
-            tresholdToolStripMenuItem1.Size = new Size(224, 26);
+            tresholdToolStripMenuItem1.Size = new Size(193, 26);
             tresholdToolStripMenuItem1.Text = "Treshold";
             tresholdToolStripMenuItem1.Click += ApplyTemp;
-            // 
-            // medianFilterToolStripMenuItem
-            // 
-            medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
-            medianFilterToolStripMenuItem.Size = new Size(224, 26);
-            medianFilterToolStripMenuItem.Text = "Median Filter";
-            medianFilterToolStripMenuItem.Click += medianFilterToolStripMenuItem_Click;
             // 
             // testingToolStripMenuItem
             // 
             testingToolStripMenuItem.Name = "testingToolStripMenuItem";
-            testingToolStripMenuItem.Size = new Size(224, 26);
+            testingToolStripMenuItem.Size = new Size(193, 26);
             testingToolStripMenuItem.Text = "Testing";
             testingToolStripMenuItem.Click += TestNew;
             // 
@@ -210,11 +200,18 @@
             // 
             // histogramToolStripMenuItem
             // 
-            histogramToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { linierToolStripMenuItem, equalizationToolStripMenuItem });
+            histogramToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { equalizationToolStripMenuItem, linierToolStripMenuItem });
             histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
             histogramToolStripMenuItem.Size = new Size(162, 26);
             histogramToolStripMenuItem.Text = "Histogram";
             histogramToolStripMenuItem.Click += OpenHistogramWindow;
+            // 
+            // equalizationToolStripMenuItem
+            // 
+            equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
+            equalizationToolStripMenuItem.Size = new Size(277, 26);
+            equalizationToolStripMenuItem.Text = "Equalization";
+            equalizationToolStripMenuItem.Click += ApplyEqualization;
             // 
             // linierToolStripMenuItem
             // 
@@ -223,12 +220,51 @@
             linierToolStripMenuItem.Text = "Linear Histogram Stretching";
             linierToolStripMenuItem.Click += ApplyLinearStretching;
             // 
-            // equalizationToolStripMenuItem
+            // blurToolStripMenuItem1
             // 
-            equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
-            equalizationToolStripMenuItem.Size = new Size(277, 26);
-            equalizationToolStripMenuItem.Text = "Equalization";
-            equalizationToolStripMenuItem.Click += ApplyEqualization;
+            blurToolStripMenuItem1.Name = "blurToolStripMenuItem1";
+            blurToolStripMenuItem1.Size = new Size(49, 24);
+            blurToolStripMenuItem1.Text = "Blur";
+            blurToolStripMenuItem1.Click += OpenBlurWindow;
+            // 
+            // filterToolStripMenuItem
+            // 
+            filterToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { medianFilterToolStripMenuItem1, universalFilterToolStripMenuItem1 });
+            filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            filterToolStripMenuItem.Size = new Size(56, 24);
+            filterToolStripMenuItem.Text = "Filter";
+            // 
+            // medianFilterToolStripMenuItem1
+            // 
+            medianFilterToolStripMenuItem1.Name = "medianFilterToolStripMenuItem1";
+            medianFilterToolStripMenuItem1.Size = new Size(189, 26);
+            medianFilterToolStripMenuItem1.Text = "Median Filter";
+            // 
+            // universalFilterToolStripMenuItem1
+            // 
+            universalFilterToolStripMenuItem1.Name = "universalFilterToolStripMenuItem1";
+            universalFilterToolStripMenuItem1.Size = new Size(189, 26);
+            universalFilterToolStripMenuItem1.Text = "Universal Filter";
+            // 
+            // morphologyToolStripMenuItem
+            // 
+            morphologyToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { operationsToolStripMenuItem, skeletonizationToolStripMenuItem });
+            morphologyToolStripMenuItem.Name = "morphologyToolStripMenuItem";
+            morphologyToolStripMenuItem.Size = new Size(105, 24);
+            morphologyToolStripMenuItem.Text = "Morphology";
+            // 
+            // operationsToolStripMenuItem
+            // 
+            operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
+            operationsToolStripMenuItem.Size = new Size(224, 26);
+            operationsToolStripMenuItem.Text = "Operations";
+            // 
+            // skeletonizationToolStripMenuItem
+            // 
+            skeletonizationToolStripMenuItem.Name = "skeletonizationToolStripMenuItem";
+            skeletonizationToolStripMenuItem.Size = new Size(224, 26);
+            skeletonizationToolStripMenuItem.Text = "Skeletonization";
+            skeletonizationToolStripMenuItem.Click += ApplySkeletonization;
             // 
             // tabControl
             // 
@@ -241,14 +277,7 @@
             tabControl.Size = new Size(800, 422);
             tabControl.TabIndex = 1;
             // 
-            // universalFilterToolStripMenuItem
-            // 
-            universalFilterToolStripMenuItem.Name = "universalFilterToolStripMenuItem";
-            universalFilterToolStripMenuItem.Size = new Size(224, 26);
-            universalFilterToolStripMenuItem.Text = "Universal Filter";
-            universalFilterToolStripMenuItem.Click += universalFilterToolStripMenuItem_Click;
-            // 
-            // MainForm
+            // MainUI
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -256,7 +285,7 @@
             Controls.Add(tabControl);
             Controls.Add(appMenu);
             MainMenuStrip = appMenu;
-            Name = "MainForm";
+            Name = "MainUI";
             Text = "Tsarehradskiy";
             appMenu.ResumeLayout(false);
             appMenu.PerformLayout();
@@ -280,17 +309,21 @@
         private ToolStripMenuItem linierToolStripMenuItem;
         private ToolStripMenuItem equalizationToolStripMenuItem;
         private ToolStripMenuItem tresholdToolStripMenuItem;
-        private ToolStripMenuItem blurToolStripMenuItem;
         private ToolStripMenuItem duplicateToolStripMenuItem;
         private ToolStripMenuItem edgeDetectionToolStripMenuItem;
         private ToolStripMenuItem negationToolStripMenuItem;
         private ToolStripMenuItem tresholdToolStripMenuItem1;
-        private ToolStripMenuItem medianFilterToolStripMenuItem;
         private ToolStripMenuItem grayToolStripMenuItem1;
         private ToolStripMenuItem bGRToolStripMenuItem;
         private ToolStripMenuItem hSVToolStripMenuItem;
         private ToolStripMenuItem lABToolStripMenuItem;
         private ToolStripMenuItem testingToolStripMenuItem;
-        private ToolStripMenuItem universalFilterToolStripMenuItem;
+        private ToolStripMenuItem blurToolStripMenuItem1;
+        private ToolStripMenuItem filterToolStripMenuItem;
+        private ToolStripMenuItem medianFilterToolStripMenuItem1;
+        private ToolStripMenuItem universalFilterToolStripMenuItem1;
+        private ToolStripMenuItem morphologyToolStripMenuItem;
+        private ToolStripMenuItem operationsToolStripMenuItem;
+        private ToolStripMenuItem skeletonizationToolStripMenuItem;
     }
 }

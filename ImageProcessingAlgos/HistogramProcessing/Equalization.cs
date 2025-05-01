@@ -24,23 +24,43 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
         public void Run()
         {
             Mat currentImage = ImageData.Image;
-            int[] distribution = currentImage.GetDistributionValues();
-            int pixels = currentImage.Height * currentImage.Width;
+            int width = currentImage.Width;
+            int height = currentImage.Height;
+            int pixels = width * height;
+
             ReadOnlySpan<byte> data = currentImage.GetData(false) as byte[];
             Span<byte> updatedData = new byte[pixels];
-            int minValue = currentImage.GetMinValue();
 
-            double result = 0;
-            for (int i = 0,
-                 pixelValue = 0; i < data.Length; i++)
+            int[] histogram = new int[256];
+            for (int i = 0; i < data.Length; i++)
             {
-                pixelValue = data[i];
-                result = ((distribution[pixelValue] - minValue) / (double)(pixels - 1)) * 255;
-                updatedData[i] = (byte)Math.Round(result);
+                histogram[data[i]]++;
             }
-            Marshal.Copy(updatedData.ToArray(), 0, ImageData.Image.DataPointer, updatedData.Length);
-            ImageData.updateImage(ImageData.Image);
+
+            int[] cdf = new int[256];
+            cdf[0] = histogram[0];
+            for (int i = 1; i < 256; i++)
+            {
+                cdf[i] = cdf[i - 1] + histogram[i];
+            }
+
+            int cdfMin = cdf.First(v => v > 0);
+
+            byte[] lut = new byte[256];
+            for (int i = 0; i < 256; i++)
+            {
+                lut[i] = (byte)Math.Round(((cdf[i] - cdfMin) / (double)(pixels - 1)) * 255);
+            }
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                updatedData[i] = lut[data[i]];
+            }
+
+            Marshal.Copy(updatedData.ToArray(), 0, currentImage.DataPointer, updatedData.Length);
+            ImageData.updateImage(currentImage);
         }
+
 
         public void SetDataImage(ImageData img)
         {

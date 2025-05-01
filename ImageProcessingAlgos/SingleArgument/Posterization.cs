@@ -14,7 +14,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 {
     public class Posterization : IAlgorithmStrategy
     {
-        private double levels;
+        private int levels;
 
         public string name => "Posterization";
         public ImageData ImageData { get;set; }
@@ -25,18 +25,18 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 
         public bool GetParameters(object parameters)
         {
-            if (parameters == null || parameters is not double)
+            if (parameters == null || parameters is not int)
             {
                 return false;
             }
-            this.levels = (double)parameters;
+            this.levels = (int)parameters;
             return true;    
         }
 
         public void Run()
         {
-            double step = 256 / levels;
-            int[] levelValues = new int[(int)levels];
+            double step = 256d / levels;
+            int[] levelValues = new int[levels];
             for (int i = 0; i < levels; i++)
             {
                 double temp = i * step;
@@ -45,7 +45,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
             Span<byte> updatedPixels = ImageData.Image.GetData(false) as byte[];
             for (int i = 0;i < updatedPixels.Length;i++)
             {
-                for ( int j = (int)levels - 1; j >= 0; j--) 
+                for ( int j = levels - 1; j >= 0; j--) 
                 {
                     if (updatedPixels[i] >= levelValues[j])
                     {

@@ -1,4 +1,4 @@
-﻿using APO_Tsarehradskiy.InputTypes;
+﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
 using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV;
@@ -27,7 +27,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
             Mat temp = new Mat();
             try
             {
-                CvInvoke.Canny(ImageData.Image, temp, parameters.threshold1, parameters.threshold2,parameters.apertureSize,parameters.L2gradient);
+                CvInvoke.Canny(ImageData.Image, temp, parameters.Threshold1, parameters.Threshold2,parameters.Sz,parameters.GradientEnabled);
             }
             catch (Exception e)
             {

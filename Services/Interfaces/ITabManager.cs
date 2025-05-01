@@ -1,4 +1,4 @@
-﻿using APO_Tsarehradskiy.customUI;
+﻿using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.Enums;
 using Emgu.CV;
 using System;

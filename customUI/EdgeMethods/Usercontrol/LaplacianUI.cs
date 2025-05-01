@@ -1,0 +1,62 @@
+﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
+using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
+using APO_Tsarehradskiy.Interfaces;
+using APO_Tsarehradskiy.Services;
+using Emgu.CV.CvEnum;
+
+namespace APO_Tsarehradskiy.customUI.EdgeMethodHandling
+{
+    public partial class LaplacianUI : UserControl,IGetStrategy
+    {
+        private LaplacianInput input;
+        private IInputHandler _inputHandler = new InputHandler();
+
+        public LaplacianUI()
+        {
+            InitializeComponent();
+            Bind();
+        }
+
+        public void Bind()
+        {
+            if (cbBorder != null)
+            {
+                cbBorder.DataSource = new[]
+                {
+                    new ComboBoxInput<BorderType>{Text = "Reflect",Value = BorderType.Reflect },
+                    new ComboBoxInput<BorderType>{Text = "Isolated",Value = BorderType.Isolated },
+                    new ComboBoxInput<BorderType>{Text = "Replicate",Value = BorderType.Replicate }
+                };
+                cbBorder.DisplayMember = "Text";
+                cbBorder.ValueMember = "Value";
+                cbBorder.DataBindings.Add(nameof(cbBorder.SelectedValue),input,nameof(input.BorderType),false,DataSourceUpdateMode.OnPropertyChanged);
+                cbBorder.SelectedIndex = 0;
+            }
+            if (cbDepth != null)
+            {
+                cbDepth.DataSource = Enum.GetValues(typeof(DepthType));
+                cbDepth.DataBindings.Add(nameof(cbDepth.SelectedItem),input,nameof(input.Depth),false,DataSourceUpdateMode.OnPropertyChanged) ;
+            }
+            if ( numSize != null )
+            {
+                numSize.DataBindings.Add(nameof(numSize.Value),input,nameof(input.Sz),false,DataSourceUpdateMode.OnPropertyChanged) ;
+            }
+            if ( tbScale != null)
+            {
+                tbScale.DataBindings.Add(nameof(tbScale.Text),input,nameof(input.Scale),false, DataSourceUpdateMode.OnPropertyChanged) ;
+                tbScale.KeyPress += _inputHandler.HandlePositiveIntegerTextBox;
+            }
+            if (tbDelta != null)
+            {
+                tbDelta.DataBindings.Add(nameof(tbDelta.Text),input,nameof(input.Delta),false, DataSourceUpdateMode.OnPropertyChanged) ;
+                tbDelta.KeyPress += _inputHandler.HandleSignedDoubleTextBox;
+            }
+        }
+
+
+        public IAlgorithmStrategy GetAlgoInstance()
+        {
+            return input.createInstace();
+        }
+    }
+}

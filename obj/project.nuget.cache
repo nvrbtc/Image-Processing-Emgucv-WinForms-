@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "pwADzKhVuhBUMpj6aQdlK8PtKF01NQM6NGiS2VU6FV9FinHRZm1rTlfVfEZvEUkJotPeFErw0kjdi2/iH7dG6g==",
+  "dgSpecHash": "o81MD8ZWMZGOIZmbUfG16z1juPFxCf8+mZXT8Xch4cp5hioIOwe9wpzE7mcLIUfjnP/sxwaO66LBKQVlAJXh5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\APO_Tsarehradskiy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\careg\\.nuget\\packages\\emgu.cv\\4.10.0.5680\\emgu.cv.4.10.0.5680.nupkg.sha512",
     "C:\\Users\\careg\\.nuget\\packages\\emgu.cv.bitmap\\4.10.0.5680\\emgu.cv.bitmap.4.10.0.5680.nupkg.sha512",
     "C:\\Users\\careg\\.nuget\\packages\\emgu.cv.runtime.windows\\4.10.0.5680\\emgu.cv.runtime.windows.4.10.0.5680.nupkg.sha512",
+    "C:\\Users\\careg\\.nuget\\packages\\emgu.cv.ui\\4.10.0.5680\\emgu.cv.ui.4.10.0.5680.nupkg.sha512",
     "C:\\Users\\careg\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.arm64\\19.42.34435\\emgu.runtime.windows.msvc.rt.arm64.19.42.34435.nupkg.sha512",
     "C:\\Users\\careg\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x64\\19.42.34435\\emgu.runtime.windows.msvc.rt.x64.19.42.34435.nupkg.sha512",
     "C:\\Users\\careg\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.42.34435\\emgu.runtime.windows.msvc.rt.x86.19.42.34435.nupkg.sha512",

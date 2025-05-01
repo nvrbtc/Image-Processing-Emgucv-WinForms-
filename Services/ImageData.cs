@@ -1,4 +1,4 @@
-﻿using APO_Tsarehradskiy.customUI;
+﻿using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.Enums;
 using Emgu.CV;
 using System;
@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.Services
 {
-    public class ImageData
+    public record ImageData
     {
         private Mat img;
 
 
         public string fileName = string.Empty;
         public event ImageUpdated UpdateEvent;
-        public ImageType Type { get; private set; }
+        public Enums.Enums Type { get; private set; }
         public Mat Image
         {
             get
@@ -28,14 +28,14 @@ namespace APO_Tsarehradskiy.Services
                 img = value;
             }
         }
-        public ImageData(Mat img, ImageType type,string fileName) 
+        public ImageData(Mat img, Enums.Enums type,string fileName) 
         {
             this.Image = img;
             this.Type = type;
             this.fileName = fileName;
         }
 
-        public void changeType(ImageType newType)
+        public void changeType(Enums.Enums newType)
         {
             Type = newType;
         }

@@ -1,4 +1,6 @@
-﻿using APO_Tsarehradskiy.InputTypes;
+﻿using APO_Tsarehradskiy.InputArguments;
+using APO_Tsarehradskiy.InputTypes;
+using APO_Tsarehradskiy.InputTypes.Blur;
 using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV;

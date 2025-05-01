@@ -26,7 +26,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
 
         public void Run()
         {
-            if ( ImageData.Type != Enums.ImageType.Gray || ImageData.Image == null) return;
+            if ( ImageData.Type != Enums.Enums.Gray || ImageData.Image == null) return;
             Mat img = ImageData.Image;
             int min = img.GetMinValue(),
                 max = img.GetMaxValue();
