@@ -17,16 +17,13 @@ namespace APO_Tsarehradskiy.Services
         public void AddPage(ImageTabPage page) { tabControl?.Controls.Add(page); }
         public void AddPage(ImageLoadResult result)
         {
-            tabControl.TabPages.Add(new ImageTabPage(result.img, result.imageType,result.fileName) { Text = result.fileName, Name = result.fileName });
-            tabControl.SelectedTab = tabControl.TabPages[$"{result.fileName}"];
+            var tab = new ImageTabPage(result.img, result.imageType, result.fileName) { Text = result.fileName, Name = result.fileName };
+            tabControl.TabPages.Add(tab);
+            tabControl.SelectedTab = tab;
         }
         public void RemovePage(ImageTabPage page)
         {
             tabControl?.TabPages.Remove(page);
-        }
-        public void UpdateImage(ImageTabPage? page, Mat img)
-        {
-            page?.RefreshImg(img);
         }
 
         public ImageTabPage? GetSelectedTab()

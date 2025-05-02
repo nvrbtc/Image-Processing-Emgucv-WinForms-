@@ -1,21 +1,13 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.Hough;
+﻿using APO_Tsarehradskiy.Enums;
 using APO_Tsarehradskiy.InputArguments.Hough;
-using APO_Tsarehradskiy.Interfaces;
+using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace APO_Tsarehradskiy.customUI.Hough.Usercontrols
 {
-    public partial class SimpleHoughUI : UserControl, IGetStrategy
+    public partial class SimpleHoughUI : UserControl, IGetInput
     {
         private HoughSimpleInput input = new HoughSimpleInput();
         private IInputHandler _usrInputHandler = new InputHandler();
@@ -24,12 +16,7 @@ namespace APO_Tsarehradskiy.customUI.Hough.Usercontrols
             InitializeComponent();
             Bind();
         }
-
-        public IAlgorithmStrategy GetAlgoInstance()
-        {
-            IAlgorithmStrategy strategy = new HoughSimple();
-            return strategy.GetParameters(input) ? strategy : null;
-        }
+        
 
         private void Bind()
         {
@@ -70,5 +57,13 @@ namespace APO_Tsarehradskiy.customUI.Hough.Usercontrols
             }
         }
 
+        object IGetInput.ReturnInput()
+        {
+            return input;
+        }
+        public Strategies ReturnStrategy()
+        {
+            return Strategies.Hough;
+        }
     }
 }

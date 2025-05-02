@@ -12,10 +12,14 @@ namespace APO_Tsarehradskiy.customUI
     {
         private Filter2dInput input = new Filter2dInput();
         private ImageData imageData;
-        private IInputHandler _inputHandler = new InputHandler();
-        public UniversalFilterWindow()
+        private readonly IInputHandler _inputHandler;
+        private readonly StrategyExecutor executor;
+
+        public UniversalFilterWindow(StrategyExecutor executor,IInputHandler inputHandler)
         {
             InitializeComponent();
+            this._inputHandler = inputHandler;
+            this.executor = executor;
             Bind();
         }
         public void SetImageData(ImageData imageData)
@@ -64,11 +68,7 @@ namespace APO_Tsarehradskiy.customUI
         private void RunButton(object sender, EventArgs e)
         {
             GetKernelValues();
-            IAlgorithmStrategy strategy = new KernelFilter();
-
-            strategy.SetDataImage(imageData);
-            if (strategy.GetParameters(input))
-                strategy.Run();
+            executor.PerformStrategy(Enums.Strategies.KernelFilter, imageData, input);
         }
         private void GetKernelValues()
         {

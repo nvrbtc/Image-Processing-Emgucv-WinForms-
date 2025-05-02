@@ -4,21 +4,26 @@ using APO_Tsarehradskiy.customUI.EdgeMethods;
 using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
 using APO_Tsarehradskiy.Interfaces;
+using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
+using Emgu.CV;
 
 namespace APO_Tsarehradskiy.customUI
 {
     public partial class EdgeDetectionWindow : Form
     {
 
-        private ImageData input;
+        private ImageData imageData;
 
         public ImageUpdated onNotify;
-        public EdgeDetectionWindow()
+        private readonly StrategyExecutor executor;
+
+        public EdgeDetectionWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
             changeUiHandler(this,null);
+            this.executor = executor;
         }
         private void Bind()
         {
@@ -57,19 +62,18 @@ namespace APO_Tsarehradskiy.customUI
             }
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
+        private void PerformStrategy(object sender, EventArgs e)
         {
             ComboBoxInput<UserControl> temp = cbMethod.SelectedItem as ComboBoxInput<UserControl>;
-            IAlgorithmStrategy strategy = (temp.Value as IGetStrategy).GetAlgoInstance();
+            IGetInput strategyData = temp.Value as IGetInput;
+            executor.PerformStrategy(strategyData.ReturnStrategy(),
+                                     imageData,
+                                     strategyData.ReturnInput());
 
-            if ( temp == null || strategy == null) return;
-
-            strategy.SetDataImage(input);
-            strategy.Run();
         }
         public void SetImageData(ImageData imageData)
         {
-            this.input = imageData;
+            this.imageData = imageData;
         }
     }
 }

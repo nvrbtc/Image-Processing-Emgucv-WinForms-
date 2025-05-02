@@ -7,44 +7,28 @@ using Emgu.CV.CvEnum;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
 {
-    public class Laplacian : IAlgorithmStrategy
+    public class Laplacian : IStrategy
     {
         public string name => "Laplacian";
 
         public ImageData ImageData { get; set; }
 
-        private LaplacianInput parameters;
+        private LaplacianInput input;
 
-        public Laplacian()
+        public async Task Run(ImageData img, object parameters)
         {
+            if (!Validate(img,parameters)) throw new ArgumentException("Input or image values are invalid.");
+
+            Mat result = new Mat();
+            CvInvoke.Laplacian(ImageData.Image, result, input.Depth, input.Sz, input.Scale, input.Delta, input.BorderType);
+
+            ImageData.updateImage(result);
         }
-
-        public void Run()
+        private bool Validate(ImageData img, object parameters)
         {
-            Mat copy = new Mat();
-            try
-            {
-
-                CvInvoke.Laplacian(ImageData.Image, copy, parameters.Depth, parameters.Sz, parameters.Scale, parameters.Delta, parameters.BorderType);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message,"Fatal error",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            ImageData.updateImage(copy);
-        }
-
-        public void SetDataImage(ImageData img)
-        {
+            if (img?.ValidateValuesAreNull() == true || parameters is not LaplacianInput) return false;
+            this.input = parameters as LaplacianInput;
             this.ImageData = img;
-        }
-
-        public bool GetParameters(object parameters)
-        {
-            if (parameters == null || parameters is not LaplacianInput) return false;
-
-            this.parameters = parameters as LaplacianInput;
             return true;
         }
     }

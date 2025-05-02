@@ -67,10 +67,8 @@ namespace APO_Tsarehradskiy.customUI
         private void btRun_Click(object sender, EventArgs e)
         {
             input.Kernel = provider.GetKernel(Direction);
-            IAlgorithmStrategy strategy = new KernelFilter();
-            strategy.SetDataImage(imageData);
-            if (strategy.GetParameters(input))
-                strategy.Run();
+            Interfaces.IStrategy? strategy = new KernelFilter();
+            strategy?.Run(imageData, input);
         }
     }
 }

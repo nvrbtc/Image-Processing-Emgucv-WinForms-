@@ -5,44 +5,30 @@ using Emgu.CV;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
 {
-    public class Sobel : IAlgorithmStrategy
+    public class Sobel : IStrategy
     {
         public string name => "Sobel";
 
         public ImageData ImageData { get; set; }
 
         //params to call method 
-        private SobelInput parameters;
+        private SobelInput input;
+        public async Task Run(ImageData img, object parameters)
+        {
+            if (!Validate(img, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
-        public Sobel()
-        {
-            
-        }
-        public void Run()
-        {
             Mat result = new Mat();
-            try
-            {
-                CvInvoke.Sobel(ImageData.Image, result, parameters.Depth, parameters.dX, parameters.dY, parameters.Sz, parameters.Scale, parameters.Delta, parameters.BorderType); 
-            }
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message,"Fatal error",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            CvInvoke.Sobel(ImageData.Image, result, input.Depth, input.dX, input.dY, input.Sz, input.Scale, input.Delta, input.BorderType);
+
             ImageData.updateImage(result);
         }
 
-        public void SetDataImage(ImageData img)
+        private bool Validate(ImageData img, object parameters)
         {
+            if (img?.ValidateValuesAreNull() == true || parameters is not SobelInput) return false;
+
             this.ImageData = img;
-        }
-
-        public bool GetParameters(object parameters)
-        {
-            if (parameters == null || parameters is not SobelInput) return false;
-
-            this.parameters = parameters as SobelInput;
+            this.input = parameters as SobelInput;
             return true;
         }
     }

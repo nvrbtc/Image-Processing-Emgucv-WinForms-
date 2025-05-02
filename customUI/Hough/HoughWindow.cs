@@ -1,18 +1,22 @@
 ﻿using APO_Tsarehradskiy.customUI.Hough.Usercontrols;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
 using APO_Tsarehradskiy.Interfaces;
+using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
 
 namespace APO_Tsarehradskiy.customUI.Hough
 {
     public partial class HoughWindow : Form
     {
+        private readonly StrategyExecutor executor;
+
         private ImageData ImageData { get; set; }
-        public HoughWindow()
+        public HoughWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
             UpdateArgsSection(this, EventArgs.Empty);
+            this.executor = executor;
         }
         private void Bind()
         {
@@ -48,11 +52,8 @@ namespace APO_Tsarehradskiy.customUI.Hough
 
         private void RunAlgo(object sender, EventArgs e)
         {
-            var strategy = (cbMethod.SelectedValue as IGetStrategy)?.GetAlgoInstance();
-
-            if (strategy == null) return;
-            strategy.SetDataImage(ImageData);
-            strategy.Run();
+            var strategyInfo = cbMethod.SelectedValue as IGetInput;
+            executor.PerformStrategy(strategyInfo.ReturnStrategy(), ImageData, strategyInfo.ReturnInput());
         }
     }
 }

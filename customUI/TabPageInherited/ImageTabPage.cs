@@ -3,11 +3,10 @@ using Emgu.CV;
 
 namespace APO_Tsarehradskiy.customUI.TabPageInherited
 {
-    public delegate void ImageUpdated(Mat img);
+    public delegate void ImageUpdated(ImageData img);
     public class ImageTabPage : TabPage
     {
-        Panel pnMain;
-        PictureBox pictureBox;
+        ImageAndHistory picBox;
         public ImageData imageData;
         public Enums.Enums Type
         {
@@ -31,42 +30,26 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
                 imageData.updateImage(value);
             }
         }
-
-        //image to view on screen 
-        //Image boxImage;
         public ImageTabPage(Mat img, Enums.Enums type, string fileName) : base()
         {
             SetTabUI();
 
-            imageData = new ImageData(img, type, fileName);
-            pictureBox.Image = imageData.Image.ToBitmap();
+            imageData = new ImageData(img, type, fileName,this);
+            picBox?.RedrawImage(imageData);
 
-            imageData.UpdateEvent += RefreshImg; // triger all subs
+            imageData.UpdateEvent += picBox.RedrawImage; // triger all subs
+
+            UpdateLogTree(imageData, "Input");
+           
         }
         private void SetTabUI()
         {
-            pnMain = new Panel() { Dock = DockStyle.Fill, AutoScroll = true };
-            pictureBox = new PictureBox()
-            {
-                SizeMode = PictureBoxSizeMode.AutoSize
-            };
-
-            pnMain.Controls.Add(pictureBox);
-            Controls.Add(pnMain);
+            picBox = new ImageAndHistory() { Dock = DockStyle.Fill };
+            Controls.Add(picBox);
         }
-        public void RefreshImg()
+        public void UpdateLogTree(ImageData imageData,string operation)
         {
-            pictureBox.Image?.Dispose();
-            pictureBox.Image = imageData.Image.ToBitmap();
-            pictureBox.Refresh();
-            //onNotify?.Invoke(imageData.Image);//inform all subs ( f.e. update histogram values )
-        }
-        public void RefreshImg(Mat img)
-        {
-            pictureBox.Image?.Dispose();
-            pictureBox.Image = img.ToBitmap();
-            pictureBox.Refresh();
-            //onNotify?.Invoke(imageData.Image);
+            picBox.UpdateLog(imageData, operation);
         }
         public ImageTabPage clone()
         {

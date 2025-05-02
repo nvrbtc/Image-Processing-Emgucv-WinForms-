@@ -5,14 +5,16 @@ using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
 using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
+using APO_Tsarehradskiy.Enums;
 
 namespace APO_Tsarehradskiy.customUI
 {
     public partial class BlurWindow : Form
     {
         private ImageData imageData;
+        private readonly StrategyExecutor executor;
 
-        private BlurInput input;
+        private BlurInput input = new();
 
         public int BoxSize
         {
@@ -28,32 +30,24 @@ namespace APO_Tsarehradskiy.customUI
                 textBoxSize.Text = input.sz.Height.ToString();
             }
         }
-        public BlurWindow()
+        public BlurWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
+            this.executor = executor;
         }
 
         private void ApplyBlur(object sender, EventArgs e)
         {
 
 
-            IAlgorithmStrategy? strategy = comboMethod.SelectedValue as IAlgorithmStrategy;
-            if (strategy == null)
-            {
-                MessageBox.Show("No value selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            strategy.SetDataImage(imageData);
-            if (strategy.GetParameters(input))
-                strategy.Run();
+            Strategies strategy = (Strategies)comboMethod.SelectedValue;
+            input.sz = new Size(BoxSize, BoxSize);
+            executor.PerformStrategy(strategy,imageData,input);
         }
 
         public void Bind()
         {
-            input = new BlurInput(BorderType.Reflect, new Size(3, 3));
-            //createInstance = () => new Blur(BorderType.Default, new Size(3, 3));
             if (trackSize != null)
             {
                 this.DataBindings.Add(nameof(this.BoxSize), trackSize, nameof(trackSize.Value), false, DataSourceUpdateMode.OnPropertyChanged);
@@ -62,26 +56,29 @@ namespace APO_Tsarehradskiy.customUI
             {
                 comboBorder.DataSource = new[]
                 {
-                    new {Text = "Reflect", Value = BorderType.Reflect},
-                    new {Text = "Isolated",Value = BorderType.Isolated},
-                    new {Text = "Replicate", Value = BorderType.Replicate}
+                    new ComboBoxInput<BorderType>{Text = "Reflect", Value = BorderType.Reflect},
+                    new ComboBoxInput<BorderType>{Text = "Isolated",Value = BorderType.Isolated},
+                    new ComboBoxInput<BorderType>{Text = "Replicate", Value = BorderType.Replicate}
                 };
                 comboBorder.DisplayMember = "Text";
                 comboBorder.ValueMember = "Value";
-                this.DataBindings.Add(nameof(input.borderType), comboBorder, nameof(comboBorder.SelectedValue), false, DataSourceUpdateMode.OnPropertyChanged);
+                comboBorder.DataBindings.Add(nameof(comboBorder.SelectedValue), input, nameof(input.BorderType), false, DataSourceUpdateMode.OnPropertyChanged);
+
+                comboMethod.SelectedIndex = 0;
             }
 
             if (comboMethod != null)
             {
                 var methods = new[]
                 {
-                    new ComboBoxInput<IAlgorithmStrategy>{ Text = "Blur",Value = new Blur()},
-                    new ComboBoxInput<IAlgorithmStrategy>{ Text = "Gaussian Blur",Value = new GaussianBlur()}
+                    new ComboBoxInput<Strategies>{ Text = "Blur",Value = Strategies.Blur},
+                    new ComboBoxInput<Strategies>{ Text = "Gaussian Blur",Value = Strategies.GaussianBlur}
                 };
                 comboMethod.DataSource = methods;
-                comboMethod.DisplayMember = "Name";
-                comboMethod.ValueMember = "Create";
+                comboMethod.DisplayMember = "Text";
+                comboMethod.ValueMember = "Value";
 
+                comboMethod.SelectedIndex = 0;
             };
 
         }

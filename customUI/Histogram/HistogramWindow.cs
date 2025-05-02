@@ -28,10 +28,13 @@ namespace APO_Tsarehradskiy.customUI
         {
             this.imageData = imageData;
             imageData.UpdateEvent += UpdateHistogram;
-            UpdateHistogram(imageData.Image);
+            UpdateHistogram(imageData);
         }
-        public void UpdateHistogram(Mat img)
+        public void UpdateHistogram(ImageData imageData)
         {
+            if (imageData?.ValidateValuesAreNull() == true || imageData.Type != Enums.Enums.Gray) return;
+
+            Mat img = imageData.Image.Clone();
             chartImg.Series.Clear();
             chartImg.Legends.Clear();
             chartImg.ChartAreas.Clear();

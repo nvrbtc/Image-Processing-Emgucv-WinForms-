@@ -79,3 +79,4 @@ C:\Users\careg\source\repos\APO_Tsarehradskiy\bin\Debug\net8.0-windows\Emgu.CV.U
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Hough.HoughWindow.resources
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Hough.Usercontrols.ProbHoughUI.resources
 C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.Hough.Usercontrols.SimpleHoughUI.resources
+C:\Users\careg\source\repos\APO_Tsarehradskiy\obj\Debug\net8.0-windows\APO_Tsarehradskiy.customUI.TabPageInherited.ImageAndHistory.resources

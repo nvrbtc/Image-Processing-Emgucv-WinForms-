@@ -1,16 +1,19 @@
-﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
+﻿using APO_Tsarehradskiy.Enums;
+using APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection;
+using APO_Tsarehradskiy.InputArguments.EdgeDetection;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
 using APO_Tsarehradskiy.Interfaces;
+using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
 
 namespace APO_Tsarehradskiy.customUI.Edgecontrol
 {
-    public partial class SobelUI : UserControl,IGetStrategy
+    public partial class SobelUI : UserControl, IGetInput
     {
         
         private IInputHandler _inputHandler = new InputHandler();
-        private SobelInput input;
+        private SobelInput input = new SobelInput();
 
         public SobelUI()
         {
@@ -18,6 +21,8 @@ namespace APO_Tsarehradskiy.customUI.Edgecontrol
             Bind();
             
         }
+
+
         private void Bind()
         {
             if (cbBorder != null)
@@ -63,9 +68,14 @@ namespace APO_Tsarehradskiy.customUI.Edgecontrol
             }
 
         }
-        public IAlgorithmStrategy GetAlgoInstance() 
+        public Strategies ReturnStrategy()
         {
-            return input.createInstace();
+            return Strategies.Sobel;
+        }
+
+        object IGetInput.ReturnInput()
+        {
+           return input;
         }
     }
 }

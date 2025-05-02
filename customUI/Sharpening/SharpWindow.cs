@@ -88,11 +88,8 @@ namespace APO_Tsarehradskiy.customUI
 
         private void btRun_Click(object sender, EventArgs e)
         {
-            IAlgorithmStrategy strategy = new KernelFilter();
-
-            strategy.SetDataImage(imageData);
-            if (strategy.GetParameters(input))
-                strategy.Run();
+            IStrategy? strategy = new KernelFilter();
+            strategy?.Run(imageData, input);
         }
     }
 }

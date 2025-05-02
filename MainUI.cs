@@ -1,23 +1,13 @@
 ﻿using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.customUI.Hough;
 using APO_Tsarehradskiy.customUI.TabPageInherited;
-using APO_Tsarehradskiy.ImageProcessingAlgos;
 using APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale;
 using APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing;
-using APO_Tsarehradskiy.ImageProcessingAlgos.Hough;
 using APO_Tsarehradskiy.ImageProcessingAlgos.Morphology;
 using APO_Tsarehradskiy.ImageProcessingAlgos.SingleArgument;
 using APO_Tsarehradskiy.InputArguments;
-using APO_Tsarehradskiy.InputArguments.Hough;
 using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using APO_Tsarehradskiy.Services.Interfaces;
-using Emgu.CV;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
-using Emgu.CV.Util;
-using System.Diagnostics;
-using System.Globalization;
 
 namespace APO_Tsarehradskiy
 {
@@ -26,14 +16,15 @@ namespace APO_Tsarehradskiy
         private readonly ImageManager imageManager;
         private readonly ITabManager tabManager;
 
-        private readonly StrategyService imageProccesService = new();
+        private readonly StrategyExecutor executor;
 
-        public MainUI(ImageManager imgMgr, ITabManager tbMgr)
+        public MainUI(ImageManager imgMgr, ITabManager tbMgr,StrategyExecutor executor)
         {
             InitializeComponent();
-            imageManager = imgMgr;
-            tabManager = tbMgr;
+            this.imageManager = imgMgr;
+            this.tabManager = tbMgr;
             tbMgr.tabControl = this.tabControl;
+            this.executor = executor;
         }
 
         /// <summary>
@@ -127,23 +118,20 @@ namespace APO_Tsarehradskiy
         {
             ImageTabPage? currentTab = tabManager.GetSelectedTab();
 
-            imageProccesService.SetAlgo(new LinearStretching());
-            imageProccesService.SetImageData(currentTab.imageData);
-            imageProccesService.Process();
+            IStrategy strategy = new  LinearStretching();
+            strategy.Run(currentTab.imageData,null);
         }
 
 
         private void ApplyEqualization(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null || currentTab.Type != Enums.Enums.Gray)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null || tab.Type != Enums.Enums.Gray)
             {
                 // show dialog box;
                 return;
             }
-            imageProccesService.SetAlgo(new Equalization());
-            imageProccesService.SetImageData(currentTab.imageData);
-            imageProccesService.Process();
+            executor.PerformStrategy(Enums.Strategies.Equalization, tab.imageData, null);
         }
 
 
@@ -171,9 +159,9 @@ namespace APO_Tsarehradskiy
                 return;
             }
 
-            var blurWindow = new BlurWindow();
-            blurWindow.SetImageData(currentTab.imageData);
-            blurWindow.Show();
+            var blurWindow = MyServiceProvider.TryGetService<BlurWindow>();
+            blurWindow?.SetImageData(currentTab.imageData);
+            blurWindow?.Show();
         }
 
         private void DuplicateImageTab(object sender, EventArgs e)
@@ -195,9 +183,9 @@ namespace APO_Tsarehradskiy
                 MessageBox.Show("No image selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var win = new EdgeDetectionWindow();
-            win.SetImageData(currentTab.imageData);
-            win.Show();
+            var win = MyServiceProvider.TryGetService<EdgeDetectionWindow>();
+            win?.SetImageData(currentTab.imageData);
+            win?.Show();
         }
 
         private void ApplyNegation(object sender, EventArgs e)
@@ -208,9 +196,8 @@ namespace APO_Tsarehradskiy
                 //show dialog ;
                 return;
             }
-            IAlgorithmStrategy strategy = new Negation();
-            strategy.SetDataImage(currentTab.imageData);
-            strategy.Run();
+            IStrategy strategy = new Negation();
+            strategy.Run(currentTab.imageData, null) ;
         }
 
         private void ApplyTemp(object sender, EventArgs e)
@@ -220,10 +207,8 @@ namespace APO_Tsarehradskiy
             {
                 return;
             }
-            IAlgorithmStrategy strategy = new Treshold();
-            strategy.SetDataImage(currentTab.imageData);
-            strategy.Run();
-            //tabManager.UpdateImage(currentTab, copy);
+            IStrategy strategy = new Threshold();
+            strategy.Run(currentTab.imageData, 127);
         }
 
         private void medianFilterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -292,13 +277,6 @@ namespace APO_Tsarehradskiy
 
         private void TestNew(object sender, EventArgs e)
         {
-            var tab = tabManager.GetSelectedTab();
-
-            if (tab == null || tab.imageData == null) return;
-
-            var win = new HoughWindow();
-            win.SetImageData(tab.imageData);
-            win.Show();
             
         }
 
@@ -306,9 +284,9 @@ namespace APO_Tsarehradskiy
         {
             ImageTabPage currentTab = tabManager.GetSelectedTab();
             if (currentTab == null) return;
-            var win = new UniversalFilterWindow();
-            win.SetImageData(currentTab.imageData);
-            win.Show();
+            var win = MyServiceProvider.TryGetService<UniversalFilterWindow>();
+            win?.SetImageData(currentTab.imageData);
+            win?.Show();
         }
 
         private void ApplySkeletonization(object sender, EventArgs e)
@@ -316,10 +294,8 @@ namespace APO_Tsarehradskiy
             ImageTabPage win = tabManager.GetSelectedTab();
             if ( win == null || win.imageData == null) return;
 
-            IAlgorithmStrategy strategy = new Skeletonization();
-            strategy.SetDataImage(win.imageData);
-            if ( strategy.GetParameters(new SkeletonizationInput()))
-                strategy.Run();
+            IStrategy strategy = new Skeletonization();
+            strategy.Run(win.imageData, new SkeletonizationInput());
         }
     }
 }

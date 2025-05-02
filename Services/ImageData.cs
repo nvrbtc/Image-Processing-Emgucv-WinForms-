@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.Services
 {
-    public record ImageData
+    public record ImageData 
     {
         private Mat img;
-
-
+        public ImageTabPage? parent;
         public string fileName = string.Empty;
         public event ImageUpdated UpdateEvent;
         public Enums.Enums Type { get; private set; }
@@ -28,11 +27,12 @@ namespace APO_Tsarehradskiy.Services
                 img = value;
             }
         }
-        public ImageData(Mat img, Enums.Enums type,string fileName) 
+        public ImageData(Mat img, Enums.Enums type, string fileName, ImageTabPage parent)
         {
             this.Image = img;
             this.Type = type;
             this.fileName = fileName;
+            this.parent = parent;
         }
 
         public void changeType(Enums.Enums newType)
@@ -41,12 +41,29 @@ namespace APO_Tsarehradskiy.Services
         }
         public void updateImage(Mat img)
         {
-            if ( !Image.Equals(img) )
+            if (!Image.Equals(img))
             {
                 Image = img;
             }
-            UpdateEvent?.Invoke(img);
+            UpdateEvent?.Invoke(this);
         }
+        public bool ValidateValuesAreNull()
+        {
+            return img == null || string.IsNullOrWhiteSpace(fileName) || Type == default;
+        }
+        public ImageData DeepClone()
+        {
+
+            return new ImageData(this.Image.Clone(), this.Type, this.fileName, this.parent);
+        }
+        public void CopyTo(ImageData data)
+        {
+            data.Image = this.Image;
+            data.Type = this.Type;
+            data.fileName = this.fileName;
+            data.parent = this.parent;
+        }
+
 
     }
 }

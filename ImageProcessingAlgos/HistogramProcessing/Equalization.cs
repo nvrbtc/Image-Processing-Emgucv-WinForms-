@@ -8,28 +8,33 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
 {
-    public class Equalization : IAlgorithmStrategy
+    public class Equalization : IStrategy
     {
+        private Mat resultImg;
         public string name => "Equalization";
-
         public ImageData ImageData { get; set; }
 
-        public Equalization()
+        public async Task Run(ImageData img, object parameters = null)
         {
-        }
+            if (img?.ValidateValuesAreNull() == true) throw new ArgumentException("Input or image values are invalid.");
+            this.ImageData = img;
+            await Task.Run(() => PerformLogic());
 
-        public void Run()
+            ImageData?.updateImage(resultImg);
+        }
+        private void PerformLogic()
         {
-            Mat currentImage = ImageData.Image;
-            int width = currentImage.Width;
-            int height = currentImage.Height;
+            resultImg = ImageData.Image.Clone();
+            int width = resultImg.Width;
+            int height = resultImg.Height;
             int pixels = width * height;
 
-            ReadOnlySpan<byte> data = currentImage.GetData(false) as byte[];
-            Span<byte> updatedData = new byte[pixels];
+            byte[] data = resultImg.GetData(false) as byte[];
+            byte[] updatedData = new byte[pixels];
 
             int[] histogram = new int[256];
             for (int i = 0; i < data.Length; i++)
@@ -57,19 +62,8 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
                 updatedData[i] = lut[data[i]];
             }
 
-            Marshal.Copy(updatedData.ToArray(), 0, currentImage.DataPointer, updatedData.Length);
-            ImageData.updateImage(currentImage);
-        }
-
-
-        public void SetDataImage(ImageData img)
-        {
-            this.ImageData = img;
-        }
-
-        public bool GetParameters(object parameters)
-        {
-            return true;
+            //Marshal.Copy(updatedData.ToArray(), 0, resultImg.DataPointer, updatedData.Length); <= dangerous
+            resultImg.SetTo(updatedData);
         }
     }
 }

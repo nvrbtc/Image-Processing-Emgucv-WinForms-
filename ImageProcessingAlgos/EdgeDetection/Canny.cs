@@ -11,42 +11,29 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
 {
-    public class Canny : IAlgorithmStrategy
+    public class Canny : IStrategy
     {
         public string name => "canny";
 
         public ImageData ImageData { get; set; }
 
         //params to call method 
-        private CannyInput parameters;
-        public Canny()
+        private CannyInput input;
+        public async Task Run(ImageData img, object parameters)
         {
-        }
-        public void Run()
-        {
-            Mat temp = new Mat();
-            try
-            {
-                CvInvoke.Canny(ImageData.Image, temp, parameters.Threshold1, parameters.Threshold2,parameters.Sz,parameters.GradientEnabled);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message,"Warning",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                return;
-            }
-            ImageData.updateImage(temp);
+            if (!Validate(img, parameters)) throw new ArgumentException("Input or image values are invalid.");
+
+            Mat result = new Mat();
+            await Task.Run( () => CvInvoke.Canny(ImageData.Image, result, input.Threshold1, input.Threshold2, input.Sz, input.GradientEnabled));
+
+            ImageData.updateImage(result);
         }
 
-        public void SetDataImage(ImageData img)
+        private bool Validate(ImageData img, object parameters)
         {
+            if (img?.ValidateValuesAreNull() == true || parameters is not CannyInput) return false;
             this.ImageData = img;
-        }
-
-        public bool GetParameters(object parameters)
-        {
-            if (parameters == null || parameters is not CannyInput) return false;
-
-            this.parameters = parameters as CannyInput; 
+            this.input = parameters as CannyInput;
             return true;
         }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APO_Tsarehradskiy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b718d57f3818e0518c443d094b818a6fdae4ff89")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7142a4e46d8c6f108d49f8c31dea9f061d5c383a")]
 [assembly: System.Reflection.AssemblyProductAttribute("APO_Tsarehradskiy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APO_Tsarehradskiy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

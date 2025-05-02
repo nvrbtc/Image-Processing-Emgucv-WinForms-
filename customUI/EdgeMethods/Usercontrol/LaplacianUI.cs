@@ -1,14 +1,17 @@
-﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
+﻿using APO_Tsarehradskiy.Enums;
+using APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection;
+using APO_Tsarehradskiy.InputArguments.EdgeDetection;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
 using APO_Tsarehradskiy.Interfaces;
+using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
 
 namespace APO_Tsarehradskiy.customUI.EdgeMethodHandling
 {
-    public partial class LaplacianUI : UserControl,IGetStrategy
+    public partial class LaplacianUI : UserControl, IGetInput
     {
-        private LaplacianInput input;
+        private LaplacianInput input = new LaplacianInput();
         private IInputHandler _inputHandler = new InputHandler();
 
         public LaplacianUI()
@@ -53,10 +56,14 @@ namespace APO_Tsarehradskiy.customUI.EdgeMethodHandling
             }
         }
 
-
-        public IAlgorithmStrategy GetAlgoInstance()
+        object IGetInput.ReturnInput()
         {
-            return input.createInstace();
+            return input;
+        }
+
+        Strategies IGetInput.ReturnStrategy()
+        {
+            return Strategies.Laplacian;
         }
     }
 }

@@ -8,71 +8,58 @@ using Emgu.CV.Structure;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
 {
-    public class Skeletonization : IAlgorithmStrategy
+    public class Skeletonization : IStrategy
     {
 
         public string name => "Skeletonization";
 
-        public SkeletonizationInput parameters { get; set; }
+        public SkeletonizationInput input { get; set; }
         public ImageData ImageData { get; set; }
 
-        public bool GetParameters(object parameters)
+        private bool Validate( ImageData img,object parameters)
         {
-            if (parameters == null || parameters is not SkeletonizationInput)
-            {
-                MessageBox.Show("Wrong input type", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            this.parameters = parameters as SkeletonizationInput;
+            if (img?.ValidateValuesAreNull() == true || parameters is not SkeletonizationInput) return false;
+            this.input = parameters as SkeletonizationInput;
+            this.ImageData = img;
             return true;
         }
 
-        public void Run()
+        public async Task Run(ImageData image, object parameters)
         {
-            if (!RequireBinaryImage()) return;
-            // Копируем исходное изображение
+            if (!Validate(image,parameters) || !RequireBinaryImage()) throw new ArgumentException("Input or image values are invalid.");
             Mat img = ImageData.Image.Clone();
 
-
-            // Убираем мелкий шум морфологическим открытием
-            Mat noiseKernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(3, 3), new Point(-1, -1));
-            CvInvoke.MorphologyEx(img, img, MorphOp.Open, noiseKernel, new Point(-1, -1), 1, BorderType.Reflect, new MCvScalar());
-
-
-            // --- Шаг 2: Скелетонизация ---
             Mat skeleton = new Mat(img.Size, DepthType.Cv8U, 1);
-            skeleton.SetTo(new MCvScalar(0)); // Инициализация черным фоном
-
-            Mat temp = new Mat();
-            Mat eroded = new Mat();
-
-            Mat element = CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(3, 3), new Point(-1, -1));
-
-            do
+            await Task.Run(() =>
             {
-                // Морфологическое открытие
-                CvInvoke.MorphologyEx(img, temp, MorphOp.Open, element, new Point(-1, -1), 1, BorderType.Reflect, new MCvScalar());
+                Mat noiseKernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(3, 3), new Point(-1, -1));
+                CvInvoke.MorphologyEx(img, img, MorphOp.Open, noiseKernel, new Point(-1, -1), 1, BorderType.Reflect, new MCvScalar());
 
-                // Вычисляем разницу: оригинал - открытие
-                CvInvoke.Subtract(img, temp, temp);
+                skeleton.SetTo(new MCvScalar(0)); // Black background
 
-                // Накладываем на скелет
-                CvInvoke.BitwiseOr(skeleton, temp, skeleton);
+                Mat temp = new Mat();
+                Mat eroded = new Mat();
 
-                // Эрозия
-                CvInvoke.Erode(img, eroded, element, new Point(-1, -1), 1, BorderType.Reflect, new MCvScalar());
+                Mat element = CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(3, 3), new Point(-1, -1));
 
-                img = eroded.Clone();
-            }
-            while (CvInvoke.CountNonZero(img) > 0);
+                do
+                {
+                    CvInvoke.MorphologyEx(img, temp, MorphOp.Open, element, new Point(-1, -1), 1, BorderType.Reflect, new MCvScalar());
+
+                    CvInvoke.Subtract(img, temp, temp);
+
+                    CvInvoke.BitwiseOr(skeleton, temp, skeleton);
+
+                    CvInvoke.Erode(img, eroded, element, new Point(-1, -1), 1, BorderType.Reflect, new MCvScalar());
+
+                    img = eroded.Clone();
+                }
+                while (CvInvoke.CountNonZero(img) > 0);
+            });
 
             ImageData.updateImage(skeleton);
         }
 
-        public void SetDataImage(ImageData img)
-        {
-            this.ImageData = img;
-        }
         private bool RequireBinaryImage()
         {
             if (ImageData.ImageIsBinary()) return true;

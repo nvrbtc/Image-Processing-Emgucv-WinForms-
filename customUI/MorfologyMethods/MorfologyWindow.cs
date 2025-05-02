@@ -91,10 +91,8 @@ namespace APO_Tsarehradskiy.customUI.MorfologyMethods
             }
             input.StructElement = structuringElement.GetStructuringElement();
 
-            IAlgorithmStrategy strategy = new Morphology();
-            strategy.SetDataImage(imageData);
-            if (strategy.GetParameters(input))
-                strategy.Run();
+            IStrategy? strategy = new Morphology();
+            strategy?.Run(imageData, input);
 
         }
     }

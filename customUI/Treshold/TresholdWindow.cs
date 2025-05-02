@@ -34,12 +34,8 @@ namespace APO_Tsarehradskiy.customUI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (imageData.Type != Enums.Enums.Gray) return;
-            IAlgorithmStrategy strategy = new Posterization();
-            strategy.SetDataImage(imageData);
-            strategy.GetParameters(Levels);
-            strategy.Run();
-
+            IStrategy? strategy = new Posterization();
+            strategy?.Run(imageData,Levels);
         }
     }
 }

@@ -28,6 +28,9 @@
     <Compile Update="customUI\Hough\Usercontrols\SimpleHoughUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="customUI\TabPageInherited\ImageAndHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="customUI\TabPageInherited\ImageTabPage.cs">
       <SubType>Component</SubType>
     </Compile>

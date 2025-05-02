@@ -13,40 +13,26 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 {
-    public class Blur : IAlgorithmStrategy
+    public class Blur : IStrategy
     {
         public string name => "Blur";
 
         public ImageData ImageData { get; set ; }
-        private BlurInput parameters;
-        public Blur()
+        private BlurInput? input;
+        public async Task Run(ImageData imageData, object parameters)
         {
-            
-        }
-        public void Run()
-        {
+            if (!Validate(imageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
+
             Mat result = new();
-            CvInvoke.Blur(ImageData.Image, result, parameters.sz, new Point(-1, -1), parameters.borderType);
+            await Task.Run(() => CvInvoke.Blur(ImageData.Image, result, this.input.sz, new Point(-1, -1), this.input.BorderType));
+
             ImageData.updateImage(result);
         }
-        public override string ToString()
+        public bool Validate(ImageData imageData, object parameters)
         {
-            return name;
-        }
-
-        public void SetDataImage(ImageData img)
-        {
-            this.ImageData = img;
-        }
-
-        public bool GetParameters(object parameters)
-        {
-            if (parameters == null || parameters is not BlurInput)
-            {
-                ///TODO:Handle error
-                return false;
-            }
-            this.parameters = parameters as BlurInput;
+            if (imageData?.ValidateValuesAreNull() == true || parameters is not BlurInput) return false;
+            this.ImageData = imageData;
+            this.input = parameters as BlurInput;
             return true;
         }
     }

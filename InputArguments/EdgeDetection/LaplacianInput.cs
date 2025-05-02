@@ -9,20 +9,13 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.InputArguments.EdgeDetection
 {
-    public class LaplacianInput : IEdgeInput
+    public record LaplacianInput 
     {
         public DepthType Depth { get; set; } = DepthType.Cv8U;
         public int Sz { get; set; } = 1;
         public double Scale { get; set; } = 1;
         public double Delta { get; set; } = 0;
         public BorderType BorderType { get; set; } =  BorderType.Reflect;
-
-        public IAlgorithmStrategy createInstace()
-        {
-            IAlgorithmStrategy strategy = new Laplacian();
-            strategy.GetParameters(this);
-            return strategy;
-        }
 
     }
 }

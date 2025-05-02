@@ -31,12 +31,8 @@ namespace APO_Tsarehradskiy.customUI
 
         private void RunMethod(object sender, EventArgs e)
         {
-            IAlgorithmStrategy strategy = new MedianBlur();
-            if (strategy.GetParameters(Sz))
-            {
-                strategy.SetDataImage(imageData);
-                strategy.Run();
-            }
+            IStrategy? strategy = new MedianBlur();
+            strategy.Run(imageData, Sz);
             
         }
     }

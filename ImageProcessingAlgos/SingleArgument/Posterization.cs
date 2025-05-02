@@ -12,55 +12,53 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 {
-    public class Posterization : IAlgorithmStrategy
+    public class Posterization : IStrategy
     {
         private int levels;
 
         public string name => "Posterization";
         public ImageData ImageData { get;set; }
 
-        public Posterization()
+        private bool GetParameters(ImageData img, object parameters = null)
         {
-        }
-
-        public bool GetParameters(object parameters)
-        {
-            if (parameters == null || parameters is not int)
-            {
-                return false;
-            }
+            if (img?.ValidateValuesAreNull() == true || parameters is not int)return false;
             this.levels = (int)parameters;
+            this.ImageData = img;
             return true;    
         }
 
-        public void Run()
+        public async Task Run(ImageData img, object parameters = null)
         {
-            double step = 256d / levels;
-            int[] levelValues = new int[levels];
-            for (int i = 0; i < levels; i++)
+            if ( img?.ValidateValuesAreNull() == true) return;
+            this.ImageData = img;
+            Mat source = ImageData.Image.Clone();
+
+            await Task.Run(() =>
             {
-                double temp = i * step;
-                levelValues[i] = (int)Math.Round(temp,MidpointRounding.ToEven);
-            }
-            Span<byte> updatedPixels = ImageData.Image.GetData(false) as byte[];
-            for (int i = 0;i < updatedPixels.Length;i++)
-            {
-                for ( int j = levels - 1; j >= 0; j--) 
+                double step = 256d / levels;
+                int[] levelValues = new int[levels];
+                for (int i = 0; i < levels; i++)
                 {
-                    if (updatedPixels[i] >= levelValues[j])
+
+                    levelValues[i] = (int)Math.Round(i * step, MidpointRounding.ToEven);
+                }
+
+                byte[] updatedPixels = source.GetData(false) as byte[];
+                for (int i = 0; i < updatedPixels.Length; i++)
+                {
+                    for (int j = levels - 1; j >= 0; j--)
                     {
-                        updatedPixels[i] = (byte)levelValues[j];
-                        break;
+                        if (updatedPixels[i] >= levelValues[j])
+                        {
+                            updatedPixels[i] = (byte)levelValues[j];
+                            break;
+                        }
                     }
                 }
-            }
-            Marshal.Copy(updatedPixels.ToArray(),0,ImageData.Image.DataPointer,updatedPixels.Length);
-            ImageData.updateImage(ImageData.Image);
-        }
+                source.SetTo(updatedPixels);
+            });
 
-        public void SetDataImage(ImageData img)
-        {
-            this.ImageData = img;
+            ImageData.updateImage(source);
         }
     }
 }

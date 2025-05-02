@@ -5,39 +5,30 @@ using Emgu.CV;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
 {
-    public class Morphology : IAlgorithmStrategy
+    public class Morphology : IStrategy
     {
         public string name => "Morphology";
-        private MorphologyInput parameters;
+        private MorphologyInput input;
 
         public ImageData ImageData { get; set; }
 
-        public bool GetParameters(object parameters)
+        private bool Validate (ImageData img, object parameters)
         {
-            if (parameters == null || parameters is not MorphologyInput) return false;
-            this.parameters = parameters as MorphologyInput;
+            if (img?.ValidateValuesAreNull() == true || parameters is not MorphologyInput input) return false;
+
+            this.ImageData = img;
+            this.input = input;
             return true;
         }
 
-        public void Run()
+        public async Task Run(ImageData img, object parameters)
         {
+            if ( !Validate(img,parameters) ) throw new ArgumentException("Input or image values are invalid.");
+
             Mat result = new Mat();
-            try
-            {
-                CvInvoke.MorphologyEx(ImageData.Image, result, parameters.Operation, parameters.StructElement, parameters.Anchor, parameters.Iterations, parameters.BorderType, CvInvoke.MorphologyDefaultBorderValue);
-                ImageData.updateImage(result);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(name, ex.Message);
-            }
-
+            CvInvoke.MorphologyEx(ImageData.Image, result, input.Operation, input.StructElement, input.Anchor, input.Iterations, input.BorderType, CvInvoke.MorphologyDefaultBorderValue);
+            ImageData.updateImage(result);
         }
 
-        public void SetDataImage(ImageData img)
-        {
-            ImageData = img;
-        }
     }
 }

@@ -3,72 +3,112 @@
   "WorkspaceRootPath": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\imageprocessingalgos\\histogramprocessing\\equalization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\histogramprocessing\\equalization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\hough\\houghsimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\hough\\houghsimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\customui\\hough\\houghwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\houghwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\usercontrols\\probhoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\usercontrols\\probhoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\usercontrols\\probhoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\usercontrols\\probhoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\usercontrols\\simplehoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\usercontrols\\simplehoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|c:\\users\\careg\\source\\repos\\apo_tsarehradskiy\\mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\inputarguments\\hough\\houghinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:inputarguments\\hough\\houghinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\histogramprocessing\\equalization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\histogramprocessing\\equalization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\hough\\houghp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\hough\\houghp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\tabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\interfaces\\igetstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:interfaces\\igetstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\interfaces\\iedgeinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:interfaces\\iedgeinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\houghwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\houghwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\usercontrols\\simplehoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\usercontrols\\simplehoughui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\usercontrols\\probhoughui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\usercontrols\\probhoughui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\myserviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\myserviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\iinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\iinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\strategyexecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\strategyexecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\hough\\houghwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\hough\\houghwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\singleargument\\threshold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\singleargument\\threshold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\edgedetection\\sobel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\edgedetection\\sobel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\histogram\\histogramwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\histogram\\histogramwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\morphology\\skeletonization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\morphology\\skeletonization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\singleargument\\posterization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\singleargument\\posterization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\singleargument\\negation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\singleargument\\negation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\morphology\\morphology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\morphology\\morphology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\blur\\medianblur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\blur\\medianblur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\histogramprocessing\\linearstretching.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\histogramprocessing\\linearstretching.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\edgedetection\\laplacian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\edgedetection\\laplacian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\filter2d\\kernelfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\filter2d\\kernelfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\services\\imagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:services\\imagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\hough\\houghsimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\hough\\houghsimple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\hough\\houghp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\hough\\houghp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\blur\\gaussianblur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\blur\\gaussianblur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\edgedetection\\canny.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\edgedetection\\canny.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\imageprocessingalgos\\blur\\blur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:imageprocessingalgos\\blur\\blur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\tabpageinherited\\imagetabpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\tabpageinherited\\imagetabpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\tabpageinherited\\imageandhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\tabpageinherited\\imageandhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customui\\histogram\\histogramwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5548AC-E3EC-4354-B93A-764636167992}|APO_Tsarehradskiy.csproj|solutionrelative:customui\\histogram\\histogramwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,207 +126,327 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyServiceProvider.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\MyServiceProvider.cs",
+              "RelativeDocumentMoniker": "Services\\MyServiceProvider.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\MyServiceProvider.cs",
+              "RelativeToolTip": "Services\\MyServiceProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:51:05.744Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Equalization.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
-              "RelativeDocumentMoniker": "ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
-              "RelativeToolTip": "ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADsAAABhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T19:25:45.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IEdgeInput.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Interfaces\\IEdgeInput.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IEdgeInput.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Interfaces\\IEdgeInput.cs",
-              "RelativeToolTip": "Interfaces\\IEdgeInput.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:24:58.589Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IGetStrategy.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Interfaces\\IGetStrategy.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IGetStrategy.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Interfaces\\IGetStrategy.cs",
-              "RelativeToolTip": "Interfaces\\IGetStrategy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:24:54.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProbHoughUI.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\ProbHoughUI.Designer.cs",
-              "RelativeDocumentMoniker": "customUI\\Hough\\Usercontrols\\ProbHoughUI.Designer.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\ProbHoughUI.Designer.cs",
-              "RelativeToolTip": "customUI\\Hough\\Usercontrols\\ProbHoughUI.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:20:16.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SimpleHoughUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs",
-              "RelativeDocumentMoniker": "customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:20:03.803Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProbHoughUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\ProbHoughUI.cs",
-              "RelativeDocumentMoniker": "customUI\\Hough\\Usercontrols\\ProbHoughUI.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\ProbHoughUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "customUI\\Hough\\Usercontrols\\ProbHoughUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:05:00.22Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:40:54.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "MainUI.cs",
               "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\MainUI.cs",
               "RelativeDocumentMoniker": "MainUI.cs",
               "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\MainUI.cs",
               "RelativeToolTip": "MainUI.cs",
-              "ViewState": "AQIAAAoBAAAAAAAAAAAWwCoBAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:34:34.94Z"
+              "WhenOpened": "2025-05-02T20:49:55.03Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "InputHandler.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\InputHandler.cs",
-              "RelativeDocumentMoniker": "Services\\InputHandler.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\InputHandler.cs",
-              "RelativeToolTip": "Services\\InputHandler.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:21:58.315Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IInputHandler.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\IInputHandler.cs",
-              "RelativeDocumentMoniker": "Services\\IInputHandler.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\IInputHandler.cs",
-              "RelativeToolTip": "Services\\IInputHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:00:44.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SimpleHoughUI.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs",
-              "RelativeDocumentMoniker": "customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs",
-              "RelativeToolTip": "customUI\\Hough\\Usercontrols\\SimpleHoughUI.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAUwCEAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T15:23:31.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "HoughWindow.cs",
               "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\HoughWindow.cs",
               "RelativeDocumentMoniker": "customUI\\Hough\\HoughWindow.cs",
               "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\HoughWindow.cs",
               "RelativeToolTip": "customUI\\Hough\\HoughWindow.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAANAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwDcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T15:07:19.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProbHoughUI.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\ProbHoughUI.cs",
-              "RelativeDocumentMoniker": "customUI\\Hough\\Usercontrols\\ProbHoughUI.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\Usercontrols\\ProbHoughUI.cs",
-              "RelativeToolTip": "customUI\\Hough\\Usercontrols\\ProbHoughUI.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T12:34:06.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HoughP.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Hough\\HoughP.cs",
-              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Hough\\HoughP.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Hough\\HoughP.cs",
-              "RelativeToolTip": "ImageProcessingAlgos\\Hough\\HoughP.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAUwCMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T11:47:39.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "HoughWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\HoughWindow.cs",
-              "RelativeDocumentMoniker": "customUI\\Hough\\HoughWindow.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Hough\\HoughWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "customUI\\Hough\\HoughWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T11:36:22.44Z"
+              "WhenOpened": "2025-05-02T20:48:00.467Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "HoughInput.cs",
-              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\InputArguments\\Hough\\HoughInput.cs",
-              "RelativeDocumentMoniker": "InputArguments\\Hough\\HoughInput.cs",
-              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\InputArguments\\Hough\\HoughInput.cs",
-              "RelativeToolTip": "InputArguments\\Hough\\HoughInput.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwAsAAAAhAAAA",
+              "Title": "Threshold.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\SingleArgument\\Threshold.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\SingleArgument\\Threshold.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\SingleArgument\\Threshold.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\SingleArgument\\Threshold.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBQAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T10:59:18.079Z"
+              "WhenOpened": "2025-05-02T20:45:49.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
+              "Title": "Sobel.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\EdgeDetection\\Sobel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:45:38.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Skeletonization.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Morphology\\Skeletonization.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Morphology\\Skeletonization.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Morphology\\Skeletonization.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Morphology\\Skeletonization.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAkwDsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:41:07.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Posterization.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\SingleArgument\\Posterization.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\SingleArgument\\Posterization.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\SingleArgument\\Posterization.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\SingleArgument\\Posterization.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwDYAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:32:50.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Negation.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\SingleArgument\\Negation.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\SingleArgument\\Negation.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\SingleArgument\\Negation.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\SingleArgument\\Negation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:32:14.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Morphology.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Morphology\\Morphology.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Morphology\\Morphology.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Morphology\\Morphology.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Morphology\\Morphology.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:31:46.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MedianBlur.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Blur\\MedianBlur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:31:15.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LinearStretching.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\HistogramProcessing\\LinearStretching.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\HistogramProcessing\\LinearStretching.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\HistogramProcessing\\LinearStretching.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\HistogramProcessing\\LinearStretching.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:24:36.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Laplacian.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Laplacian.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\EdgeDetection\\Laplacian.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Laplacian.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\EdgeDetection\\Laplacian.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:24:07.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "KernelFilter.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Filter2D\\KernelFilter.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Filter2D\\KernelFilter.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Filter2D\\KernelFilter.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Filter2D\\KernelFilter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:23:43.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ImageData.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\ImageData.cs",
+              "RelativeDocumentMoniker": "Services\\ImageData.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\ImageData.cs",
+              "RelativeToolTip": "Services\\ImageData.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAEwC8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:23:19.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "HoughSimple.cs",
               "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Hough\\HoughSimple.cs",
               "RelativeDocumentMoniker": "ImageProcessingAlgos\\Hough\\HoughSimple.cs",
               "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Hough\\HoughSimple.cs",
               "RelativeToolTip": "ImageProcessingAlgos\\Hough\\HoughSimple.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBoAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T20:40:43.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T20:16:15.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HoughP.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Hough\\HoughP.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Hough\\HoughP.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Hough\\HoughP.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Hough\\HoughP.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAwDwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:08:36.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GaussianBlur.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\GaussianBlur.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Blur\\GaussianBlur.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\GaussianBlur.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Blur\\GaussianBlur.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T20:05:28.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Equalization.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\HistogramProcessing\\Equalization.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:55:29.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Canny.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Canny.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\EdgeDetection\\Canny.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\EdgeDetection\\Canny.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\EdgeDetection\\Canny.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:54:58.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Blur.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\Blur.cs",
+              "RelativeDocumentMoniker": "ImageProcessingAlgos\\Blur\\Blur.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\ImageProcessingAlgos\\Blur\\Blur.cs",
+              "RelativeToolTip": "ImageProcessingAlgos\\Blur\\Blur.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:53:06.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ImageAndHistory.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\TabPageInherited\\ImageAndHistory.cs",
+              "RelativeDocumentMoniker": "customUI\\TabPageInherited\\ImageAndHistory.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\TabPageInherited\\ImageAndHistory.cs",
+              "RelativeToolTip": "customUI\\TabPageInherited\\ImageAndHistory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:51:41.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ImageTabPage.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\TabPageInherited\\ImageTabPage.cs",
+              "RelativeDocumentMoniker": "customUI\\TabPageInherited\\ImageTabPage.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\TabPageInherited\\ImageTabPage.cs",
+              "RelativeToolTip": "customUI\\TabPageInherited\\ImageTabPage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:51:11.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HistogramWindow.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Histogram\\HistogramWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\Histogram\\HistogramWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Histogram\\HistogramWindow.cs",
+              "RelativeToolTip": "customUI\\Histogram\\HistogramWindow.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAADgvyMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:49:20.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HistogramWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Histogram\\HistogramWindow.cs",
+              "RelativeDocumentMoniker": "customUI\\Histogram\\HistogramWindow.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\customUI\\Histogram\\HistogramWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "customUI\\Histogram\\HistogramWindow.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:49:18.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwCIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:19:31.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TabManager.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\TabManager.cs",
+              "RelativeDocumentMoniker": "Services\\TabManager.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\TabManager.cs",
+              "RelativeToolTip": "Services\\TabManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:14:50.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StrategyExecutor.cs",
+              "DocumentMoniker": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\StrategyExecutor.cs",
+              "RelativeDocumentMoniker": "Services\\StrategyExecutor.cs",
+              "ToolTip": "C:\\Users\\careg\\source\\repos\\APO_Tsarehradskiy\\Services\\StrategyExecutor.cs",
+              "RelativeToolTip": "Services\\StrategyExecutor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T18:29:05.788Z"
             }
           ]
         }

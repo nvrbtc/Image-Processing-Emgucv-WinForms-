@@ -5,37 +5,28 @@ using Emgu.CV;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 {
-    public class GaussianBlur : IAlgorithmStrategy
+    public class GaussianBlur : IStrategy
     {
-        private BlurInput parameters;
+        private BlurInput input;
 
         public string name => "Gaussian Blur";
 
         public ImageData ImageData { get ; set ; }
 
-        public GaussianBlur()
+        public async Task Run(ImageData imageData, object parameters)
         {
-        }
+            if (!Validate(imageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
-        public void Run()
-        {
-            Mat copy = new ();
-            CvInvoke.GaussianBlur(ImageData.Image, copy,parameters.sz, 0, 0,parameters.borderType);
-            ImageData.updateImage(copy);
-        }
+            Mat result = new ();
+            await Task.Run ( () => CvInvoke.GaussianBlur(ImageData.Image, result,input.sz, 0, 0,input.BorderType));
 
-        public void SetDataImage(ImageData img)
-        {
-            this.ImageData = img;
+            ImageData.updateImage(result);
         }
-
-        public bool GetParameters(object parameters)
+        private bool Validate(ImageData imageData, object parameters)
         {
-            if ( parameters == null || parameters is not BlurInput)
-            {
-                return false;
-            }
-            this.parameters = parameters as BlurInput;
+            if (imageData?.ValidateValuesAreNull() == true || parameters is not BlurInput) return false;
+            this.ImageData = imageData;
+            this.input = parameters as BlurInput;
             return true;
         }
     }

@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.InputTypes.Blur
 {
-    public class BlurInput
+    public record BlurInput
     {
-        public BorderType borderType = BorderType.Reflect;
+        public BorderType BorderType { get; set; } = BorderType.Reflect;
         public Size sz = new Size(3,3);
-        public BlurInput(BorderType borderType, Size sz)
-        {
-            this.borderType = borderType;
-            this.sz = sz;
-        }
     }
 }

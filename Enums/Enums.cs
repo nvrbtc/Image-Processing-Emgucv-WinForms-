@@ -2,6 +2,7 @@
 {
     public enum Enums
     {
+        Default,
         Rgb,
         Gray,
         Hsv,
@@ -18,5 +19,25 @@
         SouthEast,
         East,
         NorthEast
+    }
+    public enum Strategies
+    {
+        None,
+        Blur,
+        GaussianBlur,
+        MedianBlur,
+        Canny,
+        Laplacian,
+        Sobel,
+        KernelFilter,
+        Equalization,
+        LinearStretching,
+        HoughProbabilistic,
+        Hough,
+        MorphologyOperations,
+        Skeletonization,
+        Negation,
+        Posterization,
+        Threshold
     }
 }

@@ -10,40 +10,28 @@ using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.Blur
 {
-    public class MedianBlur : IAlgorithmStrategy
+    public class MedianBlur : IStrategy
     {
         public string name => "Median Blur";
 
-        private int parameters;
+        private int input;
         public ImageData ImageData { get; set; }
 
-        public bool GetParameters(object parameters)
+        public async Task Run(ImageData img, object parameters)
         {
-            if (parameters == null || parameters is not int)
-            {
-                return false;
-            }
-            this.parameters = (int)parameters;
-            return true;
-        }
+            if ( !Validate(img,parameters)) throw new ArgumentException("Input or image values are invalid.");
 
-        public void Run()
-        {
-            Mat temp = new Mat();
-            try
-            {
-                CvInvoke.MedianBlur(ImageData.Image, temp, parameters);
-            }
-            catch (Exception e)
-            {
-                return;
-            }
-            ImageData.updateImage(temp);
+            Mat result = new Mat();
+            CvInvoke.MedianBlur(ImageData.Image, result, input);
+            
+            ImageData.updateImage(result);
         }
-
-        public void SetDataImage(ImageData img)
+        private bool Validate(ImageData img, object parameters)
         {
+            if (img?.ValidateValuesAreNull() == true || parameters is not int i) return false;
             this.ImageData = img;
+            this.input = i ;
+            return true;
         }
     }
 }

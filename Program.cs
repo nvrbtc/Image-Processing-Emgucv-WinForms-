@@ -1,3 +1,4 @@
+using APO_Tsarehradskiy.customUI;
 using APO_Tsarehradskiy.Services;
 using APO_Tsarehradskiy.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,8 +28,8 @@ namespace APO_Tsarehradskiy
             var services = new ServiceCollection();
             ConfigureServices(services);
 
-            var provider = services.BuildServiceProvider();
-            var window = provider.GetRequiredService<MainUI>();
+            MyServiceProvider.Initialize(services.BuildServiceProvider());
+            var window = MyServiceProvider.GetRequiredService<MainUI>();
             
             Application.Run(window);
         }
@@ -36,8 +37,15 @@ namespace APO_Tsarehradskiy
         {
             service.AddSingleton<ImageManager>();
             service.AddSingleton<ITabManager,TabManager>();
+            service.AddTransient<IInputHandler, InputHandler>();
 
             service.AddTransient<MainUI>();
+            service.AddTransient<BlurWindow>();
+            service.AddTransient<EdgeDetectionWindow>();
+            service.AddTransient<UniversalFilterWindow>();
+
+
+            service.AddTransient<StrategyExecutor>();
         }
     }
 }

@@ -1,18 +1,11 @@
 ﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
 using APO_Tsarehradskiy.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using APO_Tsarehradskiy.Interfaces.InputReturn;
+using APO_Tsarehradskiy.Enums;
 
 namespace APO_Tsarehradskiy.customUI.EdgeMethods
 {
-    public partial class CannyUI : UserControl, IGetStrategy
+    public partial class CannyUI : UserControl, IGetInput
     {
         private CannyInput input = new CannyInput();
 
@@ -41,9 +34,14 @@ namespace APO_Tsarehradskiy.customUI.EdgeMethods
             }
         }
 
-        public IAlgorithmStrategy GetAlgoInstance()
+        public Strategies ReturnStrategy()
         {
-            return input.createInstace();
+            return Strategies.Canny;
+        }
+
+        public object ReturnInput()
+        {
+            throw new NotImplementedException();
         }
     }
 }
