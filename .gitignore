@@ -1,0 +1,18 @@
+#Visual Studio
+.vs/
+*.user
+*.suo
+
+#Build Results
+bin/
+obj/
+
+#Publish
+publish/
+*.dbmdl
+
+#Temp Files
+*.log
+*.tmp
+*.cache
+
