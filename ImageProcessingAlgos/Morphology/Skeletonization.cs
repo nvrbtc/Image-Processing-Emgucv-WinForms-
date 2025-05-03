@@ -11,7 +11,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
     public class Skeletonization : IStrategy
     {
 
-        public string name => "Skeletonization";
+        public string name  { get; set; } = "Skeletonization";
 
         public SkeletonizationInput input { get; set; }
         public ImageData ImageData { get; set; }

@@ -7,7 +7,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
 {
     public class Morphology : IStrategy
     {
-        public string name => "Morphology";
+        public string name { get; set; } = "Morphology";
         private MorphologyInput input;
 
         public ImageData ImageData { get; set; }

@@ -16,16 +16,8 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
     {
         private int levels;
 
-        public string name => "Posterization";
+        public string name { get; set; } = "Posterization";
         public ImageData ImageData { get;set; }
-
-        private bool GetParameters(ImageData img, object parameters = null)
-        {
-            if (img?.ValidateValuesAreNull() == true || parameters is not int)return false;
-            this.levels = (int)parameters;
-            this.ImageData = img;
-            return true;    
-        }
 
         public async Task Run(ImageData img, object parameters = null)
         {

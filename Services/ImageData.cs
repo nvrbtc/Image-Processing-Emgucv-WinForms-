@@ -34,6 +34,12 @@ namespace APO_Tsarehradskiy.Services
             this.fileName = fileName;
             this.parent = parent;
         }
+        public void Restore(ImageData restoredData)
+        {
+            this.Image = restoredData.Image;
+            this.Type = restoredData.Type;
+            UpdateEvent?.Invoke(this);
+        }
 
         public void changeType(Enums.Enums newType)
         {
@@ -58,10 +64,11 @@ namespace APO_Tsarehradskiy.Services
         }
         public void CopyTo(ImageData data)
         {
-            data.Image = this.Image;
-            data.Type = this.Type;
-            data.fileName = this.fileName;
-            data.parent = this.parent;
+            this.Image?.Dispose();
+            this.Image = data.Image.Clone();
+            this.Type = data.Type;
+            this.fileName = data.fileName;
+            this.parent = data.parent;
         }
 
 

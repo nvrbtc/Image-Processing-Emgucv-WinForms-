@@ -1,19 +1,20 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.Blur;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
 
 namespace APO_Tsarehradskiy.customUI
 {
     public partial class MedianFilterWindow : Form
     {
         private ImageData imageData;
+        private readonly StrategyExecutor executor;
+
         public int Sz { get; set; } = 3;
         
 
-        public MedianFilterWindow()
+        public MedianFilterWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
+            this.executor = executor;
         }
         private void Bind()
         {
@@ -29,11 +30,9 @@ namespace APO_Tsarehradskiy.customUI
             this.imageData = imageData;
         }
 
-        private void RunMethod(object sender, EventArgs e)
+        private async void RunMethod(object sender, EventArgs e)
         {
-            IStrategy? strategy = new MedianBlur();
-            strategy.Run(imageData, Sz);
-            
+            await executor.PerformStrategy(Enums.Strategies.MedianBlur,this.imageData,this.Sz);
         }
     }
 }

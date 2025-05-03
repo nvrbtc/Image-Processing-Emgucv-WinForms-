@@ -7,7 +7,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
     public class Negation : IStrategy
     {
 
-        public string name => "Negation";
+        public string name { get; set; } = "Negation";
 
         public ImageData ImageData { get; set; }
 

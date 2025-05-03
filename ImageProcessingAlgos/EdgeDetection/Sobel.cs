@@ -7,7 +7,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
 {
     public class Sobel : IStrategy
     {
-        public string name => "Sobel";
+        public string name { get; set; } = "Sobel";
 
         public ImageData ImageData { get; set; }
 

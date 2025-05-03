@@ -10,7 +10,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Hough
 {
     public class HoughSimple : IStrategy
     {
-        public string name => "Hough Lines";
+        public string name { get; set; } = "Hough Lines";
 
         public ImageData ImageData { get; set; }
         private HoughSimpleInput input;

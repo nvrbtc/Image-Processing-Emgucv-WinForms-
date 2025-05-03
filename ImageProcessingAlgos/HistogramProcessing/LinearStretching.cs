@@ -7,7 +7,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
 {
     public class LinearStretching : IStrategy
     {
-        public string name => "Linear Stretching";
+        public string name { get; set; } = "Linear Stretching";
         public ImageData ImageData { get; set; }
 
         public async Task Run(ImageData imageData, object parameters = null)

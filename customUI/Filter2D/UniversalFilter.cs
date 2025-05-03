@@ -1,10 +1,7 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.Filter;
-using APO_Tsarehradskiy.InputArguments.Filter2D;
+﻿using APO_Tsarehradskiy.InputArguments.Filter2D;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
-using System.Text.RegularExpressions;
 
 namespace APO_Tsarehradskiy.customUI
 {
@@ -65,10 +62,10 @@ namespace APO_Tsarehradskiy.customUI
         }
 
 
-        private void RunButton(object sender, EventArgs e)
+        private async void RunButton(object sender, EventArgs e)
         {
             GetKernelValues();
-            executor.PerformStrategy(Enums.Strategies.KernelFilter, imageData, input);
+            await executor.PerformStrategy(Enums.Strategies.KernelFilter, imageData, input);
         }
         private void GetKernelValues()
         {

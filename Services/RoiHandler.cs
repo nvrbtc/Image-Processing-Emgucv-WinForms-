@@ -30,21 +30,19 @@ namespace APO_Tsarehradskiy.Services
         }
         public void PaintEvent(object sender, PaintEventArgs e)
         {
-            if (rectangle != null)
-            {
-                e.Graphics.DrawRectangle(Pens.DarkRed, GetRectangle());
-            }
+
+            e.Graphics.DrawRectangle(Pens.DarkRed, GetRectangle());
+
         }
         public void MouseUpEvent(object sender, MouseEventArgs e)
         {
             if (MouseDown)
             {
-                endPosition = e.Location; 
+                endPosition = e.Location;
                 MouseDown = false;
-                if ( rectangle != null )
-                {
-                    /// todo 
-                }
+
+                /// todo 
+
             }
         }
         private Rectangle GetRectangle()

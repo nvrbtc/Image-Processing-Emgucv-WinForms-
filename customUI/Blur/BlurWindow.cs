@@ -37,13 +37,13 @@ namespace APO_Tsarehradskiy.customUI
             this.executor = executor;
         }
 
-        private void ApplyBlur(object sender, EventArgs e)
+        private async void ApplyBlur(object sender, EventArgs e)
         {
 
 
             Strategies strategy = (Strategies)comboMethod.SelectedValue;
             input.sz = new Size(BoxSize, BoxSize);
-            executor.PerformStrategy(strategy,imageData,input);
+            await executor.PerformStrategy(strategy,imageData,input);
         }
 
         public void Bind()
@@ -64,7 +64,7 @@ namespace APO_Tsarehradskiy.customUI
                 comboBorder.ValueMember = "Value";
                 comboBorder.DataBindings.Add(nameof(comboBorder.SelectedValue), input, nameof(input.BorderType), false, DataSourceUpdateMode.OnPropertyChanged);
 
-                comboMethod.SelectedIndex = 0;
+                comboBorder.SelectedIndex = 0;
             }
 
             if (comboMethod != null)

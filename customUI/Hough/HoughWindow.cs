@@ -1,6 +1,6 @@
 ﻿using APO_Tsarehradskiy.customUI.Hough.Usercontrols;
+using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
 
@@ -49,11 +49,11 @@ namespace APO_Tsarehradskiy.customUI.Hough
 
             pnUsrctnrl.Controls[0].Dock = DockStyle.Fill;
         }
-
-        private void RunAlgo(object sender, EventArgs e)
+         
+        private async void RunAlgo(object sender, EventArgs e)
         {
             var strategyInfo = cbMethod.SelectedValue as IGetInput;
-            executor.PerformStrategy(strategyInfo.ReturnStrategy(), ImageData, strategyInfo.ReturnInput());
+            await executor.PerformStrategy(strategyInfo.ReturnStrategy(), ImageData, strategyInfo.ReturnInput());
         }
     }
 }

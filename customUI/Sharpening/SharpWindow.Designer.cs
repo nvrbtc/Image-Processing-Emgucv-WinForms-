@@ -84,7 +84,7 @@
             btRun.TabIndex = 2;
             btRun.Text = "Run";
             btRun.UseVisualStyleBackColor = true;
-            btRun.Click += btRun_Click;
+            btRun.Click += RunStrategy;
             // 
             // cbOptions
             // 

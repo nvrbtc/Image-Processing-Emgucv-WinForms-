@@ -58,13 +58,16 @@
             operationsToolStripMenuItem = new ToolStripMenuItem();
             skeletonizationToolStripMenuItem = new ToolStripMenuItem();
             tabControl = new TabControl();
+            houghMethodsToolStripMenuItem = new ToolStripMenuItem();
+            simpleToolStripMenuItem = new ToolStripMenuItem();
+            probabilisticToolStripMenuItem = new ToolStripMenuItem();
             appMenu.SuspendLayout();
             SuspendLayout();
             // 
             // appMenu
             // 
             appMenu.ImageScalingSize = new Size(20, 20);
-            appMenu.Items.AddRange(new ToolStripItem[] { File, imageToolStripMenuItem, analyzeToolStripMenuItem, blurToolStripMenuItem1, filterToolStripMenuItem, morphologyToolStripMenuItem });
+            appMenu.Items.AddRange(new ToolStripItem[] { File, imageToolStripMenuItem, analyzeToolStripMenuItem, blurToolStripMenuItem1, filterToolStripMenuItem, morphologyToolStripMenuItem, houghMethodsToolStripMenuItem });
             appMenu.Location = new Point(0, 0);
             appMenu.Name = "appMenu";
             appMenu.RenderMode = ToolStripRenderMode.System;
@@ -117,7 +120,7 @@
             // duplicateToolStripMenuItem
             // 
             duplicateToolStripMenuItem.Name = "duplicateToolStripMenuItem";
-            duplicateToolStripMenuItem.Size = new Size(193, 26);
+            duplicateToolStripMenuItem.Size = new Size(224, 26);
             duplicateToolStripMenuItem.Text = "Duplicate";
             duplicateToolStripMenuItem.Click += DuplicateImageTab;
             // 
@@ -125,7 +128,7 @@
             // 
             typeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { grayToolStripMenuItem, colorToolStripMenuItem, hSVToolStripMenuItem, lABToolStripMenuItem });
             typeToolStripMenuItem.Name = "typeToolStripMenuItem";
-            typeToolStripMenuItem.Size = new Size(193, 26);
+            typeToolStripMenuItem.Size = new Size(224, 26);
             typeToolStripMenuItem.Text = "Update Type";
             // 
             // grayToolStripMenuItem
@@ -159,35 +162,35 @@
             // tresholdToolStripMenuItem
             // 
             tresholdToolStripMenuItem.Name = "tresholdToolStripMenuItem";
-            tresholdToolStripMenuItem.Size = new Size(193, 26);
+            tresholdToolStripMenuItem.Size = new Size(224, 26);
             tresholdToolStripMenuItem.Text = "Posterization";
             tresholdToolStripMenuItem.Click += OpenPosterizationWindow;
             // 
             // edgeDetectionToolStripMenuItem
             // 
             edgeDetectionToolStripMenuItem.Name = "edgeDetectionToolStripMenuItem";
-            edgeDetectionToolStripMenuItem.Size = new Size(193, 26);
+            edgeDetectionToolStripMenuItem.Size = new Size(224, 26);
             edgeDetectionToolStripMenuItem.Text = "Edge detection";
             edgeDetectionToolStripMenuItem.Click += OpenEdgeDetectionWindow;
             // 
             // negationToolStripMenuItem
             // 
             negationToolStripMenuItem.Name = "negationToolStripMenuItem";
-            negationToolStripMenuItem.Size = new Size(193, 26);
+            negationToolStripMenuItem.Size = new Size(224, 26);
             negationToolStripMenuItem.Text = "Negation";
             negationToolStripMenuItem.Click += ApplyNegation;
             // 
             // tresholdToolStripMenuItem1
             // 
             tresholdToolStripMenuItem1.Name = "tresholdToolStripMenuItem1";
-            tresholdToolStripMenuItem1.Size = new Size(193, 26);
+            tresholdToolStripMenuItem1.Size = new Size(224, 26);
             tresholdToolStripMenuItem1.Text = "Treshold";
             tresholdToolStripMenuItem1.Click += ApplyTemp;
             // 
             // testingToolStripMenuItem
             // 
             testingToolStripMenuItem.Name = "testingToolStripMenuItem";
-            testingToolStripMenuItem.Size = new Size(193, 26);
+            testingToolStripMenuItem.Size = new Size(224, 26);
             testingToolStripMenuItem.Text = "Testing";
             testingToolStripMenuItem.Click += TestNew;
             // 
@@ -202,7 +205,7 @@
             // 
             histogramToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { equalizationToolStripMenuItem, linierToolStripMenuItem });
             histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            histogramToolStripMenuItem.Size = new Size(162, 26);
+            histogramToolStripMenuItem.Size = new Size(224, 26);
             histogramToolStripMenuItem.Text = "Histogram";
             histogramToolStripMenuItem.Click += OpenHistogramWindow;
             // 
@@ -211,7 +214,7 @@
             equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
             equalizationToolStripMenuItem.Size = new Size(277, 26);
             equalizationToolStripMenuItem.Text = "Equalization";
-            equalizationToolStripMenuItem.Click += ApplyEqualization;
+            equalizationToolStripMenuItem.Click += ApplyEqualizationAsync;
             // 
             // linierToolStripMenuItem
             // 
@@ -239,12 +242,14 @@
             medianFilterToolStripMenuItem1.Name = "medianFilterToolStripMenuItem1";
             medianFilterToolStripMenuItem1.Size = new Size(189, 26);
             medianFilterToolStripMenuItem1.Text = "Median Filter";
+            medianFilterToolStripMenuItem1.Click += OpenMedianFilterWindow;
             // 
             // universalFilterToolStripMenuItem1
             // 
             universalFilterToolStripMenuItem1.Name = "universalFilterToolStripMenuItem1";
             universalFilterToolStripMenuItem1.Size = new Size(189, 26);
             universalFilterToolStripMenuItem1.Text = "Universal Filter";
+            universalFilterToolStripMenuItem1.Click += OpenUniversalFilterWindow;
             // 
             // morphologyToolStripMenuItem
             // 
@@ -256,13 +261,14 @@
             // operationsToolStripMenuItem
             // 
             operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
-            operationsToolStripMenuItem.Size = new Size(224, 26);
+            operationsToolStripMenuItem.Size = new Size(194, 26);
             operationsToolStripMenuItem.Text = "Operations";
+            operationsToolStripMenuItem.Click += OpenMorphologyWindow;
             // 
             // skeletonizationToolStripMenuItem
             // 
             skeletonizationToolStripMenuItem.Name = "skeletonizationToolStripMenuItem";
-            skeletonizationToolStripMenuItem.Size = new Size(224, 26);
+            skeletonizationToolStripMenuItem.Size = new Size(194, 26);
             skeletonizationToolStripMenuItem.Text = "Skeletonization";
             skeletonizationToolStripMenuItem.Click += ApplySkeletonization;
             // 
@@ -276,6 +282,25 @@
             tabControl.SelectedIndex = 0;
             tabControl.Size = new Size(800, 422);
             tabControl.TabIndex = 1;
+            // 
+            // houghMethodsToolStripMenuItem
+            // 
+            houghMethodsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { simpleToolStripMenuItem, probabilisticToolStripMenuItem });
+            houghMethodsToolStripMenuItem.Name = "houghMethodsToolStripMenuItem";
+            houghMethodsToolStripMenuItem.Size = new Size(130, 24);
+            houghMethodsToolStripMenuItem.Text = "Hough Methods";
+            // 
+            // simpleToolStripMenuItem
+            // 
+            simpleToolStripMenuItem.Name = "simpleToolStripMenuItem";
+            simpleToolStripMenuItem.Size = new Size(224, 26);
+            simpleToolStripMenuItem.Text = "Simple";
+            // 
+            // probabilisticToolStripMenuItem
+            // 
+            probabilisticToolStripMenuItem.Name = "probabilisticToolStripMenuItem";
+            probabilisticToolStripMenuItem.Size = new Size(224, 26);
+            probabilisticToolStripMenuItem.Text = "Probabilistic";
             // 
             // MainUI
             // 
@@ -325,5 +350,8 @@
         private ToolStripMenuItem morphologyToolStripMenuItem;
         private ToolStripMenuItem operationsToolStripMenuItem;
         private ToolStripMenuItem skeletonizationToolStripMenuItem;
+        private ToolStripMenuItem houghMethodsToolStripMenuItem;
+        private ToolStripMenuItem simpleToolStripMenuItem;
+        private ToolStripMenuItem probabilisticToolStripMenuItem;
     }
 }

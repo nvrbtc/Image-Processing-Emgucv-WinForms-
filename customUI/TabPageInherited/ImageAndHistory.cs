@@ -1,21 +1,13 @@
 ﻿using APO_Tsarehradskiy.Services;
 using Emgu.CV;
 using Emgu.CV.Structure;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace APO_Tsarehradskiy.customUI.TabPageInherited
 {
     public partial class ImageAndHistory : UserControl
     {
-        private List<LogImageStorage> logImages = new List<LogImageStorage>();
+        private Queue<LogImageStorage> logImages = new Queue<LogImageStorage> ();
+        public event ImageUpdated NodeDoubleClic;
         public ImageAndHistory()
         {
             InitializeComponent();
@@ -30,25 +22,38 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
         public void UpdateLog(ImageData img, string op)
         {
             TreeNode tn = new TreeNode(op);
+            var log = new LogImageStorage(img.Image.ToImage<Bgr, byte>().ToJpegData(90), op);
+            tn.Tag = log;
             treeHistory.Nodes.Add(tn);
             treeHistory.SelectedNode = tn;
-            logImages.Add(new LogImageStorage(img, op, tn));
+            if ( treeHistory.Nodes.Count > 10 )
+            {
+                var temp = treeHistory.Nodes[0];
+                treeHistory.Nodes.Remove(temp);
+            }
         }
-        private void Bind()
+        private void NodeDoubleClickEvent(object sender, TreeNodeMouseClickEventArgs e)
         {
-
+            var loggedData = e.Node;
+            if ( loggedData.Tag is LogImageStorage log)
+            {
+                treeHistory.Nodes.Remove(e.Node);
+                Mat restoreMat = new Mat();
+                CvInvoke.Imdecode(log.JpegData, Emgu.CV.CvEnum.ImreadModes.Color, restoreMat);
+                ImageData restoredData = new ImageData(restoreMat,Enums.Enums.Rgb ,null, null); // Restore method in ImageTab is not touching FileName and Parent
+                treeHistory.Nodes.Add(loggedData);
+                NodeDoubleClic?.Invoke(restoredData);
+            }
         }
     }
     public record LogImageStorage
     {
-        public ImageData ImageData { get; init; }
+        public byte[] JpegData { get; init; }
         public string Operation { get; init; }
-        public TreeNode Node { get; init; }
-        public LogImageStorage(ImageData img, string operation, TreeNode node)
+        public LogImageStorage(byte[] JpegData, string operation)
         {
-            this.ImageData = img;
+            this.JpegData = JpegData;
             this.Operation = operation;
-            this.Node = node;
         }
     }
 }

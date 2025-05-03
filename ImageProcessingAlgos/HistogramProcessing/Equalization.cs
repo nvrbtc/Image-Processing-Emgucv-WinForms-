@@ -15,7 +15,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
     public class Equalization : IStrategy
     {
         private Mat resultImg;
-        public string name => "Equalization";
+        public string name { get; set; } = "Equalization";
         public ImageData ImageData { get; set; }
 
         public async Task Run(ImageData img, object parameters = null)

@@ -40,20 +40,24 @@ namespace APO_Tsarehradskiy.Services
         {
             this.manager = manager;
         }
-        public async void PerformStrategy(Enums.Strategies s,ImageData imageData,object parameters)
+        public async Task PerformStrategy(Enums.Strategies s, ImageData imageData, object parameters)
         {
             var tab = manager.tabControl.TabPages[imageData.fileName] as ImageTabPage;
-            var strategy =  strategiesPool[s].Invoke();
+            var strategy = strategiesPool[s].Invoke();
             ImageData copyOfSource = imageData.DeepClone();
             try
             {
-                await strategy.Run(imageData,parameters);
-                tab?.UpdateLogTree(copyOfSource,strategy.name);
+                await strategy.Run(imageData, parameters);
+                tab?.UpdateLogTree(imageData, strategy.name);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 copyOfSource.CopyTo(imageData);
                 MessageBox.Show(e.Message, "Error while execution.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                copyOfSource.Image.Dispose();
             }
         }
     }

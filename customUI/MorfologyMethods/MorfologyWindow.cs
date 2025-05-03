@@ -1,7 +1,5 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.Morphology;
-using APO_Tsarehradskiy.InputArguments.Morphology;
+﻿using APO_Tsarehradskiy.InputArguments.Morphology;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
 using System.Data;
@@ -10,13 +8,15 @@ namespace APO_Tsarehradskiy.customUI.MorfologyMethods
 {
     public partial class MorfologyWindow : Form
     {
+        private readonly StrategyExecutor executor;
         private MorphologyInput input = new ();
         private StructuringElement structuringElement = new();
         private ImageData imageData;
-        public MorfologyWindow()
+        public MorfologyWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
+            this.executor = executor;
         }
         public void SetImageData(ImageData imageData)
         {
@@ -82,7 +82,7 @@ namespace APO_Tsarehradskiy.customUI.MorfologyMethods
             }
         }
 
-        private void RunOperation(object sender, EventArgs e)
+        private async void RunOperation(object sender, EventArgs e)
         {
             if ( structuringElement.Shape == ElementShape.Custom && structuringElement.Size % 2 != 1)
             {
@@ -91,8 +91,7 @@ namespace APO_Tsarehradskiy.customUI.MorfologyMethods
             }
             input.StructElement = structuringElement.GetStructuringElement();
 
-            IStrategy? strategy = new Morphology();
-            strategy?.Run(imageData, input);
+            await executor.PerformStrategy(Enums.Strategies.MorphologyOperations, this.imageData, input);
 
         }
     }

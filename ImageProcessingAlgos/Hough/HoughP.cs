@@ -16,7 +16,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Hough
     public class HoughP : IStrategy
     {
         private HoughProbInput input {get;set;}
-        public string name => "Prob Hough";
+        public string name { get; set; } = "Prob Hough";
 
         public ImageData ImageData { get; set; }
 

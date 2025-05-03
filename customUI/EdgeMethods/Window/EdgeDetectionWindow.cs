@@ -3,10 +3,8 @@ using APO_Tsarehradskiy.customUI.EdgeMethodHandling;
 using APO_Tsarehradskiy.customUI.EdgeMethods;
 using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Interfaces.InputReturn;
 using APO_Tsarehradskiy.Services;
-using Emgu.CV;
 
 namespace APO_Tsarehradskiy.customUI
 {
@@ -62,11 +60,11 @@ namespace APO_Tsarehradskiy.customUI
             }
         }
 
-        private void PerformStrategy(object sender, EventArgs e)
+        private async void PerformStrategy(object sender, EventArgs e)
         {
             ComboBoxInput<UserControl> temp = cbMethod.SelectedItem as ComboBoxInput<UserControl>;
             IGetInput strategyData = temp.Value as IGetInput;
-            executor.PerformStrategy(strategyData.ReturnStrategy(),
+            await executor.PerformStrategy(strategyData.ReturnStrategy(),
                                      imageData,
                                      strategyData.ReturnInput());
 

@@ -72,6 +72,7 @@
             treeHistory.Name = "treeHistory";
             treeHistory.Size = new Size(394, 506);
             treeHistory.TabIndex = 1;
+            treeHistory.NodeMouseDoubleClick += NodeDoubleClickEvent;
 
             // 
             // picBox
@@ -95,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)picBox).EndInit();
             ResumeLayout(false);
         }
+
+        
 
         #endregion
 

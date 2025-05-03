@@ -60,7 +60,7 @@
             btRun.TabIndex = 4;
             btRun.Text = "Run";
             btRun.UseVisualStyleBackColor = true;
-            btRun.Click += btRun_Click;
+            btRun.Click += RunStrategy;
             // 
             // cbBorder
             // 

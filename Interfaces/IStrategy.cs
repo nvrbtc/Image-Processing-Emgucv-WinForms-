@@ -5,8 +5,7 @@ namespace APO_Tsarehradskiy.Interfaces
 {
     public interface IStrategy
     {
-        string name { get; }
-        ImageData ImageData { get; set; }
+        string name { get; set; }
         Task Run(ImageData img, object parameters);
         
     }

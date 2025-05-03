@@ -1,19 +1,13 @@
 ﻿using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.ImageProcessingAlgos.SingleArgument
 {
     public class Threshold : IStrategy
     {
         private int input;
-        public string name => "Treshold";
+        public string name { get; set; } = "Treshold";
 
         public ImageData ImageData { get; set; }
 

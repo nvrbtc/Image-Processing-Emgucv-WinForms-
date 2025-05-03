@@ -1,4 +1,6 @@
 using APO_Tsarehradskiy.customUI;
+using APO_Tsarehradskiy.customUI.Hough;
+using APO_Tsarehradskiy.customUI.MorfologyMethods;
 using APO_Tsarehradskiy.Services;
 using APO_Tsarehradskiy.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +45,13 @@ namespace APO_Tsarehradskiy
             service.AddTransient<BlurWindow>();
             service.AddTransient<EdgeDetectionWindow>();
             service.AddTransient<UniversalFilterWindow>();
+            service.AddTransient<HistogramWindow>();
+            service.AddTransient<HoughWindow>();
+            service.AddTransient<MedianFilterWindow>();
+            service.AddTransient<PrewittWindow>();
+            service.AddTransient<SharpWindow>();
+            service.AddTransient<MorfologyWindow>();
+            service.AddTransient<PosterizationWindow>();
 
 
             service.AddTransient<StrategyExecutor>();

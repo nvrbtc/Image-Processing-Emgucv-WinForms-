@@ -1,8 +1,6 @@
 ﻿using APO_Tsarehradskiy.Enums;
-using APO_Tsarehradskiy.ImageProcessingAlgos.Filter;
 using APO_Tsarehradskiy.InputArguments.Filter2D;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
 
@@ -13,11 +11,14 @@ namespace APO_Tsarehradskiy.customUI
         private Filter2dInput input = new ();
         private PrewittMaskProvider provider = new();
         private ImageData imageData;
+        private readonly StrategyExecutor executor;
+
         public Prewitt Direction { get; set; } = Prewitt.North;
-        public PrewittWindow()
+        public PrewittWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
+            this.executor = executor;
         }
         public void SetImageData(ImageData imageData)
         {
@@ -64,11 +65,10 @@ namespace APO_Tsarehradskiy.customUI
             }
         }
 
-        private void btRun_Click(object sender, EventArgs e)
+        private async void RunStrategy(object sender, EventArgs e)
         {
             input.Kernel = provider.GetKernel(Direction);
-            Interfaces.IStrategy? strategy = new KernelFilter();
-            strategy?.Run(imageData, input);
+            await executor.PerformStrategy(Strategies.KernelFilter, this.imageData, this.input);
         }
     }
 }

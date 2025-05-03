@@ -1,8 +1,6 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.Filter;
-using APO_Tsarehradskiy.InputArguments.Filter2D;
+﻿using APO_Tsarehradskiy.InputArguments.Filter2D;
 using APO_Tsarehradskiy.InputArguments.Usercontrols;
 using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV.CvEnum;
 
@@ -28,14 +26,15 @@ namespace APO_Tsarehradskiy.customUI
             new MatrixRow (-2, 5,-2),
             new MatrixRow ( 1,-2, 1)
         };
-
+        private readonly StrategyExecutor executor;
         private ImageData imageData;
         private Filter2dInput input = new();
-        public SharpWindow()
+        public SharpWindow(StrategyExecutor executor)
         {
             InitializeComponent();
             Bind();
             SelectedValueUpdated(this, EventArgs.Empty);
+            this.executor = executor;
 
         }
         public void SetImageData(ImageData imageData)
@@ -86,10 +85,9 @@ namespace APO_Tsarehradskiy.customUI
 
         }
 
-        private void btRun_Click(object sender, EventArgs e)
+        private async void RunStrategy(object sender, EventArgs e)
         {
-            IStrategy? strategy = new KernelFilter();
-            strategy?.Run(imageData, input);
+            await executor.PerformStrategy(Enums.Strategies.KernelFilter, this.imageData, this.input);
         }
     }
 }

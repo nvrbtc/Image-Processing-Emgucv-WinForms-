@@ -1,22 +1,12 @@
 ﻿using APO_Tsarehradskiy.Extensions;
 using APO_Tsarehradskiy.Services;
 using Emgu.CV;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace APO_Tsarehradskiy.customUI
 {
     public partial class HistogramWindow : Form
     {
-        private ImageData imageData;
 
         public HistogramWindow()
         {
@@ -26,11 +16,10 @@ namespace APO_Tsarehradskiy.customUI
 
         public void SetImageData(ImageData imageData)
         {
-            this.imageData = imageData;
             imageData.UpdateEvent += UpdateHistogram;
             UpdateHistogram(imageData);
         }
-        public void UpdateHistogram(ImageData imageData)
+        public async void UpdateHistogram(ImageData imageData)
         {
             if (imageData?.ValidateValuesAreNull() == true || imageData.Type != Enums.Enums.Gray) return;
 

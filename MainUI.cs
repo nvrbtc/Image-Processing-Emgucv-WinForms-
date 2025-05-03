@@ -1,4 +1,5 @@
 ﻿using APO_Tsarehradskiy.customUI;
+using APO_Tsarehradskiy.customUI.MorfologyMethods;
 using APO_Tsarehradskiy.customUI.TabPageInherited;
 using APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale;
 using APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing;
@@ -18,7 +19,7 @@ namespace APO_Tsarehradskiy
 
         private readonly StrategyExecutor executor;
 
-        public MainUI(ImageManager imgMgr, ITabManager tbMgr,StrategyExecutor executor)
+        public MainUI(ImageManager imgMgr, ITabManager tbMgr, StrategyExecutor executor)
         {
             InitializeComponent();
             this.imageManager = imgMgr;
@@ -85,9 +86,9 @@ namespace APO_Tsarehradskiy
 
             if (currentTab == null || currentTab.Type != Enums.Enums.Gray) return;
 
-            var tab = new HistogramWindow();
-            tab.SetImageData(currentTab.imageData);
-            tab.Show();
+            var tab = MyServiceProvider.TryGetService<HistogramWindow>();
+            tab?.SetImageData(currentTab.imageData);
+            tab?.Show();
         }
 
 
@@ -98,15 +99,15 @@ namespace APO_Tsarehradskiy
         /// <param name="e"></param>
         private void FromTypeToGrayscale(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            var result = imageManager.GetQuery(currentTab.Type, Enums.Enums.Gray);
-            if (currentTab == null || result == default)
+            var tab = tabManager.GetSelectedTab();
+            var result = imageManager.GetQuery(tab.Type, Enums.Enums.Gray);
+            if (tab == null || result == default)
             {
                 MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(currentTab, result);
-            imageManager.UpdateImageType(currentTab, Enums.Enums.Gray);
+            imageManager.ChangeImageType(tab, result);
+            imageManager.UpdateImageType(tab, Enums.Enums.Gray);
         }
 
         /// <summary>
@@ -114,16 +115,15 @@ namespace APO_Tsarehradskiy
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ApplyLinearStretching(object sender, EventArgs e)
+        private async void ApplyLinearStretching(object sender, EventArgs e)
         {
-            ImageTabPage? currentTab = tabManager.GetSelectedTab();
+            var tab = tabManager.GetSelectedTab();
 
-            IStrategy strategy = new  LinearStretching();
-            strategy.Run(currentTab.imageData,null);
+            await executor.PerformStrategy(Enums.Strategies.LinearStretching, tab.imageData, null);
         }
 
 
-        private void ApplyEqualization(object sender, EventArgs e)
+        private async void ApplyEqualizationAsync(object sender, EventArgs e)
         {
             var tab = tabManager.GetSelectedTab();
             if (tab == null || tab.Type != Enums.Enums.Gray)
@@ -131,96 +131,96 @@ namespace APO_Tsarehradskiy
                 // show dialog box;
                 return;
             }
-            executor.PerformStrategy(Enums.Strategies.Equalization, tab.imageData, null);
+            await executor.PerformStrategy(Enums.Strategies.Equalization, tab.imageData, null);
         }
 
 
 
         private void OpenPosterizationWindow(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 MessageBox.Show("No image selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var window = new PosterizationWindow();
-            window.SetImageData(currentTab.imageData);
-            window.Show();
+            var window = MyServiceProvider.TryGetService<PosterizationWindow>();
+            window?.SetImageData(tab.imageData);
+            window?.Show();
         }
 
 
         private void OpenBlurWindow(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 // show dialog;
                 return;
             }
 
             var blurWindow = MyServiceProvider.TryGetService<BlurWindow>();
-            blurWindow?.SetImageData(currentTab.imageData);
+            blurWindow?.SetImageData(tab.imageData);
             blurWindow?.Show();
         }
 
         private void DuplicateImageTab(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 MessageBox.Show("No image selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            tabManager.AddPage(currentTab.clone());
+            tabManager.AddPage(tab.Clone());
         }
 
         private void OpenEdgeDetectionWindow(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 MessageBox.Show("No image selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var win = MyServiceProvider.TryGetService<EdgeDetectionWindow>();
-            win?.SetImageData(currentTab.imageData);
+            win?.SetImageData(tab.imageData);
             win?.Show();
         }
 
-        private void ApplyNegation(object sender, EventArgs e)
+        private async void ApplyNegation(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 //show dialog ;
                 return;
             }
-            IStrategy strategy = new Negation();
-            strategy.Run(currentTab.imageData, null) ;
+
+            await executor.PerformStrategy(Enums.Strategies.Negation, tab.imageData, null);
         }
 
-        private void ApplyTemp(object sender, EventArgs e)
+        private async void ApplyTemp(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 return;
             }
-            IStrategy strategy = new Threshold();
-            strategy.Run(currentTab.imageData, 127);
+
+            await executor.PerformStrategy(Enums.Strategies.Threshold, tab.imageData, 127);
         }
 
-        private void medianFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenMedianFilterWindow(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null)
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null)
             {
                 return;
             }
-            var win = new MedianFilterWindow();
-            win.SetImageData(currentTab.imageData);
-            win.Show();
+            var win = MyServiceProvider.TryGetService<MedianFilterWindow>();
+            win?.SetImageData(tab.imageData);
+            win?.Show();
 
 
         }
@@ -238,64 +238,73 @@ namespace APO_Tsarehradskiy
 
         private void FromTypeToRGB(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            var result = imageManager.GetQuery(currentTab.Type, Enums.Enums.Rgb);
-            if (currentTab == null || result == default)
+            var tab = tabManager.GetSelectedTab();
+            var queryResult = imageManager.GetQuery(tab.Type, Enums.Enums.Rgb);
+            if (tab == null || queryResult == default)
             {
                 MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(currentTab, result);
-            imageManager.UpdateImageType(currentTab, Enums.Enums.Rgb);
+            imageManager.ChangeImageType(tab, queryResult);
+            imageManager.UpdateImageType(tab, Enums.Enums.Rgb);
         }
 
         private void FromTypeToHSV(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            var result = imageManager.GetQuery(currentTab.Type, Enums.Enums.Hsv);
-            if (currentTab == null || result == default)
+            var tab = tabManager.GetSelectedTab();
+            var queryResult = imageManager.GetQuery(tab.Type, Enums.Enums.Hsv);
+            if (tab == null || queryResult == default)
             {
                 MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(currentTab, result);
-            imageManager.UpdateImageType(currentTab, Enums.Enums.Hsv);
+            imageManager.ChangeImageType(tab, queryResult);
+            imageManager.UpdateImageType(tab, Enums.Enums.Hsv);
         }
 
         private void FromTypeToLab(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            var result = imageManager.GetQuery(currentTab.Type, Enums.Enums.Lab);
-            if (currentTab == null || result == default)
+            var tab = tabManager.GetSelectedTab();
+            var queryResult = imageManager.GetQuery(tab.Type, Enums.Enums.Lab);
+            if (tab == null || queryResult == default)
             {
                 MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(currentTab, result);
-            imageManager.UpdateImageType(currentTab, Enums.Enums.Lab);
+            imageManager.ChangeImageType(tab, queryResult);
+            imageManager.UpdateImageType(tab, Enums.Enums.Lab);
         }
 
         private void TestNew(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void universalFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenUniversalFilterWindow(object sender, EventArgs e)
         {
-            ImageTabPage currentTab = tabManager.GetSelectedTab();
-            if (currentTab == null) return;
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null) return;
             var win = MyServiceProvider.TryGetService<UniversalFilterWindow>();
-            win?.SetImageData(currentTab.imageData);
+            win?.SetImageData(tab.imageData);
             win?.Show();
         }
 
-        private void ApplySkeletonization(object sender, EventArgs e)
+        private async void ApplySkeletonization(object sender, EventArgs e)
         {
-            ImageTabPage win = tabManager.GetSelectedTab();
-            if ( win == null || win.imageData == null) return;
+            var win = tabManager.GetSelectedTab();
+            if (win == null || win.imageData == null) return;
 
-            IStrategy strategy = new Skeletonization();
-            strategy.Run(win.imageData, new SkeletonizationInput());
+
+            await executor.PerformStrategy(Enums.Strategies.Skeletonization, win.imageData, new SkeletonizationInput());
+        }
+
+        private void OpenMorphologyWindow(object sender, EventArgs e)
+        {
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null) return;
+            var win = MyServiceProvider.TryGetService<MorfologyWindow>();
+            win?.SetImageData(tab.imageData);
+            win?.Show();
         }
     }
 }

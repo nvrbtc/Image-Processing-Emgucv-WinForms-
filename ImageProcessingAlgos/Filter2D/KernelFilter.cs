@@ -9,15 +9,12 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Filter
     {
         private Filter2dInput input;
         private ConvolutionKernelF inputKernel;
-        public string name => "Linear Sharpening ( filter2d )";
+        public string name { get; set; } = "Linear Sharpening ( filter2d )";
 
-        public ImageData ImageData { get; set; }
-
-        public bool Validate (ImageData img,object parameters)
+        public bool Validate (ImageData ImageData, object parameters)
         {
-            if ( img?.ValidateValuesAreNull() == true || parameters is not Filter2dInput)  return false;
-            this.ImageData = img;
-            this.input = parameters as Filter2dInput;
+            if ( ImageData?.ValidateValuesAreNull() == true || parameters is not Filter2dInput input)  return false;
+            this.input = input;
 
             if (this.input?.NormalizeKernel() == false) return false; // in case sum of kernel == 0 
 
@@ -25,12 +22,14 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Filter
             return true;
         }
 
-        public async Task Run(ImageData img, object parameters)
+        public async Task Run(ImageData ImageData, object parameters)
         {
-            if (!Validate(img, parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(ImageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
-            Mat result = new Mat();
-            CvInvoke.Filter2D(ImageData.Image, result, inputKernel, new Point(-1, -1));
+            Mat state = ImageData.Image.Clone();
+            Mat result = Mat.Zeros(state.Rows, state.Cols, state.Depth, state.NumberOfChannels);
+
+            CvInvoke.Filter2D(state, result, inputKernel, new Point(-1, -1));
 
             ImageData.updateImage(result);
         }
