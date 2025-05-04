@@ -16,8 +16,5 @@ namespace APO_Tsarehradskiy.Services.Interfaces
         void AddPage(ImageTabPage tab);
         void AddPage(ImageLoadResult result);
         void RemovePage(ImageTabPage tab);
-        //void UpdateImage(ImageTabPage tab,Mat img);
-        //void AddSubscriber(ImageTabPage tab,ImageUpdated callback);
-        
     }
 }

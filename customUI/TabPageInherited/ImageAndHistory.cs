@@ -22,7 +22,15 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
         public void UpdateLog(ImageData img, string op)
         {
             TreeNode tn = new TreeNode(op);
-            var log = new LogImageStorage(img.Image.ToImage<Bgr, byte>().ToJpegData(90), op);
+            LogImageStorage log;
+            if (img.Type == Enums.Enums.Gray)
+            {
+                log = new LogImageStorage(img.Image.ToImage<Gray, byte>().ToJpegData(90), op,true);
+            }
+            else
+            {
+                log = new LogImageStorage(img.Image.ToImage<Bgr, byte>().ToJpegData(90), op);
+            }
             tn.Tag = log;
             treeHistory.Nodes.Add(tn);
             treeHistory.SelectedNode = tn;
@@ -39,9 +47,20 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
             {
                 treeHistory.Nodes.Remove(e.Node);
                 Mat restoreMat = new Mat();
-                CvInvoke.Imdecode(log.JpegData, Emgu.CV.CvEnum.ImreadModes.Color, restoreMat);
-                ImageData restoredData = new ImageData(restoreMat,Enums.Enums.Rgb ,null, null); // Restore method in ImageTab is not touching FileName and Parent
+                if (log.IsGray)
+                {
+                    CvInvoke.Imdecode(log.JpegData, Emgu.CV.CvEnum.ImreadModes.Grayscale, restoreMat);
+                }
+                else
+                {
+                    CvInvoke.Imdecode(log.JpegData, Emgu.CV.CvEnum.ImreadModes.Color, restoreMat);
+                }
+
+                ImageData restoredData = new ImageData( restoreMat,
+                                                        log.IsGray ? Enums.Enums.Gray : Enums.Enums.Rgb ,
+                                                        null, null); // Restore method in ImageTab is not touching FileName and Parent
                 treeHistory.Nodes.Add(loggedData);
+                treeHistory.SelectedNode = loggedData;
                 NodeDoubleClic?.Invoke(restoredData);
             }
         }
@@ -50,10 +69,12 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
     {
         public byte[] JpegData { get; init; }
         public string Operation { get; init; }
-        public LogImageStorage(byte[] JpegData, string operation)
+        public bool IsGray { get; init; }
+        public LogImageStorage(byte[] JpegData, string operation, bool IsGray = false)
         {
             this.JpegData = JpegData;
             this.Operation = operation;
+            this.IsGray = IsGray;
         }
     }
 }

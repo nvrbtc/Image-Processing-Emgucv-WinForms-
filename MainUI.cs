@@ -277,7 +277,10 @@ namespace APO_Tsarehradskiy
 
         private void TestNew(object sender, EventArgs e)
         {
-
+            var tab = tabManager.GetSelectedTab();
+            if (tab == null) return;
+            var win = new DrawLineExample(tab.imageData);
+            win?.Show();
         }
 
         private void OpenUniversalFilterWindow(object sender, EventArgs e)

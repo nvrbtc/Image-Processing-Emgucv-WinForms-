@@ -13,11 +13,11 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
 
         //params to call method 
         private SobelInput input;
-        public async Task Run(ImageData img, object parameters)
+        public async Task Run(ImageData data, object parameters)
         {
-            if (!Validate(img, parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(data, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
-            Mat result = new Mat();
+            Mat result = new Mat(data.Image.Rows,data.Image.Cols,input.Depth,data.Image.NumberOfChannels);
             CvInvoke.Sobel(ImageData.Image, result, input.Depth, input.dX, input.dY, input.Sz, input.Scale, input.Delta, input.BorderType);
 
             ImageData.updateImage(result);

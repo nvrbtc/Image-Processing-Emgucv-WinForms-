@@ -21,8 +21,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
 
         public async Task Run(ImageData img, object parameters = null)
         {
-            if ( img?.ValidateValuesAreNull() == true) return;
-            this.ImageData = img;
+            if (!Validate(img,parameters)) throw new ArgumentException("Input image or values are invalid.");
             Mat source = ImageData.Image.Clone();
 
             await Task.Run(() =>
@@ -51,6 +50,14 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
             });
 
             ImageData.updateImage(source);
+        }
+        private bool Validate(ImageData img,object parameters) 
+        {
+            if (img?.ValidateValuesAreNull() == true || parameters is not int levels) return false;
+
+            this.levels = levels;
+            this.ImageData = img;
+            return true;
         }
     }
 }
