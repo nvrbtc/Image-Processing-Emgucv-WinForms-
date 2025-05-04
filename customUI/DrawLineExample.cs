@@ -66,14 +66,14 @@ namespace APO_Tsarehradskiy.customUI
             {
                 foreach (Point p in points)
                 {
-                    if (p.X < 0 || p.Y < 0 || p.X > imageData.Image.Cols || p.Y > imageData.Image.Rows) continue;
-                    values2Display.Add(data[p.Y - 1, p.X - 1]);
+                    if (p.X <= 0 || p.Y <= 0 || p.X > imageData.Image.Cols || p.Y > imageData.Image.Rows) continue;
+                    values2Display.Add(data[p.Y - 1, p.X -1 ]);
                 }
             });
             hist.Points.DataBindXY(Enumerable.Range(0, values2Display.Count).ToArray(), values2Display);
 
             chROI.ChartAreas["Histogram"].AxisX.Minimum = 0;
-            chROI.ChartAreas["Histogram"].AxisX.Maximum = points.Count - 1;
+            chROI.ChartAreas["Histogram"].AxisX.Maximum = values2Display.Count - 1;
 
 
 

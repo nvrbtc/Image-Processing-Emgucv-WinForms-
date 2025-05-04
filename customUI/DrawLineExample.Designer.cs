@@ -31,85 +31,91 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            layoutTb = new TableLayoutPanel();
             pnBox = new Panel();
             pcBox = new PictureBox();
-            panelHist = new Panel();
             chROI = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            layoutTb.SuspendLayout();
             pnBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcBox).BeginInit();
-            panelHist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chROI).BeginInit();
             SuspendLayout();
+            // 
+            // layoutTb
+            // 
+            layoutTb.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            layoutTb.ColumnCount = 2;
+            layoutTb.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            layoutTb.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            layoutTb.Controls.Add(pnBox, 0, 0);
+            layoutTb.Controls.Add(chROI, 1, 0);
+            layoutTb.Dock = DockStyle.Fill;
+            layoutTb.Location = new Point(0, 0);
+            layoutTb.Name = "layoutTb";
+            layoutTb.RowCount = 1;
+            layoutTb.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            layoutTb.Size = new Size(1068, 524);
+            layoutTb.TabIndex = 0;
             // 
             // pnBox
             // 
             pnBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnBox.AutoScroll = true;
-            pnBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnBox.BorderStyle = BorderStyle.FixedSingle;
             pnBox.Controls.Add(pcBox);
-            pnBox.Location = new Point(12, 12);
+            pnBox.Location = new Point(3, 3);
             pnBox.Name = "pnBox";
-            pnBox.Size = new Size(647, 500);
+            pnBox.Size = new Size(528, 518);
             pnBox.TabIndex = 0;
             // 
             // pcBox
             // 
             pcBox.BorderStyle = BorderStyle.Fixed3D;
-            pcBox.Location = new Point(3, 3);
+            pcBox.Location = new Point(9, 9);
             pcBox.Name = "pcBox";
             pcBox.Size = new Size(125, 62);
             pcBox.SizeMode = PictureBoxSizeMode.AutoSize;
             pcBox.TabIndex = 0;
             pcBox.TabStop = false;
             // 
-            // panelHist
-            // 
-            panelHist.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelHist.Controls.Add(chROI);
-            panelHist.Location = new Point(665, 12);
-            panelHist.Name = "panelHist";
-            panelHist.Size = new Size(424, 275);
-            panelHist.TabIndex = 1;
-            // 
             // chROI
             // 
+            chROI.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chartArea1.Name = "ChartArea1";
             chROI.ChartAreas.Add(chartArea1);
-            chROI.Dock = DockStyle.Fill;
             legend1.Name = "Legend1";
             chROI.Legends.Add(legend1);
-            chROI.Location = new Point(0, 0);
+            chROI.Location = new Point(537, 3);
             chROI.Name = "chROI";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chROI.Series.Add(series1);
-            chROI.Size = new Size(424, 275);
-            chROI.TabIndex = 0;
-            chROI.Text = "Roi";
+            chROI.Size = new Size(528, 518);
+            chROI.TabIndex = 1;
+            chROI.Text = "chart1";
             // 
             // DrawLineExample
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1101, 524);
-            Controls.Add(panelHist);
-            Controls.Add(pnBox);
+            ClientSize = new Size(1068, 524);
+            Controls.Add(layoutTb);
             Name = "DrawLineExample";
             Text = "DrawLineExample";
+            layoutTb.ResumeLayout(false);
             pnBox.ResumeLayout(false);
             pnBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcBox).EndInit();
-            panelHist.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chROI).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private TableLayoutPanel layoutTb;
         private Panel pnBox;
         private PictureBox pcBox;
-        private Panel panelHist;
         private System.Windows.Forms.DataVisualization.Charting.Chart chROI;
     }
 }

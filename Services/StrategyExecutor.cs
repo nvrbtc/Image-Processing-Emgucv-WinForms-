@@ -42,7 +42,7 @@ namespace APO_Tsarehradskiy.Services
         }
         public async Task PerformStrategy(Enums.Strategies s, ImageData imageData, object parameters)
         {
-            var tab = manager.tabControl.TabPages[imageData.fileName] as ImageTabPage;
+            var tab = imageData.parent;
             var strategy = strategiesPool[s].Invoke();
             ImageData copyOfSource = imageData.DeepClone();
             try
