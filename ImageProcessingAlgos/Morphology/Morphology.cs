@@ -1,9 +1,9 @@
-﻿using APO_Tsarehradskiy.InputArguments.Morphology;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Morphology : IStrategy
     {

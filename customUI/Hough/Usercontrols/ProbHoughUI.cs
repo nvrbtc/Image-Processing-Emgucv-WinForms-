@@ -1,15 +1,14 @@
-﻿using APO_Tsarehradskiy.Enums;
-using APO_Tsarehradskiy.InputArguments.Hough;
-using APO_Tsarehradskiy.Interfaces.InputReturn;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 using System.Data;
 
-namespace APO_Tsarehradskiy.customUI.Hough.Usercontrols
+namespace APO_Tsarehradskiy.customUI
 {
     public partial class ProbHoughUI : UserControl, IGetInput
     {
-        private IInputHandler inputHandler = new InputHandler();
+        private IInputHandler inputHandler = new UserInputHandler();
         private HoughProbInput input = new();
         public ProbHoughUI()
         {

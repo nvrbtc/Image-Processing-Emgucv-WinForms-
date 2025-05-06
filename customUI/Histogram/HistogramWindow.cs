@@ -1,5 +1,4 @@
-﻿using APO_Tsarehradskiy.Extensions;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.DTO;
 using Emgu.CV;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -11,17 +10,16 @@ namespace APO_Tsarehradskiy.customUI
         public HistogramWindow()
         {
             InitializeComponent();
-            //UpdateHistogram(img);
         }
 
         public void SetImageData(ImageData imageData)
         {
-            imageData.UpdateEvent += UpdateHistogram;
+            imageData.DataUpdated += UpdateHistogram;
             UpdateHistogram(imageData);
         }
         public async void UpdateHistogram(ImageData imageData)
         {
-            if (imageData?.ValidateValuesAreNull() == true || imageData.Type != Enums.Enums.Gray) return;
+            if (imageData?.ValidateValuesAreNull() == true || imageData.Type != Enums.Gray) return;
 
             Mat img = imageData.Image.Clone();
             chartImg.Series.Clear();

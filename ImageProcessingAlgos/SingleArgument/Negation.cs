@@ -1,8 +1,7 @@
-﻿using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
-using System.Runtime.InteropServices;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Negation : IStrategy
     {

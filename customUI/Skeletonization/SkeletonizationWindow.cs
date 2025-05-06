@@ -1,7 +1,7 @@
-﻿using APO_Tsarehradskiy.InputArguments;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 
-namespace APO_Tsarehradskiy.customUI.Skeletonization
+namespace APO_Tsarehradskiy.customUI
 {
     public partial class SkeletonizationWindow : Form
     {

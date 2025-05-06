@@ -1,28 +1,15 @@
 ﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.InputArguments.Morphology
+namespace APO_Tsarehradskiy.InputArguments
 {
     public class MorphologyInput
     {
-        public MorphOp Operation { get; set; }
-        public Mat StructElement { get; set; }
-        public Point Anchor { get; set; }
-        public int Iterations { get; set; }
-        public BorderType BorderType
-        {
-            get;
-            set;
-        }
-
-        public MorphologyInput()
-        {
-            Operation = MorphOp.Erode;
-            StructElement = new Mat();
-            Anchor = new Point(-1, -1);
-            Iterations = 1;
-            BorderType = BorderType.Replicate;
-        }
+        public MorphOp Operation { get; set; } = MorphOp.Erode;
+        public Mat StructElement { get; set; } = new Mat();
+        public Point Anchor { get; set; } = new Point(-1, -1);
+        public int Iterations { get; set; } = 1;
+        public BorderType BorderType { get; set; } =  BorderType.Replicate;
 
     }
 }

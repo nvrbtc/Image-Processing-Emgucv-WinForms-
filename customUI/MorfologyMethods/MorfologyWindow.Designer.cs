@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.MorfologyMethods
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class MorfologyWindow
     {

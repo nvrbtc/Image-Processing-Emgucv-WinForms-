@@ -1,9 +1,8 @@
-﻿using APO_Tsarehradskiy.Extensions;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class LinearStretching : IStrategy
     {
@@ -12,7 +11,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
 
         public async Task Run(ImageData imageData, object parameters = null)
         {
-            if ( ImageData?.ValidateValuesAreNull() == true || ImageData?.Type != Enums.Enums.Gray) throw new ArgumentException("Input or image values are invalid.");
+            if ( ImageData?.ValidateValuesAreNull() == true || ImageData?.Type != Enums.Gray) throw new ArgumentException("Input or image values are invalid.");
             this.ImageData = imageData;
             Mat img = ImageData.Image;
             int min = img.GetMinValue(),

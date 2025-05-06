@@ -1,7 +1,6 @@
-﻿using APO_Tsarehradskiy.InputArguments.Filter2D;
-using APO_Tsarehradskiy.InputArguments.Usercontrols;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 
 namespace APO_Tsarehradskiy.customUI
@@ -87,7 +86,7 @@ namespace APO_Tsarehradskiy.customUI
 
         private async void RunStrategy(object sender, EventArgs e)
         {
-            await executor.PerformStrategy(Enums.Strategies.KernelFilter, this.imageData, this.input);
+            await executor.PerformStrategy(Strategies.KernelFilter, this.imageData, this.input);
         }
     }
 }

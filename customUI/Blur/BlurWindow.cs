@@ -1,11 +1,7 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale;
-using APO_Tsarehradskiy.InputTypes.Blur;
-using APO_Tsarehradskiy.Interfaces;
+﻿using Emgu.CV.CvEnum;
 using APO_Tsarehradskiy.Services;
-using Emgu.CV.CvEnum;
-using APO_Tsarehradskiy.customUI.TabPageInherited;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Enums;
+using APO_Tsarehradskiy.InputArguments;
+using APO_Tsarehradskiy.DTO;
 
 namespace APO_Tsarehradskiy.customUI
 {
@@ -20,14 +16,14 @@ namespace APO_Tsarehradskiy.customUI
         {
             get
             {
-                return input.sz.Width;
+                return input.Size.Width;
             }
             set
             {
 
-                input.sz.Width = 2 * value + 1;
-                input.sz.Height = 2 * value + 1;
-                textBoxSize.Text = input.sz.Height.ToString();
+                input.Size.Width = 2 * value + 1;
+                input.Size.Height = 2 * value + 1;
+                textBoxSize.Text = input.Size.Height.ToString();
             }
         }
         public BlurWindow(StrategyExecutor executor)
@@ -42,7 +38,7 @@ namespace APO_Tsarehradskiy.customUI
 
 
             Strategies strategy = (Strategies)comboMethod.SelectedValue;
-            input.sz = new Size(BoxSize, BoxSize);
+            input.Size = new Size(BoxSize, BoxSize);
             await executor.PerformStrategy(strategy,imageData,input);
         }
 

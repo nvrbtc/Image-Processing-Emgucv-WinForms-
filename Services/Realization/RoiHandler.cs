@@ -1,18 +1,11 @@
-﻿using Emgu.CV.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APO_Tsarehradskiy.Services
+﻿namespace APO_Tsarehradskiy.Services
 {
-    public delegate void GetValuesFromSegment (List<Point> points);
+    public delegate void GetValuesFromSegment(List<Point> points);
     public class RoiHandler
     {
         public GetValuesFromSegment? NotifyLineMoved;
         private PictureBox Surface { get; init; }
-        private readonly uint GRAB_LINE_DISTANCE = 10;
+        private const uint GRAB_LINE_DISTANCE = 10;
 
         private bool LineIsMoving = false;
         private bool MouseDown = false;
@@ -24,7 +17,7 @@ namespace APO_Tsarehradskiy.Services
         private int dx, dy;
         public RoiHandler(PictureBox surface)
         {
-            this.Surface = surface;
+            Surface = surface;
         }
 
         public void MouseDownEvent(object sender, MouseEventArgs e)
@@ -46,8 +39,8 @@ namespace APO_Tsarehradskiy.Services
         {
             if (LineIsMoving)
             {
-                 dx = e.Location.X - xStartMove;
-                 dy = e.Location.Y - yStartMove;
+                dx = e.Location.X - xStartMove;
+                dy = e.Location.Y - yStartMove;
 
                 x0 += dx;
                 y0 += dy;

@@ -17,3 +17,5 @@ Properties/
 *.tmp
 *.cache
 
+#Ndepend
+NDependOut/

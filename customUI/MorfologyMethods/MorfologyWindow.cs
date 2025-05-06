@@ -1,10 +1,10 @@
-﻿using APO_Tsarehradskiy.InputArguments.Morphology;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 using System.Data;
 
-namespace APO_Tsarehradskiy.customUI.MorfologyMethods
+namespace APO_Tsarehradskiy.customUI
 {
     public partial class MorfologyWindow : Form
     {
@@ -91,7 +91,7 @@ namespace APO_Tsarehradskiy.customUI.MorfologyMethods
             }
             input.StructElement = structuringElement.GetStructuringElement();
 
-            await executor.PerformStrategy(Enums.Strategies.MorphologyOperations, this.imageData, input);
+            await executor.PerformStrategy(Strategies.MorphologyOperations, this.imageData, input);
 
         }
     }

@@ -1,8 +1,8 @@
-﻿using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.Blur
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class MedianBlur : IStrategy
     {

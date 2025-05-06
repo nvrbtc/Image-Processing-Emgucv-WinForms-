@@ -1,18 +1,14 @@
-﻿using APO_Tsarehradskiy.Enums;
-using APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection;
-using APO_Tsarehradskiy.InputArguments.EdgeDetection;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Interfaces.InputReturn;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.customUI.Edgecontrol
+namespace APO_Tsarehradskiy.customUI
 {
     public partial class SobelUI : UserControl, IGetInput
     {
         
-        private IInputHandler _inputHandler = new InputHandler();
+        private IInputHandler _inputHandler = new UserInputHandler();
         private SobelInput input = new SobelInput();
 
         public SobelUI()

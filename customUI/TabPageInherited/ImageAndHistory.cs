@@ -1,13 +1,12 @@
-﻿using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.DTO;
 using Emgu.CV;
 using Emgu.CV.Structure;
 
-namespace APO_Tsarehradskiy.customUI.TabPageInherited
+namespace APO_Tsarehradskiy.Services
 {
     public partial class ImageAndHistory : UserControl
     {
-        private Queue<LogImageStorage> logImages = new Queue<LogImageStorage> ();
-        public event ImageUpdated NodeDoubleClic;
+        public event Action<ImageData> NodeDoubleClic;
         public ImageAndHistory()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
         {
             TreeNode tn = new TreeNode(op);
             LogImageStorage log;
-            if (img.Type == Enums.Enums.Gray)
+            if (img.Type == Enums.Gray)
             {
                 log = new LogImageStorage(img.Image.ToImage<Gray, byte>().ToJpegData(90), op,true);
             }
@@ -57,24 +56,13 @@ namespace APO_Tsarehradskiy.customUI.TabPageInherited
                 }
 
                 ImageData restoredData = new ImageData( restoreMat,
-                                                        log.IsGray ? Enums.Enums.Gray : Enums.Enums.Rgb ,
-                                                        null, null); // Restore method in ImageTab is not touching FileName and Parent
+                                                        log.IsGray ? Enums.Gray : Enums.Rgb ,
+                                                        null); // Restore method in ImageTab is not touching FileName and Parent
                 treeHistory.Nodes.Add(loggedData);
                 treeHistory.SelectedNode = loggedData;
                 NodeDoubleClic?.Invoke(restoredData);
             }
         }
     }
-    public record LogImageStorage
-    {
-        public byte[] JpegData { get; init; }
-        public string Operation { get; init; }
-        public bool IsGray { get; init; }
-        public LogImageStorage(byte[] JpegData, string operation, bool IsGray = false)
-        {
-            this.JpegData = JpegData;
-            this.Operation = operation;
-            this.IsGray = IsGray;
-        }
-    }
+    
 }

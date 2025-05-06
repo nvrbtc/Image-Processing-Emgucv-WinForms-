@@ -1,9 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APO_Tsarehradskiy.Services
 {
@@ -18,8 +13,9 @@ namespace APO_Tsarehradskiy.Services
             }
             _provider = provider;
         }
-        public static T GetRequiredService<T> (){
-            if ( _provider == null) throw new ArgumentNullException(nameof(_provider));
+        public static T GetRequiredService<T>()
+        {
+            if (_provider == null) throw new ArgumentNullException(nameof(_provider));
             return _provider.GetRequiredService<T>();
         }
         public static T? TryGetService<T>() where T : class

@@ -1,11 +1,9 @@
-﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
-using APO_Tsarehradskiy.InputTypes;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV;
-using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Laplacian : IStrategy
     {

@@ -1,9 +1,9 @@
-﻿using APO_Tsarehradskiy.InputArguments.Filter2D;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.Filter
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class KernelFilter : IStrategy
     {

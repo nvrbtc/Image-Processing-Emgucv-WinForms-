@@ -1,14 +1,13 @@
-﻿using APO_Tsarehradskiy.Enums;
-using APO_Tsarehradskiy.InputArguments.Filter2D;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 
 namespace APO_Tsarehradskiy.customUI
 {
     public partial class PrewittWindow : Form
     {
-        private Filter2dInput input = new ();
+        private Filter2dInput input = new();
         private PrewittMaskProvider provider = new();
         private ImageData imageData;
         private readonly StrategyExecutor executor;

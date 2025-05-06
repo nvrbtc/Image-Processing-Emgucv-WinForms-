@@ -1,20 +1,14 @@
-﻿using APO_Tsarehradskiy.customUI.TabPageInherited;
-using APO_Tsarehradskiy.Enums;
-using Emgu.CV;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using APO_Tsarehradskiy.customUI;
+using APO_Tsarehradskiy.DTO;
 
-namespace APO_Tsarehradskiy.Services.Interfaces
+namespace APO_Tsarehradskiy.Services
 {
     public interface ITabManager
     {
-        TabControl tabControl { get; set; }
-        ImageTabPage GetSelectedTab();
-        void AddPage(ImageTabPage tab);
-        void AddPage(ImageLoadResult result);
-        void RemovePage(ImageTabPage tab);
+        public void SetTab(TabControl tabControl);
+        public ImageData? GetImageDataFromTab();
+        public void TryDuplicate();
+        public void AddPage(ImageLoadResult result);
+        public void RemovePage();
     }
 }

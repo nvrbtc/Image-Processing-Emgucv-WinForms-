@@ -1,19 +1,13 @@
-﻿using APO_Tsarehradskiy.customUI.Edgecontrol;
-using APO_Tsarehradskiy.customUI.EdgeMethodHandling;
-using APO_Tsarehradskiy.customUI.EdgeMethods;
-using APO_Tsarehradskiy.customUI.TabPageInherited;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces.InputReturn;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 
 namespace APO_Tsarehradskiy.customUI
 {
     public partial class EdgeDetectionWindow : Form
     {
 
-        private ImageData imageData;
-
-        public ImageUpdated onNotify;
+        private  ImageData imageData;
         private readonly StrategyExecutor executor;
 
         public EdgeDetectionWindow(StrategyExecutor executor)
@@ -32,7 +26,6 @@ namespace APO_Tsarehradskiy.customUI
                     new ComboBoxInput<UserControl>{Text = "Sobel",Value = new SobelUI()  },
                     new ComboBoxInput<UserControl>{ Text = "Laplacian", Value = new LaplacianUI() },
                     new ComboBoxInput<UserControl>{ Text = "canny", Value = new CannyUI() }
-                    //new EdgeMethodInput(){Text = "canny",Value = (input) => input.createInstace() }
                 };
                 cbMethod.DisplayMember = "Text";
                 cbMethod.SelectedValueChanged += changeUiHandler;

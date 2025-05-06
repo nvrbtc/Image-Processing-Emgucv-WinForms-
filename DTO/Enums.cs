@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.Enums
+﻿namespace APO_Tsarehradskiy.DTO
 {
     public enum Enums
     {

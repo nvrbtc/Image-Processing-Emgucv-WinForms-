@@ -1,4 +1,5 @@
 ﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 
 namespace APO_Tsarehradskiy.customUI
 {
@@ -32,7 +33,7 @@ namespace APO_Tsarehradskiy.customUI
 
         private async void RunMethod(object sender, EventArgs e)
         {
-            await executor.PerformStrategy(Enums.Strategies.MedianBlur,this.imageData,this.Sz);
+            await executor.PerformStrategy(Strategies.MedianBlur,this.imageData,this.Sz);
         }
     }
 }

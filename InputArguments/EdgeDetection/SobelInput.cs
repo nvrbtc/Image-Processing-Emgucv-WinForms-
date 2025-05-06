@@ -1,9 +1,6 @@
-﻿using APO_Tsarehradskiy.ImageProcessingAlgos.EdgeDetection;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
-using Emgu.CV.CvEnum;
+﻿using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.InputArguments.EdgeDetection
+namespace APO_Tsarehradskiy.InputArguments
 {
     public record SobelInput 
     {

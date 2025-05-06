@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.Edgecontrol
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class SobelUI
     {

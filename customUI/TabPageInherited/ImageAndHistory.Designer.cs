@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.TabPageInherited
+﻿namespace APO_Tsarehradskiy.Services
 {
     partial class ImageAndHistory
     {

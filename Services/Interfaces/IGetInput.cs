@@ -1,6 +1,6 @@
-﻿using APO_Tsarehradskiy.Enums;
+﻿using APO_Tsarehradskiy.DTO;
 
-namespace APO_Tsarehradskiy.Interfaces.InputReturn
+namespace APO_Tsarehradskiy.Services
 {
     public interface IGetInput
     {

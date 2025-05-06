@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APO_Tsarehradskiy.InputTypes.ComboBoxGeneric
+﻿namespace APO_Tsarehradskiy.InputArguments
 {
     public class ComboBoxInput<T>
     {

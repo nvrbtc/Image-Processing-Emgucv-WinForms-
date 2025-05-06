@@ -1,10 +1,8 @@
-﻿using APO_Tsarehradskiy.Services;
-using Emgu.CV;
+﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
-using System.Runtime.InteropServices;
 
-namespace APO_Tsarehradskiy.Extensions
+namespace APO_Tsarehradskiy.DTO
 {
     public static class ImageExtensions
     {
@@ -53,14 +51,14 @@ namespace APO_Tsarehradskiy.Extensions
 
             int radius = sz.Width / 2;
             var image = new Image<Gray, byte>(sz.Width, sz.Width);
-            
+
             for (int i = 0; i < sz.Width; i++)
             {
                 for (int j = 0; j < sz.Width; j++)
                 {
                     int dx = Math.Abs(i - radius);
                     int dy = Math.Abs(j - radius);
-                    image.Data[i, j, 0] = (byte)((dx + dy <= radius) ? 1 : 0);
+                    image.Data[i, j, 0] = (byte)(dx + dy <= radius ? 1 : 0);
                 }
             }
 
@@ -68,7 +66,7 @@ namespace APO_Tsarehradskiy.Extensions
         }
         public static bool ImageIsBinary(this ImageData data)
         {
-            if (data.Type != Enums.Enums.Gray) return false;
+            if (data.Type != Enums.Gray) return false;
 
             var values = data.Image.GetHistogramValues();
 
@@ -79,27 +77,29 @@ namespace APO_Tsarehradskiy.Extensions
             return true;
 
         }
-        public static bool TryConvertType(this ImageData imageData, Enums.Enums destinationType)
+        public static bool TryConvertType(this ImageData imageData, Enums destinationType)
         {
             string query = $"{imageData.Type}2{destinationType}";
+            ColorConversion result;
 
-            if (!Enum.TryParse(typeof(ColorConversion), query, out object result)) return false;
+            if (!Enum.TryParse(query, out result)) return false;
 
             Mat mat = new Mat();
-            CvInvoke.CvtColor(imageData.Image, mat, (ColorConversion)result);
+            CvInvoke.CvtColor(imageData.Image, mat, result);
             imageData.updateImage(mat);
             imageData.changeType(destinationType);
             return true;
         }
         public static void Negation(this ImageData imageData)
         {
+
             byte[] updatedValues = imageData.Image.GetData(false) as byte[];
 
             for (int i = 0; i < updatedValues.Length; i++)
             {
                 updatedValues[i] = (byte)(255 - updatedValues[i]);
             }
-            Marshal.Copy(updatedValues, 0, imageData.Image.DataPointer, updatedValues.Length);
+            imageData.Image.SetTo(updatedValues);
             imageData.updateImage(imageData.Image);
         }
     }

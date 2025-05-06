@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.Hough.Usercontrols
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class SimpleHoughUI
     {

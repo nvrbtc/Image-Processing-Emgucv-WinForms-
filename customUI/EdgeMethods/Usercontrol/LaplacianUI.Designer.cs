@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.EdgeMethodHandling
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class LaplacianUI
     {

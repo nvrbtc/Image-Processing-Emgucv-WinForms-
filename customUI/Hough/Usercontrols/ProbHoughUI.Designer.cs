@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.Hough.Usercontrols
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class ProbHoughUI
     {
@@ -247,7 +247,7 @@
         }
 
         #endregion
-        private TextBox textBox2;
+        
         private NumericUpDown numThreshold;
         private HelpProvider helpTheta;
         private HelpProvider helpGap;

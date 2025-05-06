@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.InputArguments.Usercontrols
+﻿namespace APO_Tsarehradskiy.InputArguments
 {
     public class MatrixRow
     {

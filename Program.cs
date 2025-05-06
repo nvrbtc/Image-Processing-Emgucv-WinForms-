@@ -1,8 +1,5 @@
-using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.customUI.Hough;
-using APO_Tsarehradskiy.customUI.MorfologyMethods;
 using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.Services.Interfaces;
+using APO_Tsarehradskiy.customUI;
 using Microsoft.Extensions.DependencyInjection;
 using System.Globalization;
 
@@ -39,7 +36,7 @@ namespace APO_Tsarehradskiy
         {
             service.AddSingleton<ImageManager>();
             service.AddSingleton<ITabManager,TabManager>();
-            service.AddTransient<IInputHandler, InputHandler>();
+            service.AddTransient<IInputHandler, UserInputHandler>();
 
             service.AddTransient<MainUI>();
             service.AddTransient<BlurWindow>();

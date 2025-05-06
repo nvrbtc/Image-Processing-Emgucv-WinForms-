@@ -1,17 +1,11 @@
-﻿using APO_Tsarehradskiy.InputArguments.Hough;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using APO_Tsarehradskiy.Extensions;
+using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.Hough
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class HoughP : IStrategy
     {
@@ -54,7 +48,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Hough
                 }
             });
 
-            ImageData.changeType(Enums.Enums.Rgb); // result => Grayscale img + Red lines
+            ImageData.changeType(Enums.Rgb); // result => Grayscale img + Red lines
             ImageData.updateImage( resultBGR );
         }
 
@@ -64,7 +58,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Hough
 
             if (MessageBox.Show($"Image is not binary.{Environment.NewLine}Apply Otsu Thresholding?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
 
-            if (ImageData.Type != Enums.Enums.Gray && !ImageData.TryConvertType(Enums.Enums.Gray)) return false;
+            if (ImageData.Type != Enums.Gray && !ImageData.TryConvertType(Enums.Gray)) return false;
 
             Mat mat = new Mat();
             CvInvoke.Threshold(ImageData.Image, mat, 0, 255, ThresholdType.Binary | ThresholdType.Otsu);

@@ -1,23 +1,23 @@
-﻿using APO_Tsarehradskiy.InputTypes.Blur;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Blur : IStrategy
     {
         public string name { get; set; } = "Blur";
-        private BlurInput? input;
+        private BlurInput input;
         public async Task Run(ImageData ImageData, object parameters)
         {
             if (!Validate(ImageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
             Mat result = new();
-            await Task.Run(() => CvInvoke.Blur(ImageData.Image, result, this.input.sz, new Point(-1, -1), this.input.BorderType));
+            await Task.Run(() => CvInvoke.Blur(ImageData.Image, result, input.Size, new Point(-1, -1), input.BorderType));
 
             ImageData.updateImage(result);
-            name = $"{name}:{input?.sz},{input?.BorderType}";
+            name = $"{name}:{input?.Size},{input?.BorderType}";
         }
         public bool Validate(ImageData imageData, object parameters)
         {

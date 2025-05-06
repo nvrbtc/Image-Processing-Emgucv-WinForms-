@@ -1,16 +1,8 @@
-﻿using APO_Tsarehradskiy.Extensions;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 using Emgu.CV;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.HistogramProcessing
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Equalization : IStrategy
     {

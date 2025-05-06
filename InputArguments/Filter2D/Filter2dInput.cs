@@ -1,7 +1,6 @@
-﻿using Emgu.CV;
-using Emgu.CV.CvEnum;
+﻿using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.InputArguments.Filter2D
+namespace APO_Tsarehradskiy.InputArguments
 
 {
     public class Filter2dInput

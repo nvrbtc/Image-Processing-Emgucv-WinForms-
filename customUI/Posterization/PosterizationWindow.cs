@@ -1,4 +1,5 @@
 ﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 
 namespace APO_Tsarehradskiy.customUI
 {
@@ -35,7 +36,7 @@ namespace APO_Tsarehradskiy.customUI
 
         private async void RunStrategy(object sender, EventArgs e)
         {
-            await executor.PerformStrategy(Enums.Strategies.Posterization, this.imageData, Levels);
+            await executor.PerformStrategy(Strategies.Posterization, this.imageData, Levels);
         }
     }
 }

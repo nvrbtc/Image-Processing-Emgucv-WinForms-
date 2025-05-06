@@ -1,13 +1,12 @@
-﻿using APO_Tsarehradskiy.InputArguments.EdgeDetection;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Interfaces.InputReturn;
-using APO_Tsarehradskiy.Enums;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 
-namespace APO_Tsarehradskiy.customUI.EdgeMethods
+namespace APO_Tsarehradskiy.customUI
 {
     public partial class CannyUI : UserControl, IGetInput
     {
-        private CannyInput input = new CannyInput();
+        private readonly CannyInput input = new CannyInput();
 
         public CannyUI()
         {
@@ -41,7 +40,7 @@ namespace APO_Tsarehradskiy.customUI.EdgeMethods
 
         public object ReturnInput()
         {
-            throw new NotImplementedException();
+            return input;
         }
     }
 }

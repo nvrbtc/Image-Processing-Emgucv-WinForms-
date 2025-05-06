@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.Skeletonization
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class SkeletonizationWindow
     {

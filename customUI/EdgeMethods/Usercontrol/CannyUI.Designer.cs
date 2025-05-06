@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.customUI.EdgeMethods
+﻿namespace APO_Tsarehradskiy.customUI
 {
     partial class CannyUI
     {

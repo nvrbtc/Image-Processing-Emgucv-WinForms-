@@ -1,6 +1,6 @@
-﻿using APO_Tsarehradskiy.InputArguments.Filter2D;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 using Emgu.CV.CvEnum;
 
 namespace APO_Tsarehradskiy.customUI
@@ -8,6 +8,7 @@ namespace APO_Tsarehradskiy.customUI
     public partial class UniversalFilterWindow : Form
     {
         private Filter2dInput input = new Filter2dInput();
+
         private ImageData imageData;
         private readonly IInputHandler _inputHandler;
         private readonly StrategyExecutor executor;
@@ -65,7 +66,7 @@ namespace APO_Tsarehradskiy.customUI
         private async void RunButton(object sender, EventArgs e)
         {
             GetKernelValues();
-            await executor.PerformStrategy(Enums.Strategies.KernelFilter, imageData, input);
+            await executor.PerformStrategy(Strategies.KernelFilter, imageData, input);
         }
         private void GetKernelValues()
         {

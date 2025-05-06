@@ -1,6 +1,4 @@
-﻿using APO_Tsarehradskiy.Enums;
-
-namespace APO_Tsarehradskiy.Services
+﻿namespace APO_Tsarehradskiy.DTO
 {
     public class PrewittMaskProvider
     {
@@ -62,7 +60,7 @@ namespace APO_Tsarehradskiy.Services
         {  1, -1, -1 }
     }
         };
-        public float[,]? GetKernel (Prewitt direction)
+        public float[,]? GetKernel(Prewitt direction)
         {
             return options.GetValueOrDefault(direction);
         }

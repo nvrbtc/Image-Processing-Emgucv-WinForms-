@@ -1,10 +1,8 @@
-﻿using APO_Tsarehradskiy.customUI.Hough.Usercontrols;
-using APO_Tsarehradskiy.customUI.TabPageInherited;
-using APO_Tsarehradskiy.InputTypes.ComboBoxGeneric;
-using APO_Tsarehradskiy.Interfaces.InputReturn;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
+using APO_Tsarehradskiy.InputArguments;
 
-namespace APO_Tsarehradskiy.customUI.Hough
+namespace APO_Tsarehradskiy.customUI
 {
     public partial class HoughWindow : Form
     {

@@ -1,16 +1,8 @@
-﻿using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 using Emgu.CV;
-using Emgu.CV.CvEnum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.BinaryOrGrayscale
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Posterization : IStrategy
     {

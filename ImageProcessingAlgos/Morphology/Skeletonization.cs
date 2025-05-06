@@ -1,12 +1,11 @@
-﻿using APO_Tsarehradskiy.Extensions;
+﻿using APO_Tsarehradskiy.Services;
+using APO_Tsarehradskiy.DTO;
 using APO_Tsarehradskiy.InputArguments;
-using APO_Tsarehradskiy.Interfaces;
-using APO_Tsarehradskiy.Services;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
+namespace APO_Tsarehradskiy.ImageProcessingAlgos
 {
     public class Skeletonization : IStrategy
     {
@@ -67,7 +66,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos.Morphology
             if (MessageBox.Show($"Image is not binary.{Environment.NewLine}Apply Otsu Thresholding + Median Blur?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
 
             Mat temp = new Mat();
-            if (ImageData.Type != Enums.Enums.Gray && ImageData.TryConvertType(Enums.Enums.Gray)) return false;
+            if (ImageData.Type != Enums.Gray && ImageData.TryConvertType(Enums.Gray)) return false;
 
             CvInvoke.MedianBlur(ImageData.Image, temp, 3);
             ImageData.updateImage(temp);
