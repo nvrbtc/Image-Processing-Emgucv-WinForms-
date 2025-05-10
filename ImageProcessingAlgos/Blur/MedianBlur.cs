@@ -1,24 +1,24 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class MedianBlur : IStrategy
     {
-        public string name { get; set; } = "Median Blur";
+        public string Name { get; set; } = "Median Blur";
 
         private int input;
 
-        public async Task Run(ImageData ImageData, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if ( !Validate(ImageData,parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if ( !Validate(imageData,parameters)) throw new ArgumentException("Input or image values are invalid.");
 
             Mat result = new Mat();
-            CvInvoke.MedianBlur(ImageData.Image, result, input);
+            CvInvoke.MedianBlur(imageData.Image, result, input);
 
-            ImageData.updateImage(result);
-            name = $"{name}:{input}x{input}";
+            imageData.UpdateImage(result);
+            Name = $"{Name}:{input}x{input}";
         }
         private bool Validate(ImageData img, object parameters)
         {

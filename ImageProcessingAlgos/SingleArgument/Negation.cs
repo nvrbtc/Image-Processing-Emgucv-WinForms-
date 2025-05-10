@@ -1,30 +1,24 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
+using APO_Tsarehradskiy.Services.Interfaces;
+using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Negation : IStrategy
     {
-
-        public string name { get; set; } = "Negation";
-
-        public ImageData ImageData { get; set; }
-
-
-        public async Task Run(ImageData img, object parameters = null)
+        public string Name { get; set; } = "Negation";
+        public async Task Run(ImageData imageData, object parameters = null)
         {
-            if ( img?.ValidateValuesAreNull() == true ) throw new ArgumentException("Input or image values are invalid.");
-
-            this.ImageData = img;
-            byte[] updatedValues = ImageData.Image.GetData(false) as byte[];
-
+            if ( imageData?.ValidateValuesAreNull() == true ) throw new ArgumentException("Input or image values are invalid.");
+            byte[] updatedValues = imageData.Image.GetData(false) as byte[];
+            Mat result = imageData.Image.Clone();
             for (int i = 0; i < updatedValues.Length; i++)
             {
                 updatedValues[i] = (byte)(255 - updatedValues[i]);
             }
-            ImageData.Image.SetTo(updatedValues);
+            result.SetTo(updatedValues);
 
-            ImageData.updateImage(ImageData.Image);
+            imageData.UpdateImage(result);
         }
 
     }

@@ -19,3 +19,4 @@ Properties/
 
 #Ndepend
 NDependOut/
+*.yaml

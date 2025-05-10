@@ -1,4 +1,6 @@
-﻿namespace APO_Tsarehradskiy.Services
+﻿using APO_Tsarehradskiy.Services.Interfaces;
+
+namespace APO_Tsarehradskiy.Services.Realization
 {
     public class UserInputHandler : IInputHandler
     {
@@ -10,7 +12,7 @@
             }
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if (e.KeyChar == '.' && (sender as TextBox)?.Text.IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
@@ -25,7 +27,7 @@
             }
 
             // No leading Zero
-            if (e.KeyChar == '0' && (sender as TextBox).Text.Length != 0)
+            if (e.KeyChar == '0' && (sender as TextBox)?.Text.Length != 0)
             {
                 e.Handled = true;
             }
@@ -39,12 +41,12 @@
             }
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if (e.KeyChar == '.' && (sender as TextBox)?.Text.IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
             // only allow one sign
-            if (e.KeyChar == '-' && (sender as TextBox).Text.Length != 0)
+            if (e.KeyChar == '-' && (sender as TextBox)?.Text.Length != 0)
             {
                 e.Handled = true;
             }
@@ -58,7 +60,7 @@
             }
 
             // only allow one decimal point
-            if (e.KeyChar == '-' && (sender as TextBox).Text.Length != 0)
+            if (e.KeyChar == '-' && (sender as TextBox)?.Text.Length != 0)
             {
                 e.Handled = true;
             }

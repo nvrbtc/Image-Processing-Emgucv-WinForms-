@@ -1,9 +1,10 @@
-using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.customUI;
 using Microsoft.Extensions.DependencyInjection;
 using System.Globalization;
+using Apo.customUI;
+using APO_Tsarehradskiy.Services.Interfaces;
+using APO_Tsarehradskiy.Services.Realization;
 
-namespace APO_Tsarehradskiy
+namespace Apo
 {
     internal static class Program
     {
@@ -37,6 +38,7 @@ namespace APO_Tsarehradskiy
             service.AddSingleton<ImageManager>();
             service.AddSingleton<ITabManager,TabManager>();
             service.AddTransient<IInputHandler, UserInputHandler>();
+            service.AddTransient<RoiHandler>();
 
             service.AddTransient<MainUI>();
             service.AddTransient<BlurWindow>();

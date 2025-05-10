@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace APO_Tsarehradskiy.Services
+namespace APO_Tsarehradskiy.Services.Realization
 {
     public static class MyServiceProvider
     {

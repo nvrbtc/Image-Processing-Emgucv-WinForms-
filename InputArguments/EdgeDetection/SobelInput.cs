@@ -1,6 +1,6 @@
 ﻿using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.InputArguments
+namespace Apo.InputArguments
 {
     public record SobelInput 
     {

@@ -1,52 +1,54 @@
 ﻿using Emgu.CV;
-namespace APO_Tsarehradskiy.DTO
+
+namespace Apo.DTO
 {
+    /// <summary>
+    /// Represents required information to operate on image (<c>Mat</c>).
+    /// </summary>
     public record ImageData
     {
-        private Mat img;
-        public string fileName = string.Empty;
+        public string fileName;
 
-        public event Action<ImageData> DataUpdated;
-        public event Action<ImageData, string> UpdateHistoryEvent;
-        public Enums Type { get; private set; }
-        public Mat Image
-        {
-            get
-            {
-                return img;
-            }
-            private set
-            {
-                img = value;
-            }
-        }
-        public ImageData(Mat img, Enums type, string fileName)
+        /// <summary>
+        /// This event is optionally triggered when <c>Image</c> updated.
+        /// </summary>
+        public event Action<ImageData>? DataUpdated;
+
+        public event Action<ImageData, string>? UpdateHistoryEvent;
+        public ImageType Type { get; private set; }
+        public Mat Image { get; private set; }
+
+        public ImageData(Mat img, ImageType type, string fileName)
         {
             Image = img;
             Type = type;
             this.fileName = fileName;
-            //this.parent = parent;
         }
-        public void Restore(ImageData restoredData)
+
+        /// <summary>
+        /// When strategy throws an exception, <c>StrategyExecutor</c> restores original information.
+        /// </summary>
+        /// <param name="image">Original image</param>
+        /// <param name="type">Original type</param>
+        public void Restore(Mat image, ImageType type)
         {
             Image?.Dispose();
-            Image = restoredData.Image;
-            Type = restoredData.Type;
+            Image = image;
+            Type = type;
             DataUpdated?.Invoke(this);
         }
 
-        public void changeType(Enums newType)
+        public void ChangeType(ImageType newType)
         {
             Type = newType;
         }
-        public void updateImage(Mat img)
+
+        public void UpdateImage(Mat mat, bool notifySubscribers = true)
         {
-            if (!Image.Equals(img))
-            {
-                Image?.Dispose();
-                Image = img;
-            }
-            DataUpdated?.Invoke(this);
+            Image?.Dispose();
+            Image = mat;
+            if (notifySubscribers)
+                DataUpdated?.Invoke(this);
         }
 
         public void UpdateHistory(string lastOperation)
@@ -56,21 +58,21 @@ namespace APO_Tsarehradskiy.DTO
 
         public bool ValidateValuesAreNull()
         {
-            return img == null || string.IsNullOrWhiteSpace(fileName) || Type == default;
+            return Image.IsEmpty || string.IsNullOrWhiteSpace(fileName) || Type == default;
         }
+
         public ImageData DeepClone()
         {
-
             return new ImageData(Image.Clone(), Type, fileName);
         }
-        public void CopyTo(ImageData data)
+
+        public void CopyFrom(ImageData data)
         {
             Image?.Dispose();
             Image = data.Image.Clone();
             Type = data.Type;
             fileName = data.fileName;
         }
-
-
     }
+
 }

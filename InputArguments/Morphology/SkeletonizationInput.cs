@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.InputArguments
+﻿namespace Apo.InputArguments
 {
     public class SkeletonizationInput
     {

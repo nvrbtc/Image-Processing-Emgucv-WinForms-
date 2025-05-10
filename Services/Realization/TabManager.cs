@@ -1,25 +1,30 @@
-﻿using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.DTO;
+﻿using Apo.customUI;
+using Apo.DTO;
+using APO_Tsarehradskiy.Services.Interfaces;
 
-namespace APO_Tsarehradskiy.Services
+namespace APO_Tsarehradskiy.Services.Realization
 {
     public class TabManager : ITabManager
     {
-        private TabControl tabControl { get; set; }
-        public void TryDuplicate() { 
-            var tab = tabControl.SelectedTab as ImageTabPage;
+        private TabControl TabControl;
+
+        public void TryDuplicate()
+        {
+            var tab = TabControl.SelectedTab as ImageTabPage;
             if (tab == null) return;
             var clonedPage = tab.Clone();
-            tabControl.TabPages.Add(clonedPage);
-            tabControl.SelectedTab = clonedPage;
-            
+            TabControl.TabPages.Add(clonedPage);
+            TabControl.SelectedTab = clonedPage;
         }
+
         public void AddPage(ImageLoadResult result)
         {
-            var tab = new ImageTabPage(result.img, result.imageType, result.fileName) { Text = result.fileName, Name = result.fileName };
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            var tab = new ImageTabPage(result.Image, result.ImageType, result.FileName)
+            { Text = result.FileName, Name = result.FileName };
+            TabControl.TabPages.Add(tab);
+            TabControl.SelectedTab = tab;
         }
+
         public void RemovePage()
         {
             //tabControl?.TabPages.Remove(page);
@@ -27,15 +32,14 @@ namespace APO_Tsarehradskiy.Services
 
         public ImageData? GetImageDataFromTab()
         {
-            ImageTabPage? temp = tabControl.SelectedTab as ImageTabPage;
+            ImageTabPage? temp = TabControl.SelectedTab as ImageTabPage;
 
-            return temp?.imageData;
+            return temp?.GetImageData();
         }
 
         public void SetTab(TabControl tabControl)
         {
-            this.tabControl = tabControl;
+            TabControl = tabControl;
         }
-
     }
 }

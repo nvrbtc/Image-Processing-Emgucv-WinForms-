@@ -1,8 +1,8 @@
-﻿using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy.InputArguments
+namespace Apo.InputArguments
 {
     public class StructuringElement
     {

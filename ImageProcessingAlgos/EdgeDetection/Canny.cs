@@ -1,26 +1,26 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.InputArguments;
+﻿using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Canny : IStrategy
     {
-        public string name { get; set; } = "Canny";
+        public string Name { get; set; } = "Canny";
 
         //params to call method 
         private CannyInput? input;
-        public async Task Run(ImageData ImageData, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if (!Validate(ImageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(imageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
             Mat result = new Mat();
-            await Task.Run( () => CvInvoke.Canny(ImageData.Image, result, input.Threshold1, input.Threshold2, input.Sz, input.GradientEnabled));
+            await Task.Run( () => CvInvoke.Canny(imageData.Image, result, input.Threshold1, input.Threshold2, input.Sz, input.GradientEnabled));
 
-            ImageData.updateImage(result);
+            imageData.UpdateImage(result);
 
-            name = $"{name}:{input.Threshold1},{input.Threshold2},{input.Sz}";
+            Name = $"{Name}:{input.Threshold1},{input.Threshold2},{input.Sz}";
         }
 
         private bool Validate(ImageData img, object parameters)

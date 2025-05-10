@@ -1,17 +1,11 @@
 ﻿using Emgu.CV;
 
-namespace APO_Tsarehradskiy.DTO
+namespace Apo.DTO
 {
-    public class ImageLoadResult
+    public record ImageLoadResult(Mat Image, string FileName, ImageType ImageType)
     {
-        public Mat img;
-        public string fileName = string.Empty;
-        public Enums imageType;
-        public ImageLoadResult(Mat input, string name, Enums type)
-        {
-            img = input;
-            fileName = name;
-            imageType = type;
-        }
+        public readonly Mat Image = Image;
+        public readonly string FileName = FileName;
+        public readonly ImageType ImageType = ImageType;
     }
 }

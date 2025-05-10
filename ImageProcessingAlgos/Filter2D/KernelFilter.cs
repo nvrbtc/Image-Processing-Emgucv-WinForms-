@@ -1,37 +1,35 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.InputArguments;
+﻿using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class KernelFilter : IStrategy
     {
         private Filter2dInput input;
         private ConvolutionKernelF inputKernel;
-        public string name { get; set; } = "Linear Sharpening ( filter2d )";
+        public string Name { get; set; } = "Linear Sharpening ( filter2d )";
 
-        public bool Validate (ImageData ImageData, object parameters)
+        private bool Validate (ImageData imageData, object parameters)
         {
-            if ( ImageData?.ValidateValuesAreNull() == true || parameters is not Filter2dInput input)  return false;
-            this.input = input;
+            if ( imageData?.ValidateValuesAreNull() == true || parameters is not Filter2dInput filter2dInput)  return false;
+            this.input = filter2dInput;
 
             if (this.input?.NormalizeKernel() == false) return false; // in case sum of kernel == 0 
 
-            this.inputKernel = new ConvolutionKernelF(this.input.Kernel);
+            this.inputKernel = new ConvolutionKernelF(filter2dInput.Kernel);
             return true;
         }
 
-        public async Task Run(ImageData ImageData, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if (!Validate(ImageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(imageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
+            Mat result = new();
 
-            Mat state = ImageData.Image.Clone();
-            Mat result = Mat.Zeros(state.Rows, state.Cols, state.Depth, state.NumberOfChannels);
-
-            CvInvoke.Filter2D(state, result, inputKernel, new Point(-1, -1));
-
-            ImageData.updateImage(result);
+            CvInvoke.Filter2D(imageData.Image, result, inputKernel, new Point(-1, -1));
+            inputKernel?.Dispose();
+            imageData.UpdateImage(result);
         }
     }
 }

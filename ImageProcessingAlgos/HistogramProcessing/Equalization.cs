@@ -1,22 +1,22 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Equalization : IStrategy
     {
         private Mat resultImg;
-        public string name { get; set; } = "Equalization";
-        public ImageData ImageData { get; set; }
+        public string Name { get; set; } = "Equalization";
+        private ImageData ImageData;
 
-        public async Task Run(ImageData img, object parameters = null)
+        public async Task Run(ImageData imageData, object parameters = null)
         {
-            if (img?.ValidateValuesAreNull() == true) throw new ArgumentException("Input or image values are invalid.");
-            this.ImageData = img;
+            if (imageData?.ValidateValuesAreNull() == true) throw new ArgumentException("Input or image values are invalid.");
+            this.ImageData = imageData;
             await Task.Run(() => PerformLogic());
 
-            ImageData?.updateImage(resultImg);
+            ImageData?.UpdateImage(resultImg);
         }
         private void PerformLogic()
         {
@@ -53,8 +53,6 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
             {
                 updatedData[i] = lut[data[i]];
             }
-
-            //Marshal.Copy(updatedData.ToArray(), 0, resultImg.DataPointer, updatedData.Length); <= dangerous
             resultImg.SetTo(updatedData);
         }
     }

@@ -1,19 +1,19 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Posterization : IStrategy
     {
         private int levels;
 
-        public string name { get; set; } = "Posterization";
+        public string Name { get; set; } = "Posterization";
         public ImageData ImageData { get;set; }
 
-        public async Task Run(ImageData img, object parameters = null)
+        public async Task Run(ImageData imageData, object parameters = null)
         {
-            if (!Validate(img,parameters)) throw new ArgumentException("Input image or values are invalid.");
+            if (!Validate(imageData,parameters)) throw new ArgumentException("Input image or values are invalid.");
             Mat source = ImageData.Image.Clone();
 
             await Task.Run(() =>
@@ -41,7 +41,7 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
                 source.SetTo(updatedPixels);
             });
 
-            ImageData.updateImage(source);
+            ImageData.UpdateImage(source);
         }
         private bool Validate(ImageData img,object parameters) 
         {

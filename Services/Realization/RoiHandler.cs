@@ -1,14 +1,14 @@
-﻿namespace APO_Tsarehradskiy.Services
+﻿namespace APO_Tsarehradskiy.Services.Realization
 {
     public delegate void GetValuesFromSegment(List<Point> points);
     public class RoiHandler
     {
-        public GetValuesFromSegment? NotifyLineMoved;
+        public Action<List<Point>> NotifyLineMoved;
         private PictureBox Surface { get; init; }
-        private const uint GRAB_LINE_DISTANCE = 10;
+        private const uint GrabLineDistance = 10;
 
-        private bool LineIsMoving = false;
-        private bool MouseDown = false;
+        private bool lineIsMoving;
+        private bool mouseDown;
 
         private int x0, y0;
         private int x1, y1;
@@ -24,20 +24,20 @@
         {
             if (IsNearLine(e.Location))
             {
-                LineIsMoving = true;
+                lineIsMoving = true;
                 xStartMove = e.Location.X;
                 yStartMove = e.Location.Y;
             }
             else
             {
-                MouseDown = true;
+                mouseDown = true;
                 x0 = e.Location.X;
                 y0 = e.Location.Y;
             }
         }
         public void MouseMoveEvent(object sender, MouseEventArgs e)
         {
-            if (LineIsMoving)
+            if (lineIsMoving)
             {
                 dx = e.Location.X - xStartMove;
                 dy = e.Location.Y - yStartMove;
@@ -54,7 +54,7 @@
                 Surface?.Invalidate();
                 return;
             }
-            if (MouseDown)
+            if (mouseDown)
             {
                 x1 = e.Location.X;
                 y1 = e.Location.Y;
@@ -68,16 +68,16 @@
         }
         public void MouseUpEvent(object sender, MouseEventArgs e)
         {
-            if (LineIsMoving)
+            if (lineIsMoving)
             {
-                LineIsMoving = false;
+                lineIsMoving = false;
 
             }
-            if (MouseDown)
+            if (mouseDown)
             {
                 x1 = e.Location.X;
                 y1 = e.Location.Y;
-                MouseDown = false;
+                mouseDown = false;
             }
         }
         public void KeyPressEvent(object sender, KeyPressEventArgs e)
@@ -90,26 +90,25 @@
         }
         public bool IsNearLine(Point p)
         {
+            float dX = x1 - x0;
+            float dY = y1 - y0;
 
-            float dx = x1 - x0;
-            float dy = y1 - y0;
-
-            if (dx == 0 && dy == 0)
+            if (dX == 0 && dY == 0)
             {
                 // Отрезок - точка
-                return Math.Sqrt((p.X - x0) * (p.X - x0) + (p.Y - y0) * (p.Y - y0)) <= GRAB_LINE_DISTANCE;
+                return Math.Sqrt((p.X - x0) * (p.X - x0) + (p.Y - y0) * (p.Y - y0)) <= GrabLineDistance;
             }
 
-            float t = ((p.X - x0) * dx + (p.Y - y0) * dy) / (dx * dx + dy * dy);
+            float t = ((p.X - x0) * dX + (p.Y - y0) * dY) / (dX * dX + dY * dY);
             t = Math.Max(0, Math.Min(1, t));
 
-            float nearestX = x0 + t * dx;
-            float nearestY = y0 + t * dy;
+            float nearestX = x0 + t * dX;
+            float nearestY = y0 + t * dY;
 
             float distX = p.X - nearestX;
             float distY = p.Y - nearestY;
 
-            return Math.Sqrt(distX * distX + distY * distY) <= GRAB_LINE_DISTANCE;
+            return Math.Sqrt(distX * distX + distY * distY) <= GrabLineDistance;
         }
         public void GetLinePoints(int x0, int y0, int x1, int y1)
         {

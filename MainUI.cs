@@ -1,9 +1,12 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.customUI;
-using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.InputArguments;
+﻿using Apo.customUI;
+using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Forms;
+using APO_Tsarehradskiy.Services.Interfaces;
+using APO_Tsarehradskiy.Services.Realization;
+using Emgu.CV.CvEnum;
 
-namespace APO_Tsarehradskiy
+namespace Apo
 {
     public partial class MainUI : Form
     {
@@ -27,22 +30,23 @@ namespace APO_Tsarehradskiy
         /// <param name="e"></param>
         private void OpenRgbImage(object sender, EventArgs e)
         {
-            var RGBimage = imageManager.OpenRGBImage();
-            if (RGBimage == null) return;
+            var rgbImage = imageManager.OpenRgbImage();
+            if (rgbImage == null) return;
 
-            tabManager.AddPage(RGBimage);
+            tabManager.AddPage(rgbImage);
         }
 
         private void SaveImage(object sender, EventArgs e)
         {
             return;
-            // to do later
+            // todo: later
             if (false)
             {
                 MessageBox.Show("No picture selected", "Warning", MessageBoxButtons.OK);
                 // throw new ArgumentException("No image detected");
                 return;
             }
+
             // Panel img = (Panel)tabControl.SelectedTab.Controls[];
             SaveFileDialog dialog = new SaveFileDialog()
             {
@@ -58,8 +62,6 @@ namespace APO_Tsarehradskiy
                 {
                     switch (dialog.FilterIndex)
                     {
-
-
                     }
                 }
             }
@@ -76,7 +78,7 @@ namespace APO_Tsarehradskiy
         {
             var data = tabManager.GetImageDataFromTab();
 
-            if (data?.Type != Enums.Gray) return;
+            if (data?.Type != ImageType.Gray) return;
 
             var tab = MyServiceProvider.TryGetService<HistogramWindow>();
             tab?.SetImageData(data);
@@ -91,15 +93,17 @@ namespace APO_Tsarehradskiy
         /// <param name="e"></param>
         private void FromTypeToGrayscale(object sender, EventArgs e)
         {
-            var tab = tabManager.GetImageDataFromTab();
-            var result = imageManager.GetQuery(tab.Type, Enums.Gray);
-            if (tab == null || result == default)
+            var data = tabManager.GetImageDataFromTab();
+            var result = imageManager.GetQuery(data.Type, ImageType.Gray);
+            if (data?.Image == null || result == default)
             {
-                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(tab, result);
-            imageManager.UpdateImageType(tab, Enums.Gray);
+
+            imageManager.ChangeImageType(data, result);
+            imageManager.UpdateImageType(data, ImageType.Gray);
         }
 
         /// <summary>
@@ -111,21 +115,21 @@ namespace APO_Tsarehradskiy
         {
             var data = tabManager.GetImageDataFromTab();
 
-            await executor.PerformStrategy(Strategies.LinearStretching, data, null);
+            if (data != null) await executor.PerformStrategy(Strategies.LinearStretching, data, null);
         }
 
 
         private async void ApplyEqualizationAsync(object sender, EventArgs e)
         {
             var data = tabManager.GetImageDataFromTab();
-            if (data?.Type != Enums.Gray)
+            if (data?.Type != ImageType.Gray)
             {
                 // show dialog box;
                 return;
             }
+
             await executor.PerformStrategy(Strategies.Equalization, data, null);
         }
-
 
 
         private void OpenPosterizationWindow(object sender, EventArgs e)
@@ -136,6 +140,7 @@ namespace APO_Tsarehradskiy
                 MessageBox.Show("No image selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             var window = MyServiceProvider.TryGetService<PosterizationWindow>();
             window?.SetImageData(data);
             window?.Show();
@@ -175,6 +180,7 @@ namespace APO_Tsarehradskiy
                 MessageBox.Show("No image selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             var win = MyServiceProvider.TryGetService<EdgeDetectionWindow>();
             win?.SetImageData(data);
             win?.Show();
@@ -210,69 +216,71 @@ namespace APO_Tsarehradskiy
             {
                 return;
             }
+
             var win = MyServiceProvider.TryGetService<MedianFilterWindow>();
             win?.SetImageData(data);
             win?.Show();
-
-
         }
 
         private void OpenGrayscaleImage(object sender, EventArgs e)
         {
             var result = imageManager.OpenGrayImage();
-            if (result == null)
-            {
-                // show dialog ;
-                return;
-            }
+            if (result == null) return;
             tabManager.AddPage(result);
         }
 
-        private void FromTypeToRGB(object sender, EventArgs e)
+        private void FromTypeToRgb(object sender, EventArgs e)
         {
-            var tab = tabManager.GetImageDataFromTab();
-            var queryResult = imageManager.GetQuery(tab.Type, Enums.Rgb);
-            if (tab == null || queryResult == default)
+            var data = tabManager.GetImageDataFromTab();
+            var queryResult = imageManager.GetQuery(data.Type, ImageType.Rgb);
+            if (data == null || queryResult == default)
             {
-                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(tab, queryResult);
-            imageManager.UpdateImageType(tab, Enums.Rgb);
+
+            imageManager.ChangeImageType(data, queryResult);
+            imageManager.UpdateImageType(data, ImageType.Rgb);
         }
 
-        private void FromTypeToHSV(object sender, EventArgs e)
+        private void FromTypeToHsv(object sender, EventArgs e)
         {
-            var tab = tabManager.GetImageDataFromTab();
-            var queryResult = imageManager.GetQuery(tab.Type, Enums.Hsv);
-            if (tab == null || queryResult == default)
+            var data = tabManager.GetImageDataFromTab();
+            var queryResult = imageManager.GetQuery(data.Type, ImageType.Hsv);
+            if (data == null || queryResult == default)
             {
-                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
-            imageManager.ChangeImageType(tab, queryResult);
-            imageManager.UpdateImageType(tab, Enums.Hsv);
+
+            imageManager.ChangeImageType(data, queryResult);
+            imageManager.UpdateImageType(data, ImageType.Hsv);
         }
 
         private void FromTypeToLab(object sender, EventArgs e)
         {
             var tab = tabManager.GetImageDataFromTab();
-            var queryResult = imageManager.GetQuery(tab.Type, Enums.Lab);
+            var queryResult = imageManager.GetQuery(tab.Type, ImageType.Lab);
             if (tab == null || queryResult == default)
             {
-                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No image selected or prohibit query", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
+
             imageManager.ChangeImageType(tab, queryResult);
-            imageManager.UpdateImageType(tab, Enums.Lab);
+            imageManager.UpdateImageType(tab, ImageType.Lab);
         }
 
         private void TestNew(object sender, EventArgs e)
         {
-            var tab = tabManager.GetImageDataFromTab();
-            if (tab == null) return;
-            var win = new DrawLineExample(tab);
-            win?.Show();
+            var data = tabManager.GetImageDataFromTab();
+            if (data == null) return;
+            var input = new TwoPicsOps(data);
+            input.Show();
+
         }
 
         private void OpenUniversalFilterWindow(object sender, EventArgs e)
@@ -298,6 +306,25 @@ namespace APO_Tsarehradskiy
             var data = tabManager.GetImageDataFromTab();
             if (data == null) return;
             var win = MyServiceProvider.TryGetService<MorfologyWindow>();
+            win?.SetImageData(data);
+            win?.Show();
+        }
+
+        private void OpenProfileLineWindow(object? sender, EventArgs e)
+        {
+            var data = tabManager.GetImageDataFromTab();
+            if (data?.Type != ImageType.Gray) return;
+
+            var win = new DrawLineExample(data);
+            win.Show();
+        }
+
+        private void houghMethodsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var data = tabManager.GetImageDataFromTab();
+            if (data == null) return;
+
+            var win = MyServiceProvider.TryGetService<HoughWindow>();
             win?.SetImageData(data);
             win?.Show();
         }

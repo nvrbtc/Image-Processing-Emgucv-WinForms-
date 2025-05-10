@@ -1,6 +1,6 @@
-﻿using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
 
-namespace APO_Tsarehradskiy.Services
+namespace APO_Tsarehradskiy.Services.Interfaces
 {
     public interface IGetInput
     {

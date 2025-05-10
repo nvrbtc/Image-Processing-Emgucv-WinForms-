@@ -2,30 +2,35 @@
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 
-namespace APO_Tsarehradskiy.DTO
+namespace Apo.DTO
 {
     public static class ImageExtensions
     {
+        public static Bitmap UpdatePicBoxImage(this ImageData data)
+        {
+            //todo: implement switch return
+            return null;
+        }
 
         public static int[] GetHistogramValues(this Mat img)
         {
-            ReadOnlySpan<byte> data = img.GetData(false) as byte[];
+            byte[]? data = img.GetData(false) as byte[];
             int[] histogramValues = new int[256];
 
-            for (int i = 0; i < data.Length; i++)
+            foreach (var t in data)
             {
-                histogramValues[data[i]]++;
+                histogramValues[t]++;
             }
             return histogramValues;
         }
         public static int[] GetDistributionValues(this Mat img)
         {
             int[] distributionValues = new int[256];
-            int[] histagramValues = img.GetHistogramValues();
+            int[] histogramValues = img.GetHistogramValues();
 
             for (int i = 0, sum = 0; i < 256; i++)
             {
-                sum += histagramValues[i];
+                sum += histogramValues[i];
                 distributionValues[i] = sum;
             }
             return distributionValues;
@@ -51,7 +56,7 @@ namespace APO_Tsarehradskiy.DTO
 
             int radius = sz.Width / 2;
             var image = new Image<Gray, byte>(sz.Width, sz.Width);
-
+            
             for (int i = 0; i < sz.Width; i++)
             {
                 for (int j = 0; j < sz.Width; j++)
@@ -66,7 +71,7 @@ namespace APO_Tsarehradskiy.DTO
         }
         public static bool ImageIsBinary(this ImageData data)
         {
-            if (data.Type != Enums.Gray) return false;
+            if (data.Type != ImageType.Gray) return false;
 
             var values = data.Image.GetHistogramValues();
 
@@ -77,30 +82,30 @@ namespace APO_Tsarehradskiy.DTO
             return true;
 
         }
-        public static bool TryConvertType(this ImageData imageData, Enums destinationType)
+        public static bool TryConvertType(this ImageData imageData, ImageType destinationType)
         {
             string query = $"{imageData.Type}2{destinationType}";
-            ColorConversion result;
 
-            if (!Enum.TryParse(query, out result)) return false;
+            if (!Enum.TryParse(query, out ColorConversion result)) return false;
 
             Mat mat = new Mat();
             CvInvoke.CvtColor(imageData.Image, mat, result);
-            imageData.updateImage(mat);
-            imageData.changeType(destinationType);
+            imageData.UpdateImage(mat);
+            imageData.ChangeType(destinationType);
             return true;
         }
         public static void Negation(this ImageData imageData)
         {
-
-            byte[] updatedValues = imageData.Image.GetData(false) as byte[];
-
-            for (int i = 0; i < updatedValues.Length; i++)
+            
+            byte[]? updatedValues = imageData.Image.GetData(false) as byte[];
+            
+            for (int i = 0; i < updatedValues!.Length; i++)
             {
                 updatedValues[i] = (byte)(255 - updatedValues[i]);
             }
-            imageData.Image.SetTo(updatedValues);
-            imageData.updateImage(imageData.Image);
+            Mat afterNegation =imageData.Image.Clone();
+            afterNegation.SetTo(updatedValues);
+            imageData.UpdateImage(afterNegation);
         }
     }
 }

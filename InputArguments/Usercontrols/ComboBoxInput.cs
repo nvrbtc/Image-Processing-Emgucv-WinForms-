@@ -1,9 +1,9 @@
-﻿namespace APO_Tsarehradskiy.InputArguments
+﻿namespace Apo.InputArguments
 {
     public class ComboBoxInput<T>
     {
-        public string Text { get; set; }
-        public T Value { get; set; }
+        public string Text { get; init; }
+        public T Value { get; init; }
 
     }
 }

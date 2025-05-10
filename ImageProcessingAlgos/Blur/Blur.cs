@@ -1,28 +1,28 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.InputArguments;
+﻿using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Blur : IStrategy
     {
-        public string name { get; set; } = "Blur";
+        public string Name { get; set; } = "Blur";
         private BlurInput input;
-        public async Task Run(ImageData ImageData, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if (!Validate(ImageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(imageData, parameters)) throw new ArgumentException("Input or image values are invalid.");
 
             Mat result = new();
-            await Task.Run(() => CvInvoke.Blur(ImageData.Image, result, input.Size, new Point(-1, -1), input.BorderType));
+            await Task.Run(() => CvInvoke.Blur(imageData.Image, result, input.Size, new Point(-1, -1), input.BorderType));
 
-            ImageData.updateImage(result);
-            name = $"{name}:{input?.Size},{input?.BorderType}";
+            imageData.UpdateImage(result);
+            Name = $"{Name}:{input?.Size},{input?.BorderType}";
         }
         public bool Validate(ImageData imageData, object parameters)
         {
-            if (imageData?.ValidateValuesAreNull() == true || parameters is not BlurInput input) return false;
-            this.input = input;
+            if (imageData?.ValidateValuesAreNull() == true || parameters is not BlurInput blurInput) return false;
+            this.input = blurInput;
             return true;
         }
     }

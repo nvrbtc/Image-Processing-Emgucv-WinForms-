@@ -1,4 +1,4 @@
-﻿namespace APO_Tsarehradskiy.DTO
+﻿namespace Apo.DTO
 {
     public class PrewittMaskProvider
     {

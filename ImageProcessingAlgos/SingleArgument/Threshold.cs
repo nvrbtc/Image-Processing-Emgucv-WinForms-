@@ -1,20 +1,20 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
+﻿using Apo.DTO;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Threshold : IStrategy
     {
         private int input;
-        public string name { get; set; } = "Treshold";
+        public string Name { get; set; } = "Treshold";
 
-        public ImageData ImageData { get; set; }
+        public ImageData ImageData;
 
 
-        public async Task Run(ImageData img, object parameters )
+        public async Task Run(ImageData imageData, object parameters )
         {
-            if ( !Validate(img, parameters) ) throw new ArgumentException("Input or image values are invalid.");
+            if ( !Validate(imageData, parameters) ) throw new ArgumentException("Input or image values are invalid.");
 
             Mat source = ImageData.Image.Clone();
             byte[] updatedData = source.GetData(false) as byte[];
@@ -22,16 +22,16 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
             {
                 updatedData[i] = updatedData[i] > input ? (byte)255 : (byte)0;
             }
-            ImageData.Image.SetTo(updatedData);
+            source.SetTo(updatedData);
 
-            ImageData.updateImage(ImageData.Image);
+            ImageData.UpdateImage(source);
         }
 
         private bool Validate(ImageData img, object parameters)
         {
             if (img?.ValidateValuesAreNull() == true || parameters is not int value) return false;
             this.input = value ;
-            this.ImageData = img;
+            this.ImageData = img!;
             return true;
         }
     }

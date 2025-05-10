@@ -1,25 +1,25 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.InputArguments;
+﻿using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Laplacian : IStrategy
     {
-        public string name { get; set; } = "Laplacian";
+        public string Name { get; set; } = "Laplacian";
 
         private LaplacianInput input;
 
-        public async Task Run(ImageData ImageData, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if (!Validate(ImageData,parameters)) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(imageData,parameters)) throw new ArgumentException("Input or image values are invalid.");
 
             Mat result = new Mat();
-            CvInvoke.Laplacian(ImageData.Image, result, input.Depth, input.Sz, input.Scale, input.Delta, input.BorderType);
+            CvInvoke.Laplacian(imageData.Image, result, input.Depth, input.Sz, input.Scale, input.Delta, input.BorderType);
 
-            ImageData.updateImage(result);
-            name = $"{name}:{input.Sz},{input.Scale}";
+            imageData.UpdateImage(result);
+            Name = $"{Name}:{input.Sz},{input.Scale}";
         }
         private bool Validate(ImageData img, object parameters)
         {

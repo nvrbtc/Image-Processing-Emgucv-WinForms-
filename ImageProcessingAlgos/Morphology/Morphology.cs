@@ -1,13 +1,13 @@
-﻿using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.InputArguments;
+﻿using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Services.Interfaces;
 using Emgu.CV;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class Morphology : IStrategy
     {
-        public string name { get; set; } = "Morphology";
+        public string Name { get; set; } = "Morphology";
         private MorphologyInput input;
 
         public ImageData ImageData { get; set; }
@@ -21,13 +21,13 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
             return true;
         }
 
-        public async Task Run(ImageData img, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if ( !Validate(img,parameters) ) throw new ArgumentException("Input or image values are invalid.");
+            if ( !Validate(imageData,parameters) ) throw new ArgumentException("Input or image values are invalid.");
 
             Mat result = new Mat();
             CvInvoke.MorphologyEx(ImageData.Image, result, input.Operation, input.StructElement, input.Anchor, input.Iterations, input.BorderType, CvInvoke.MorphologyDefaultBorderValue);
-            ImageData.updateImage(result);
+            ImageData.UpdateImage(result);
         }
 
     }

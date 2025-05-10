@@ -1,7 +1,8 @@
-﻿using APO_Tsarehradskiy.DTO;
-using APO_Tsarehradskiy.ImageProcessingAlgos;
+﻿using Apo.DTO;
+using Apo.ImageProcessingAlgos;
+using APO_Tsarehradskiy.Services.Interfaces;
 
-namespace APO_Tsarehradskiy.Services
+namespace APO_Tsarehradskiy.Services.Realization
 {
     public class StrategyExecutor
     {
@@ -22,27 +23,27 @@ namespace APO_Tsarehradskiy.Services
             { Strategies.Skeletonization ,() => new Skeletonization() },
             { Strategies.Negation, () => new Negation() },
             { Strategies.Posterization ,() => new Posterization() },
-            { Strategies.Threshold,() => new Threshold() }
+            { Strategies.Threshold,() => new Threshold() },
+            { Strategies.Pyramid,() => new Pyramid() }
         };
 
         public async Task PerformStrategy(Strategies s, ImageData imageData, object parameters)
         {
-            //var tab = imageData.parent;
             var strategy = strategiesPool[s].Invoke();
             ImageData copyOfSource = imageData.DeepClone();
             try
             {
                 await strategy.Run(imageData, parameters);
-                imageData.UpdateHistory( strategy.name);
+                imageData.UpdateHistory(strategy.Name);
             }
             catch (Exception e)
             {
-                copyOfSource.CopyTo(imageData);
+                imageData.CopyFrom(copyOfSource);
                 MessageBox.Show(e.Message, "Error while execution.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                copyOfSource.Image.Dispose();
+                copyOfSource.Image?.Dispose();
             }
         }
     }

@@ -1,15 +1,15 @@
 ﻿using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV;
-using APO_Tsarehradskiy.InputArguments;
-using APO_Tsarehradskiy.Services;
-using APO_Tsarehradskiy.DTO;
+using Apo.DTO;
+using Apo.InputArguments;
+using APO_Tsarehradskiy.Services.Interfaces;
 
-namespace APO_Tsarehradskiy.ImageProcessingAlgos
+namespace Apo.ImageProcessingAlgos
 {
     public class HoughSimple : IStrategy
     {
-        public string name { get; set; } = "Hough Lines";
+        public string Name { get; set; } = "Hough Lines";
 
         public ImageData ImageData { get; set; }
         private HoughSimpleInput input;
@@ -23,28 +23,26 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
             return true;
         }
 
-        public async Task Run(ImageData img, object parameters)
+        public async Task Run(ImageData imageData, object parameters)
         {
-            if (!Validate(img, parameters) || !EnsureImageIsBinary()) throw new ArgumentException("Input or image values are invalid.");
+            if (!Validate(imageData, parameters) || !EnsureImageIsBinary()) throw new ArgumentException("Input or image values are invalid.");
 
-
-            Mat resultBGR = new Mat();
+            Mat resultBgr = new Mat();
             await Task.Run(() =>
             {
                 Mat source = ImageData.Image.Clone();
 
                 Mat edgesOutput = new();
                 CvInvoke.Canny(source, edgesOutput, 50, 200);
-                CvInvoke.CvtColor(edgesOutput, resultBGR, ColorConversion.Gray2Bgr);
-
+                CvInvoke.CvtColor(edgesOutput, resultBgr, ColorConversion.Gray2Bgr);
                 var linesOutput = new Mat();
-                CvInvoke.HoughLines(edgesOutput, linesOutput, ///TODO: research if its possible to pass LineSegment2DF somehow
+                CvInvoke.HoughLines(edgesOutput, linesOutput, //TODO: research if its possible to pass LineSegment2DF somehow
                                     input.Rho,
                                     Math.PI / input.Theta,
                                     input.Theta,
                                     input.Srn, input.Stn);
 
-                float[,,] pointsData = linesOutput.GetData() as float[,,];
+                var pointsData = linesOutput?.GetData() as float[,,];
                 for (int i = 0; i < pointsData?.GetLength(0); i++)
                 {
 
@@ -57,16 +55,17 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
                     double x0 = a * rho;
                     double y0 = b * rho;
 
-                    Point pt1 = new Point((int)Math.Round(x0 + 1000 * -b), (int)Math.Round(y0 + 1000 * a));
-                    Point pt2 = new Point((int)Math.Round(x0 - 1000 * -b), (int)Math.Round(y0 - 1000 * a));
+                    var pt1 = new Point((int)Math.Round(x0 + 1000 * -b), (int)Math.Round(y0 + 1000 * a));
+                    var pt2 = new Point((int)Math.Round(x0 - 1000 * -b), (int)Math.Round(y0 - 1000 * a));
 
 
-                    CvInvoke.Line(resultBGR, pt1, pt2, new MCvScalar(0, 0, 255), input.LineThickness, input.LineType);
+                    CvInvoke.Line(resultBgr, pt1, pt2, new MCvScalar(0, 0, 255), input.LineThickness, input.LineType);
                 }
+                DisposeAllMats(source,edgesOutput,linesOutput);
             });
 
-            ImageData.changeType(Enums.Rgb); // result => Grayscale source image + Red lines
-            ImageData.updateImage(resultBGR);
+            ImageData.ChangeType(ImageType.Rgb); // result => Grayscale source image + Red lines
+            ImageData.UpdateImage(resultBgr);
 
         }
         private bool EnsureImageIsBinary()
@@ -75,15 +74,24 @@ namespace APO_Tsarehradskiy.ImageProcessingAlgos
 
             if (MessageBox.Show($"Image is not binary.{Environment.NewLine}Apply Otsu Thresholding?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
 
-            Mat mat = new Mat();
-            if (ImageData.Type != Enums.Gray && !ImageData.TryConvertType(Enums.Gray)) return false;
+            
+            if (ImageData.Type != ImageType.Gray && !ImageData.TryConvertType(ImageType.Gray)) return false;
 
-            CvInvoke.Threshold(ImageData.Image, mat, 0, 255, ThresholdType.Binary | ThresholdType.Otsu);
-            ImageData.updateImage(mat);
+            Mat afterThreshold = new Mat();
+            CvInvoke.Threshold(ImageData.Image, afterThreshold, 0, 255, ThresholdType.Binary | ThresholdType.Otsu);
+            ImageData.UpdateImage(afterThreshold);
             if (MessageBox.Show("Invert values ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 ImageData.Negation();
 
             return true;
         }
+
+        private void DisposeAllMats(params Mat[] mats)
+        {
+            foreach (var mat in mats)
+            {
+                mat?.Dispose();
+            }
+        } 
     }
 }
